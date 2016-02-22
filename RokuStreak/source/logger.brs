@@ -54,5 +54,6 @@ Function LogObject(o as Object) as void
 End Function
 
 Function FormatLogString(msg as String) as String
-    return NewLine() + msg
+    'return NewLine() + msg
+    return msg
 End Function

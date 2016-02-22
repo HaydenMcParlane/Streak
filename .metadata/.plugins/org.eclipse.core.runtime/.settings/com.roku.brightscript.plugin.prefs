@@ -1,0 +1,5 @@
+SSDPService.userLocation.192.168.1.100=http\://192.168.1.100\:8060/
+SSDPServiceList=192.168.1.100
+SSDPServiceSelected=192.168.1.100
+eclipse.preferences.version=1
+usn_to_projectname_map=192.168.1.100\:RokuStreak,

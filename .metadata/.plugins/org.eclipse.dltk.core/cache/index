@@ -1,10 +1,27 @@
 <?xml version="1.0" encoding="ASCII"?>
-<cache:CacheIndex xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:cache="http://eclipse.org/dltk/cache_model" lastIndex="2" environment="org.eclipse.dltk.core.environment.localEnvironment">
-  <entries path="/home/hayden/projects/github/Streak/RokuStreak/source" timestamp="1456042226000" lastAccessTime="1456115099814">
+<cache:CacheIndex xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:cache="http://eclipse.org/dltk/cache_model" lastIndex="22" environment="org.eclipse.dltk.core.environment.localEnvironment">
+  <entries path="/home/hayden/projects/github/Streak/RokuStreak/source" timestamp="1456042226000" lastAccessTime="1456117054515">
     <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/3478516768/1.idx"/>
   </entries>
-  <entries path="/home/hayden/projects/github/Streak/RokuStreak/source/screen_tv_schedule.brs" timestamp="1456042226000" lastAccessTime="1456101868036"/>
-  <entries path="/home/hayden/projects/github/Streak/RokuStreak/source/screen_search.brs" timestamp="1456042226000" lastAccessTime="1456101881250"/>
-  <entries path="/home/hayden/projects/github/Streak/RokuStreak/source/screen_main.brs" timestamp="1456042226000" lastAccessTime="1456101881468"/>
-  <entries path="/home/hayden/projects/github/Streak/RokuStreak/source/digest.brs" timestamp="1456042226000" lastAccessTime="1456101881599"/>
+  <entries path="/home/hayden/projects/github/Streak/RokuStreak/source/screen_tv_schedule.brs" timestamp="1456042226000" lastAccessTime="1456116543903">
+    <attributes name="indexed" location="2838196607/3585250467/15.idx"/>
+  </entries>
+  <entries path="/home/hayden/projects/github/Streak/RokuStreak/source/schedules_direct.brs" timestamp="1456116300000" lastAccessTime="1456116543989">
+    <attributes name="indexed" location="2838196607/3585250467/17.idx"/>
+  </entries>
+  <entries path="/home/hayden/projects/github/Streak/RokuStreak/source/config.brs" timestamp="1456107976000" lastAccessTime="1456116540906">
+    <attributes name="indexed" location="2838196607/3585250467/3.idx"/>
+  </entries>
+  <entries path="/home/hayden/projects/github/Streak/RokuStreak/source/digest.brs" timestamp="1456042226000" lastAccessTime="1456116543602">
+    <attributes name="indexed" location="2838196607/3585250467/9.idx"/>
+  </entries>
+  <entries path="/home/hayden/projects/github/Streak/RokuStreak/source/logger.brs" timestamp="1456115660000" lastAccessTime="1456116543795">
+    <attributes name="indexed" location="2838196607/3585250467/13.idx"/>
+  </entries>
+  <entries path="/home/hayden/projects/github/Streak/RokuStreak/source/json.brs" timestamp="1456042226000" lastAccessTime="1456116543693">
+    <attributes name="indexed" location="2838196607/3585250467/11.idx"/>
+  </entries>
+  <entries path="/home/hayden/projects/github/Streak/RokuStreak/source/util.brs" timestamp="1456113925000" lastAccessTime="1456116544086">
+    <attributes name="indexed" location="2838196607/3585250467/19.idx"/>
+  </entries>
 </cache:CacheIndex>

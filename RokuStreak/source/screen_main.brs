@@ -41,15 +41,13 @@ Function Main()
     list.Push(aa)
     poster.SetContentList(list)
     poster.Show()
-    
-    
-    
+            
     while true
         msg = wait(0, poster.GetMessagePort())
         if msg.isScreenClosed() then
             return -1
         else if msg.isListItemSelected()
-            print "List item selected"
+            ' TODO: Implement check to ensure list item selected was Search Screen            
             RenderSearchScreen()
         endif
     endwhile        

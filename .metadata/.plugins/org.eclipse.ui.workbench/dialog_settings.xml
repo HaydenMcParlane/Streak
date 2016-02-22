@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="BrightScriptDeploymentWizard">
+		<item value="false" key="BrightScriptDeploymentWizardPage1.package"/>
+		<item value="true" key="BrightScriptDeploymentWizardPage1.sideload"/>
+		<item value="rokudev" key="BrightScriptDeploymentWizardPage1.STORE_DEV_USERNAME"/>
+		<item value="umkcsce" key="BrightScriptDeploymentWizardPage1.STORE_DEV_PASSWORD"/>
+		<item value="false" key="BrightScriptDeploymentWizardPage1.STORE_COMPRESS_CONTENTS_ID"/>
+		<item value="false" key="BrightScriptDeploymentWizardPage1.STORE_BUILD_VALUE_AS_DATETIME"/>
+		<item value="false" key="BrightScriptDeploymentWizardPage1.STORE_CLEAR_DEBUG_CONSOLE"/>
+		<item value="false" key="BrightScriptDeploymentWizardPage1.STORE_ZIP_FILE_OVERWRITE"/>
+		<item value="false" key="BrightScriptDeploymentWizardPage1.STORE_CREATE_STRUCTURE_ID"/>
+		<item value="192.168.1.100" key="BrightScriptDeploymentWizardPage1.ipaddy"/>
+		<item value="Build" key="BrightScriptDeploymentWizardPage1.STORE_AUTO_INCREMENT_VERSION"/>
+		<item value="" key="BrightScriptDeploymentWizardPage1.keypass"/>
+		<list key="BrightScriptDeploymentWizardPage1.STORE_DESTINATION_NAMES_ID">
+		</list>
+	</section>
+	<section name="org.eclipse.ui.internal.QuickAccess">
+		<item value="-1" key="dialogWidth"/>
+		<item value="-1" key="dialogHeight"/>
+		<list key="orderedProviders">
+		</list>
+		<list key="textArray">
+		</list>
+		<list key="orderedElements">
+		</list>
+		<list key="textEntries">
+		</list>
+	</section>
+	<section name="ImportExportAction">
+		<item value="com.roku.brightscript.plugin.wizards.deployment.BrightScriptDeploymentWizard" key="ImportExportPage.STORE_SELECTED_EXPORT_WIZARD_ID"/>
+		<list key="ImportExportPage.STORE_EXPANDED_EXPORT_CATEGORIES">
+			<item value="com.roku.brightscript.plugin.category"/>
+		</list>
+	</section>
+</section>

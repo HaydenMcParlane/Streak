@@ -25,10 +25,9 @@ Function Tokenize() as void ' This may need to be changed such that it returns s
     body.AddReplace("password", Password())        
     
     response = PostRequest(SchedulesDirectJSONTokenUrl(), invalid, body)  
-    LogDebug("Value of response.body -> " + response.jsonString)
-    LogDebugObj("Value of response.json -> ", response.json)
-    for each header in response.headers    
-        LogDebugObj("Value of response.headers -> ", header)           
-    end for
+    
+    ' TODO: *** NEXT MAIN TASK *** extract information from response, store token, proceed with communication
+    ' with schedules direct to receive data to display in TV Schedule "view"  
+    
     LogInfo("Tokenize Complete Successfully")    
 End Function

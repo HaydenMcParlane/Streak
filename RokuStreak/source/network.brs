@@ -15,8 +15,7 @@ Function GetRequest(destUrl as String, aaHeaders as Object, aaBody as Object) as
     return response
 End Function
 
-Function Request(requestType as String, destUrl as String, aaHeaders as Object, aaBody as Object) as Object
-    ' TODO: Test pass by reference!
+Function Request(requestType as String, destUrl as String, aaHeaders as Object, aaBody as Object) as Object    
     urlTransfer = CreateObject("roUrlTransfer")
     port = CreateObject("roMessagePort")
     timer = CreateObject("roTimeSpan")
@@ -26,10 +25,7 @@ Function Request(requestType as String, destUrl as String, aaHeaders as Object, 
     
     packet = ConstructPacket(urlTransfer, aaHeaders, aaBody)
     
-    LogDebug("IN NETWORK MODULE")
-    
-    LogInfo("Initiating " + requestType + " request to -> " + NewLine() + destUrl)
-    
+    LogInfo("Initiating " + requestType + " request to -> " + destUrl)    
     if requestType = POST()
         urlTransfer.AsyncPostFromString(packet)
     else if requestType = GET()
@@ -44,7 +40,7 @@ Function Request(requestType as String, destUrl as String, aaHeaders as Object, 
         LogDebug("Waiting for server response")
         msg = wait(100, port)
         if type(msg) = "roUrlEvent" then
-            LogDebug("Event Received -> roUrlEvent")
+            LogDebug("Server response received")
             LogDebugObj("Response Code is ", msg.GetResponseCode())
             ' TODO: Efficiently implement check of different response status codes here
             if msg.GetResponseCode() = 200 then             
@@ -66,11 +62,19 @@ Function BuildResponse(message as Object) as Object
         LogError("UrlTransfer Message received was invalid")
         stop
     else
-        LogDebug("Constructing Response Object")
+        ' TODO: Think about event data that may be useful to include here. For reference, look @ 
+        ' https://sdkdocs.roku.com/display/sdkdoc/roUrlEvent
+        LogDebug("Constructing response object")
         response = CreateObject("roAssociativeArray")                        
         response.json = ParseJSON(message.GetString())
         response.jsonString = message.GetString()
         response.headers = message.GetResponseHeadersArray()  
+        LogDebug("Value of response.body -> " + response.jsonString)
+        LogDebugObj("Value of response.json -> ", response.json)        
+        for each header in response.headers    
+            LogDebugObj("Value of response.headers -> ", header)           
+        end for
+        LogDebug("Response object build successful")
     end if
     return response
 End Function
