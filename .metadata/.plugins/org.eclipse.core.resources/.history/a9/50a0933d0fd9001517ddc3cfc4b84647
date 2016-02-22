@@ -1,0 +1,133 @@
+'
+'   This document contains helper functions for use while working with networking.
+'   For example, accessing response status codes, checking those codes, etc is done
+'   here.
+'   @author: Hayden McParlane
+
+'   Execute GET request at specified URL
+Function PostRequest(destUrl as String, aaHeaders as Object, aaBody as Object) as Object                             
+    ' TODO: Test pass by reference!
+    ConstructPacket(urlTransfer, aaHeaders, aaBody)     
+    urlTransfer.AsyncPostFromString(jBody)
+    
+    response = Request(POST(), destUrl, aaHeaders, aaBody)
+    
+End Function
+
+Function Request(requestType as String, destUrl as String, aaHeaders as Object, aaBody as Object) as Object
+    ' TODO: Test pass by reference!
+    urlTransfer = CreateObject("roUrlTransfer")
+    port = CreateObject("roMessagePort")
+    timer = CreateObject("roTimeSpan")
+    timer.Mark()
+    urlTransfer.SetPort(port)
+    urlTransfer.SetUrl(destUrl)        
+    ' TODO: Test pass by reference!        
+    InitClient(urlTransfer)
+    ' TODO: Test pass by reference!
+    ConstructPacketHeader(urlTransfer, aaHeaders)
+    bodyStr = ConstructPacketBody(aaBody)
+    
+    LogInfo("Initiating " + requestType + " request")
+    
+    if requestType = POST()
+        urlTransfer.AsyncPostFromString(jBody)
+    else if requestType = GET()
+        urlTransfer.AsyncGetToString(jBody)
+    else
+        LogError("Invalid request type -> " + requestType)
+        stop
+    end if
+    
+    while true
+        LogDebug("Waiting for server response")
+        msg = wait(100, port)
+        if type(msg) = "roUrlEvent" then
+            LogDebug("Event roUrlEvent received")
+            LogDebugObj("Response Code is ", msg.GetResponseCode())
+            if msg.GetResponseCode() = 200 then
+                LogInfo("HTTP 200 Status Received")
+                response = msg.GetString()
+                headers = msg.GetResponseHeadersArray()
+                LogDebug("Response -> " + NewLine() + response)
+                LogDebugObj("Headers -> ", headers)
+                exit while
+            else
+                u.AsyncCancel()
+            end if
+        else
+            LogDebug("Do Useful stuff while wait for data")
+        end if
+   end while
+    
+End Function
+
+Function ConstructPacketHeader(urlTransfer as Object, aaHeaders as Object) as void
+    if aaHeaders = invalid
+        ' Do nothing
+    else    
+        for each header in aaHeaders
+            urlTransfer.AddHeader(header, aaHeaders[header])
+        end for
+    end if
+    ' TODO: Test pass by reference!
+    'return urlTransfer
+End Function
+
+Function ConstructPacketBody(aaBody as Object) as String
+    if aaBody = invalid
+        bodyStr = ""
+    else
+        bodyStr = ConstructJSONStr(aaBody)
+    end if   
+    return bodyStr
+End Function
+
+Function InitClient(urlTransfer as Object) as void    
+    urlTransfer.SetCertificatesFile(SSLCertificatePath())
+    urlTransfer.AddHeader("X-Roku-Reserved-Dev-Id",XRokuReservedDevId())
+    urlTransfer.InitClientCertificates()
+    'TODO: Test pass by reference
+    'return urlTransfer    
+End Function
+
+Function temp() as void
+    ' TODO: Refine generic network access routines
+    timer = CreateObject("roTimeSpan")
+    timer.Mark()
+    u = CreateObject("roUrlTransfer")
+    u.SetCertificatesFile(SSLCertificatePath())
+    u.AddHeader("X-Roku-Reserved-Dev-Id","")
+    u.InitClientCertificates()
+    port = CreateObject("roMessagePort")
+    u.SetPort(port)
+    u.SetUrl(SchedulesDirectJsonTokenUrl())
+    u.AsyncPostFromString(ConstructJSONStr(aa))
+    while true
+        msg = wait(100, port)
+        if type(msg) = "roUrlEvent" then
+            LogDebug("roUrlEvent received")
+            LogDebugObj("Response Code is ", msg.GetResponseCode())
+            if msg.GetResponseCode() = 200 then
+                LogInfo("HTTP 200 Status Received")
+                response = msg.GetString()
+                headers = msg.GetResponseHeadersArray()
+                LogDebug("Response -> " + NewLine() + response)
+                LogDebugObj("Headers -> ", headers)
+                exit while
+            else
+                u.AsyncCancel()
+            end if
+        else
+            LogDebug("Do Useful stuff while wait for data")
+        end if
+   end while
+End Function
+
+Function POST() as String
+    return "POST"
+End Function
+
+Function GET() as String
+    return "GET"
+End Function

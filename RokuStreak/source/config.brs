@@ -19,3 +19,7 @@ End Function
 Function SSLCertificatePath() as String
     return "common:/certs/ca-bundle.crt"
 End Function
+
+Function XRokuReservedDevId() as String    
+    return ""
+End Function

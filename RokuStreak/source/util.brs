@@ -26,6 +26,14 @@ Function DoubleQuotes() as String
     return Chr(34)
 End Function
 
+'   TODO: Figure out better NoneType Implementation to avoid comparisons testing for None()
+'   before invalid and introducing massive bugs into the code that are hard to find.
+'   A function to represent "No Assigned Value," similar to python None
+Function None() as Object
+    'return Chr(96)
+    return invalid
+End Function
+
 '######################################################################
 '   ASSOCIATIVE ARRAY HELPER FUNCTIONS
 '######################################################################
