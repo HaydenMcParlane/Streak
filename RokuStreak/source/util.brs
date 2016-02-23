@@ -39,9 +39,38 @@ End Function
 '######################################################################
 
 ' Get an arbitrary key in an associative array. This can be used to start for loops to construct
-' strings iteratively. Otherwise, there's no way to retrieve the key on 2.20.2016.
+' strings iteratively. Otherwise, there's no way to retrieve the key on 2.20.2016. I decided not
+' to use the provided Keys() method because the results are sorted in lexicographical order which
+' adds heavy computation to a simple use case.
 Function GetRandomKey(aa as Object) as Object
     for each key in aa
         return key
+    end for
+End Function
+
+Function LinkAssociativeArrays(array as Object) as Object
+    aa = CreateObject("roAssociativeArray")
+    for each row in array
+        aa.Append(row)
+    end for
+    return aa
+End Function
+
+'######################################################################
+'   ARRAY HELPER FUNCTIONS
+'######################################################################
+
+' TODO: Review for correctness. Particularly to ensure that the ordering of returned strings is
+' static. If used with headers and order not consistent, could result in header value and header
+' name being swapped.
+Function MakeAssociative(array as Object, splitChar as String) as Object
+    regex = CreateObject("roRegex", splitChar, "")
+    aa = CreateObject("roAssociativeArray")
+    for each row in array    
+        tempArr = regex.Split(row)
+        for each entry in tempArr            
+            entry = entry.trim()
+        end for        
+        aa.AddReplace(tempArr[0],tempArr[1])
     end for
 End Function

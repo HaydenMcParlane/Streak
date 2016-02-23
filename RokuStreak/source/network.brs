@@ -42,7 +42,8 @@ Function Request(requestType as String, destUrl as String, aaHeaders as Object, 
         if type(msg) = "roUrlEvent" then
             LogDebug("Server response received")
             LogDebugObj("Response Code is ", msg.GetResponseCode())
-            ' TODO: Efficiently implement check of different response status codes here
+            ' TODO: Efficiently implement check of different response status codes here and deal
+            ' with concerning circumstances appropriately
             if msg.GetResponseCode() = 200 then             
                 response = BuildResponse(msg)                
                 exit while
@@ -67,13 +68,12 @@ Function BuildResponse(message as Object) as Object
         LogDebug("Constructing response object")
         response = CreateObject("roAssociativeArray")                        
         response.json = ParseJSON(message.GetString())
-        response.jsonString = message.GetString()
-        response.headers = message.GetResponseHeadersArray()  
+        response.jsonString = message.GetString()        
+        response.headers = LinkAssociativeArrays(message.GetResponseHeadersArray())       
         LogDebug("Value of response.body -> " + response.jsonString)
-        LogDebugObj("Value of response.json -> ", response.json)        
-        for each header in response.headers    
-            LogDebugObj("Value of response.headers -> ", header)           
-        end for
+        LogDebugObj("Value of response.json -> ", response.json)
+        LogDebugObj("Value of response.headers -> ", response.headers)        
+           
         LogDebug("Response object build successful")
     end if
     return response

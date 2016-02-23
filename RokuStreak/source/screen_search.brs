@@ -24,7 +24,7 @@ Function RenderSearchScreen() as void
                     LogDebug("Search text: " + searchText)
                     ' TODO: Validate input later
                     ' TODO: Complete implementation of search
-                    SearchSchedulesDirect()                                        
+                    searchResults = SearchSchedulesDirect()                                        
                     'aa = SearchSchedulesDirect(searchText)                    
                                      
                     'RenderTVSchedule(aa)
