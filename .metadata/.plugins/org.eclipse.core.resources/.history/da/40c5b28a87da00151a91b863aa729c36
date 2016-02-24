@@ -1,0 +1,7 @@
+'
+'   This document functions as the interface into television schedules for the project.
+'   It decouples the screens from the back-end API used to gather TV scheduling information.
+'   @author: Hayden McParlane
+Function FilterTVShows(aaCriteria as Object) as Object
+    searchResults = SearchSchedulesDirect()
+End Function

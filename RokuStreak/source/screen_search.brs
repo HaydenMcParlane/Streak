@@ -21,14 +21,11 @@ Function RenderSearchScreen() as void
             else if msg.isButtonPressed() then                
                 if msg.GetIndex() = 1
                     searchText = screen.GetText()
-                    LogDebug("Search text: " + searchText)
-                    ' TODO: Validate input later
-                    ' TODO: Complete implementation of search
-                    searchResults = SearchSchedulesDirect()                                        
-                    'aa = SearchSchedulesDirect(searchText)                    
-                                     
-                    'RenderTVSchedule(aa)
-                                        
+                    LogDebug("Search text received -> " + searchText)
+                    
+                    ' TODO: Validate input later                    
+                    result = FilterTVShows(searchText)                                     
+                    'RenderTVSchedule(result)
                     return
                 else if msg.GetIndex() = 2
                     ' Return to previous screen                    

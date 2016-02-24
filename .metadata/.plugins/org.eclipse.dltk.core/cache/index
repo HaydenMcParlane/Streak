@@ -1,36 +1,33 @@
 <?xml version="1.0" encoding="ASCII"?>
-<cache:CacheIndex xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:cache="http://eclipse.org/dltk/cache_model" lastIndex="38" environment="org.eclipse.dltk.core.environment.localEnvironment">
-  <entries path="/home/hayden/projects/github/Streak/RokuStreak/source" timestamp="1456042226000" lastAccessTime="1456266115170">
-    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/3478516768/1.idx"/>
-  </entries>
-  <entries path="/home/hayden/projects/github/Streak/RokuStreak/source/screen_tv_schedule.brs" timestamp="1456042226000" lastAccessTime="1456246029589">
+<cache:CacheIndex xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:cache="http://eclipse.org/dltk/cache_model" lastIndex="50" environment="org.eclipse.dltk.core.environment.localEnvironment">
+  <entries path="/home/hayden/projects/github/Streak/RokuStreak/source/screen_tv_schedule.brs" timestamp="1456042226000" lastAccessTime="1456266470216">
     <attributes name="indexed" location="2838196607/3585250467/15.idx"/>
   </entries>
-  <entries path="/home/hayden/projects/github/Streak/RokuStreak/source/digest.brs" timestamp="1456042226000" lastAccessTime="1456246029589">
+  <entries path="/home/hayden/projects/github/Streak/RokuStreak/source/digest.brs" timestamp="1456042226000" lastAccessTime="1456266470215">
     <attributes name="indexed" location="2838196607/3585250467/9.idx"/>
   </entries>
-  <entries path="/home/hayden/projects/github/Streak/RokuStreak/source/logger.brs" timestamp="1456115660000" lastAccessTime="1456246029589">
+  <entries path="/home/hayden/projects/github/Streak/RokuStreak/source/logger.brs" timestamp="1456115660000" lastAccessTime="1456266470216">
     <attributes name="indexed" location="2838196607/3585250467/13.idx"/>
   </entries>
-  <entries path="/home/hayden/projects/github/Streak/RokuStreak/source/json.brs" timestamp="1456042226000" lastAccessTime="1456246029589">
-    <attributes name="indexed" location="2838196607/3585250467/11.idx"/>
-  </entries>
-  <entries path="#special#brightscript_types#/builtins/intrinsics_types" lastAccessTime="1456246003744">
+  <entries path="#special#brightscript_types#/builtins/intrinsics_types" lastAccessTime="1456266470095">
     <attributes name="indexed" location="2838196607/903500642/23.idx"/>
   </entries>
-  <entries path="#special#brightscript_types#/builtins/v30_bslCore" lastAccessTime="1456246003809">
+  <entries path="#special#brightscript_types#/builtins/v30_bslCore" lastAccessTime="1456266470095">
     <attributes name="indexed" location="2838196607/903500642/25.idx"/>
   </entries>
-  <entries path="#special#brightscript_types#/builtins/types" lastAccessTime="1456246003809">
+  <entries path="#special#brightscript_types#/builtins/types" lastAccessTime="1456266470096">
     <attributes name="indexed" location="2838196607/903500642/27.idx"/>
   </entries>
-  <entries path="#special#brightscript_types#/builtins/v30_bslDefender" lastAccessTime="1456246003810">
+  <entries path="#special#brightscript_types#/builtins/v30_bslDefender" lastAccessTime="1456266470096">
     <attributes name="indexed" location="2838196607/903500642/29.idx"/>
   </entries>
-  <entries path="#special#brightscript_types#/builtins/globals" lastAccessTime="1456246003810">
+  <entries path="#special#brightscript_types#/builtins/globals" lastAccessTime="1456266470096">
     <attributes name="indexed" location="2838196607/903500642/31.idx"/>
   </entries>
-  <entries path="/home/hayden/projects/github/Streak/RokuStreak/source/screen_main.brs" timestamp="1456116085000" lastAccessTime="1456246030120">
+  <entries path="/home/hayden/projects/github/Streak/RokuStreak/source/screen_main.brs" timestamp="1456116085000" lastAccessTime="1456266470217">
     <attributes name="indexed" location="2838196607/3585250467/37.idx"/>
+  </entries>
+  <entries path="/home/hayden/projects/github/Streak/RokuStreak/source" timestamp="1456270782000" lastAccessTime="1456275872689">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/3478516768/49.idx"/>
   </entries>
 </cache:CacheIndex>
