@@ -48,7 +48,7 @@ Function SchedulesDirectTokenize() as void ' This may need to be changed such th
             stop
         end if
     
-        ' 4. Store result in m-hierarchy        
+        ' 4. Store token in system variable        
         AddUpdateSchedulesDirectToken(response.json["token"])            
         LogInfo("Tokenize Complete Successfully -> " + GetSchedulesDirectToken())
     end if   
@@ -76,20 +76,12 @@ Function GetCableHeadends(country as String, zipcode as String)
         ' TODO: Program shouldn't be halted. What should be done here?
         stop
     end if          
+
+    ' 4. Store token in system variable        
+    AddUpdateSchedulesDirectCableHeadends(LinkAssociativeArrays(response.json))
     
-    ' 4. Store result in m-hierarchy        
-    AddUpdateSchedulesDirectCableHeadends(response.json)        
-    
-    LogDebug("Printing cable headends in response -> ")
-    for each headend in response.json
-        LogDebugObj("", headend)
-    end for        
-    
-    LogDebug("Printing m-hierarchy cable headends -> ")
-    for each headend in GetSchedulesDirectCableHeadends()
-        LogDebugObj("", headend)
-    end for
-    LogDebug("Fetch cable headends succeeded")            
+    LogDebugObj("Cable headends fetched successfully -> ", response.json)
+    LogDebugObj("Checking to ensure m-hierarchy updated successfully -> ", GetSchedulesDirectCableHeadends())    
 End Function
 
 '###################################################################################

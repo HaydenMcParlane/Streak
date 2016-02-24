@@ -10,8 +10,6 @@ Function SearchSchedulesDirect() as void
     ' how.
     InitSchedulesDirect()
     SchedulesDirectTokenize()
-    ' TODO: Modify as appropriate. Cable headends may not need fetch.    
-    GetCableHeadends("USA", "66103")
 End Function
 
 ' TODO: GetSchedulesDirectAccountStatus()
@@ -48,48 +46,39 @@ Function SchedulesDirectTokenize() as void ' This may need to be changed such th
             stop
         end if
     
-        ' 4. Store result in m-hierarchy        
+        ' 4. Store token in system variable        
         AddUpdateSchedulesDirectToken(response.json["token"])            
         LogInfo("Tokenize Complete Successfully -> " + GetSchedulesDirectToken())
     end if   
 End Function
 
 Function GetCableHeadends(country as String, zipcode as String)
-    LogInfo("Fetching cable headends")    
+    LogInfo("Fetching cable headends")
     headers = CreateObject("roAssociativeArray")
     body = CreateObject("roAssociativeArray")
     
-    ' 1. Populate headers and body for network packet    
+    ' 1. Populate headers and body for network packet
     headers.AddReplace("User-Agent",SchedulesDirectUserAgentHeader())
-    ' TODO: Token may not have been populated here, or may need to be refreshed.
-    ' How to implement?
-    headers.AddReplace("token",GetSchedulesDirectToken())
     body.AddReplace("username", SchedulesDirectUsername())
-    body.AddReplace("password", SchedulesDirectPassword())                
+    body.AddReplace("password", SchedulesDirectPassword())        
     
     ' 2. Make request to API
-    response = GetRequest(SchedulesDirectCableHeadendsUrl(country, zipcode), headers, body)
+    response = PostRequest(SchedulesDirectJSONTokenUrl(), headers, body)
     
     ' 3. Check server status code (not HTTP status, that's checked in network module)            
     if response.headers["code"] = 3000
         LogErrorObj("Schedules Direct server offline. Try again later.", response.json)
         ' TODO: Program shouldn't be halted. What should be done here?
         stop
-    end if          
+    else if response.json["code"] <> 0
+        LogErrorObj("Schedules Direct response status code non-zero (Abnormal).", response.json)
+        stop
+    end if
+
+    ' 4. Store token in system variable        
+    AddUpdateSchedulesDirectToken(response.json["token"])        
     
-    ' 4. Store result in m-hierarchy        
-    AddUpdateSchedulesDirectCableHeadends(response.json)        
-    
-    LogDebug("Printing cable headends in response -> ")
-    for each headend in response.json
-        LogDebugObj("", headend)
-    end for        
-    
-    LogDebug("Printing m-hierarchy cable headends -> ")
-    for each headend in GetSchedulesDirectCableHeadends()
-        LogDebugObj("", headend)
-    end for
-    LogDebug("Fetch cable headends succeeded")            
+    LogDebug("Cable headends fetched successfully.")
 End Function
 
 '###################################################################################
@@ -260,6 +249,4 @@ Function SchedulesDirectJSONTokenUrl() as String
 End Function
 
 Function SchedulesDirectCableHeadendsUrl(country as String, zipcode as String)
-    ' TODO: Validate country entry style? Builder to translate entered strings into required strings?
     return SchedulesDirectBaseJsonUrl() + "/headends?country=" + country + "&" + "postalcode=" + zipcode
-End Function

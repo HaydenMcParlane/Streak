@@ -10,8 +10,6 @@ Function SearchSchedulesDirect() as void
     ' how.
     InitSchedulesDirect()
     SchedulesDirectTokenize()
-    ' TODO: Modify as appropriate. Cable headends may not need fetch.    
-    GetCableHeadends("USA", "66103")
 End Function
 
 ' TODO: GetSchedulesDirectAccountStatus()
@@ -48,7 +46,7 @@ Function SchedulesDirectTokenize() as void ' This may need to be changed such th
             stop
         end if
     
-        ' 4. Store result in m-hierarchy        
+        ' 4. Store token in system variable        
         AddUpdateSchedulesDirectToken(response.json["token"])            
         LogInfo("Tokenize Complete Successfully -> " + GetSchedulesDirectToken())
     end if   
@@ -68,28 +66,22 @@ Function GetCableHeadends(country as String, zipcode as String)
     body.AddReplace("password", SchedulesDirectPassword())                
     
     ' 2. Make request to API
-    response = GetRequest(SchedulesDirectCableHeadendsUrl(country, zipcode), headers, body)
+    response = PostRequest(SchedulesDirectCableHeadendsUrl(country, zipcode), headers, body)
     
     ' 3. Check server status code (not HTTP status, that's checked in network module)            
     if response.headers["code"] = 3000
         LogErrorObj("Schedules Direct server offline. Try again later.", response.json)
         ' TODO: Program shouldn't be halted. What should be done here?
         stop
-    end if          
+    else if response.json["code"] <> 0
+        LogErrorObj("Schedules Direct response status code non-zero (Abnormal).", response.json)
+        stop
+    end if
+
+    ' 4. Store token in system variable        
+    AddUpdateSchedulesDirectToken(response.json["token"])        
     
-    ' 4. Store result in m-hierarchy        
-    AddUpdateSchedulesDirectCableHeadends(response.json)        
-    
-    LogDebug("Printing cable headends in response -> ")
-    for each headend in response.json
-        LogDebugObj("", headend)
-    end for        
-    
-    LogDebug("Printing m-hierarchy cable headends -> ")
-    for each headend in GetSchedulesDirectCableHeadends()
-        LogDebugObj("", headend)
-    end for
-    LogDebug("Fetch cable headends succeeded")            
+    LogDebug("Cable headends fetched successfully.")
 End Function
 
 '###################################################################################

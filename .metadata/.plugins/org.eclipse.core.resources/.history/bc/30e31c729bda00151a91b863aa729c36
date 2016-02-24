@@ -80,16 +80,15 @@ Function GetCableHeadends(country as String, zipcode as String)
     ' 4. Store result in m-hierarchy        
     AddUpdateSchedulesDirectCableHeadends(response.json)        
     
-    LogDebug("Printing cable headends in response -> ")
+    LogDebugObj("Printing cable headends in response -> ")
     for each headend in response.json
         LogDebugObj("", headend)
     end for        
     
-    LogDebug("Printing m-hierarchy cable headends -> ")
+    LogDebugObj("Printing m-hierarchy cable headends -> ")
     for each headend in GetSchedulesDirectCableHeadends()
         LogDebugObj("", headend)
-    end for
-    LogDebug("Fetch cable headends succeeded")            
+    end for            
 End Function
 
 '###################################################################################

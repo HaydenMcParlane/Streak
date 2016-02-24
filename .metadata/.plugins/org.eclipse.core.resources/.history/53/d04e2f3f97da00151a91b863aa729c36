@@ -66,8 +66,7 @@ Function BuildResponse(message as Object) as Object
         ' TODO: Think about event data that may be useful to include here. For reference, look @ 
         ' https://sdkdocs.roku.com/display/sdkdoc/roUrlEvent
         LogDebug("Constructing response object")
-        response = CreateObject("roAssociativeArray") 
-        response.statusCode = message.GetResponseCode()                       
+        response = CreateObject("roAssociativeArray")                        
         response.json = ParseJSON(message.GetString())
         response.jsonString = message.GetString()        
         response.headers = LinkAssociativeArrays(message.GetResponseHeadersArray())       

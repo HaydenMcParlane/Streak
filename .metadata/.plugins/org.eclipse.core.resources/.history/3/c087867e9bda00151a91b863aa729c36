@@ -88,8 +88,7 @@ Function GetCableHeadends(country as String, zipcode as String)
     LogDebug("Printing m-hierarchy cable headends -> ")
     for each headend in GetSchedulesDirectCableHeadends()
         LogDebugObj("", headend)
-    end for
-    LogDebug("Fetch cable headends succeeded")            
+    end for            
 End Function
 
 '###################################################################################

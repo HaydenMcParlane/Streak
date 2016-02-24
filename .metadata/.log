@@ -6008,3 +6008,781 @@ org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special
 	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
 !SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-02-23 19:09:14.514
 !MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-02-23 19:11:47.195
+!MESSAGE error: Unable to determine method at current cursor position: 69
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-02-23 19:13:35.321
+!MESSAGE error: Found multiple no return values for method call expression: 'SearchSchedulesDirect()'
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-02-23 19:13:46.166
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roString'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-02-23 19:13:46.167
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-02-23 19:17:17.852
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roString'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-02-23 19:17:17.852
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-02-23 19:25:28.263
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'AddReplace'
+!STACK 1
+org.eclipse.dltk.core.ModelException: types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getHTMLContentReader(ProposalInfo.java:158)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:140)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:90)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-02-23 19:25:28.264
+!MESSAGE types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-02-23 19:32:46.702
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'AddHeader'
+!STACK 1
+org.eclipse.dltk.core.ModelException: types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getHTMLContentReader(ProposalInfo.java:158)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:140)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:90)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-02-23 19:32:46.702
+!MESSAGE types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-02-23 19:34:08.407
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roString'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:104)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-02-23 19:34:08.407
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-02-23 19:34:08.408
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roArray'
+!STACK 1
+org.eclipse.dltk.core.ModelException: types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:104)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-02-23 19:34:08.408
+!MESSAGE types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-02-23 19:35:09.013
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roString'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-02-23 19:35:09.013
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-02-23 19:35:21.935
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roString'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-02-23 19:35:21.936
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-02-23 19:35:34.500
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roString'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-02-23 19:35:34.500
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-02-23 19:37:06.754
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roString'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-02-23 19:37:06.754
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-02-23 19:37:33.438
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'SetModeCaseSensitive'
+!STACK 1
+org.eclipse.dltk.core.ModelException: types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getHTMLContentReader(ProposalInfo.java:158)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:140)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:90)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-02-23 19:37:33.438
+!MESSAGE types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-02-23 19:37:55.148
+!MESSAGE error: Unable to determine method at current cursor position: 2742
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-02-23 19:38:42.636
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roString'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-02-23 19:38:42.636
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-02-23 19:39:53.799
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roString'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-02-23 19:39:53.799
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-02-23 19:40:10.671
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roString'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-02-23 19:40:10.672
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-02-23 19:43:47.798
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'AddReplace'
+!STACK 1
+org.eclipse.dltk.core.ModelException: types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getHTMLContentReader(ProposalInfo.java:158)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:140)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:90)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-02-23 19:43:47.798
+!MESSAGE types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY org.eclipse.dltk.ui 4 2 2016-02-23 19:44:07.195
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.dltk.ui".
+!STACK 0
+java.lang.StringIndexOutOfBoundsException: String index out of range: 9887
+	at java.lang.String.substring(String.java:1907)
+	at com.roku.brightscript.ide.eclipse.core.model.ast.BrightScriptAbstractASTTranslator.getImageOfProduction(BrightScriptAbstractASTTranslator.java:163)
+	at com.roku.brightscript.ide.eclipse.core.model.ast.BrightScriptAbstractASTTranslator.getImageOfNode(BrightScriptAbstractASTTranslator.java:147)
+	at com.roku.brightscript.ide.eclipse.core.model.ast.BrightScriptASTTranslator.exitFnorconstexprhead(BrightScriptASTTranslator.java:2285)
+	at com.roku.brightscript.parser.BrightScriptAnalyzer.exit(BrightScriptAnalyzer.java:1323)
+	at net.percederberg.grammatica.parser.Parser.exitNode(Parser.java:540)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:300)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseStart(RecursiveDescentParser.java:177)
+	at net.percederberg.grammatica.parser.Parser.parse(Parser.java:389)
+	at com.roku.brightscript.ide.eclipse.core.model.parsers.BrightScriptSourceParser.parse(BrightScriptSourceParser.java:101)
+	at com.roku.brightscript.ide.eclipse.core.model.parsers.BrightScriptSourceElementParser.parseSourceModule(BrightScriptSourceElementParser.java:78)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.buildStructure(AbstractSourceModule.java:507)
+	at org.eclipse.dltk.internal.core.Openable.generateInfos(Openable.java:188)
+	at org.eclipse.dltk.internal.core.ModelElement.openWhenClosed(ModelElement.java:184)
+	at org.eclipse.dltk.internal.core.SourceModule.makeConsistent(SourceModule.java:257)
+	at org.eclipse.dltk.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:79)
+	at org.eclipse.dltk.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:58)
+	at org.eclipse.dltk.internal.core.ModelOperation.run(ModelOperation.java:698)
+	at org.eclipse.dltk.internal.core.ModelOperation.runOperation(ModelOperation.java:764)
+	at org.eclipse.dltk.internal.core.SourceModule.reconcile(SourceModule.java:309)
+	at org.eclipse.dltk.internal.ui.text.ScriptReconcilingStrategy.reconcile(ScriptReconcilingStrategy.java:164)
+	at org.eclipse.dltk.internal.ui.text.ScriptReconcilingStrategy.access$0(ScriptReconcilingStrategy.java:153)
+	at org.eclipse.dltk.internal.ui.text.ScriptReconcilingStrategy$1.run(ScriptReconcilingStrategy.java:125)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.dltk.internal.ui.text.ScriptReconcilingStrategy.reconcile(ScriptReconcilingStrategy.java:120)
+	at org.eclipse.dltk.internal.ui.text.ScriptReconcilingStrategy.reconcile(ScriptReconcilingStrategy.java:192)
+	at org.eclipse.dltk.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:97)
+	at org.eclipse.dltk.internal.ui.text.ScriptCompositeReconcilingStrategy.reconcile(ScriptCompositeReconcilingStrategy.java:74)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:77)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:206)
+
+!ENTRY org.eclipse.dltk.ui 4 10001 2016-02-23 19:44:07.284
+!MESSAGE Error in DLTK Core during reconcile
+!STACK 0
+java.lang.StringIndexOutOfBoundsException: String index out of range: 9887
+	at java.lang.String.substring(String.java:1907)
+	at com.roku.brightscript.ide.eclipse.core.model.ast.BrightScriptAbstractASTTranslator.getImageOfProduction(BrightScriptAbstractASTTranslator.java:163)
+	at com.roku.brightscript.ide.eclipse.core.model.ast.BrightScriptAbstractASTTranslator.getImageOfNode(BrightScriptAbstractASTTranslator.java:147)
+	at com.roku.brightscript.ide.eclipse.core.model.ast.BrightScriptASTTranslator.exitFnorconstexprhead(BrightScriptASTTranslator.java:2285)
+	at com.roku.brightscript.parser.BrightScriptAnalyzer.exit(BrightScriptAnalyzer.java:1323)
+	at net.percederberg.grammatica.parser.Parser.exitNode(Parser.java:540)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:300)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseStart(RecursiveDescentParser.java:177)
+	at net.percederberg.grammatica.parser.Parser.parse(Parser.java:389)
+	at com.roku.brightscript.ide.eclipse.core.model.parsers.BrightScriptSourceParser.parse(BrightScriptSourceParser.java:101)
+	at com.roku.brightscript.ide.eclipse.core.model.parsers.BrightScriptSourceElementParser.parseSourceModule(BrightScriptSourceElementParser.java:78)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.buildStructure(AbstractSourceModule.java:507)
+	at org.eclipse.dltk.internal.core.Openable.generateInfos(Openable.java:188)
+	at org.eclipse.dltk.internal.core.ModelElement.openWhenClosed(ModelElement.java:184)
+	at org.eclipse.dltk.internal.core.SourceModule.makeConsistent(SourceModule.java:257)
+	at org.eclipse.dltk.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:79)
+	at org.eclipse.dltk.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:58)
+	at org.eclipse.dltk.internal.core.ModelOperation.run(ModelOperation.java:698)
+	at org.eclipse.dltk.internal.core.ModelOperation.runOperation(ModelOperation.java:764)
+	at org.eclipse.dltk.internal.core.SourceModule.reconcile(SourceModule.java:309)
+	at org.eclipse.dltk.internal.ui.text.ScriptReconcilingStrategy.reconcile(ScriptReconcilingStrategy.java:164)
+	at org.eclipse.dltk.internal.ui.text.ScriptReconcilingStrategy.access$0(ScriptReconcilingStrategy.java:153)
+	at org.eclipse.dltk.internal.ui.text.ScriptReconcilingStrategy$1.run(ScriptReconcilingStrategy.java:125)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.dltk.internal.ui.text.ScriptReconcilingStrategy.reconcile(ScriptReconcilingStrategy.java:120)
+	at org.eclipse.dltk.internal.ui.text.ScriptReconcilingStrategy.reconcile(ScriptReconcilingStrategy.java:192)
+	at org.eclipse.dltk.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:97)
+	at org.eclipse.dltk.internal.ui.text.ScriptCompositeReconcilingStrategy.reconcile(ScriptCompositeReconcilingStrategy.java:74)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:77)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:206)
+
+!ENTRY org.eclipse.dltk.core 4 2 2016-02-23 19:45:14.668
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.dltk.core".
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException
+
+!ENTRY org.eclipse.dltk.core 4 4 2016-02-23 19:45:14.670
+!MESSAGE Exception occurred in listener of script element change notification
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-02-23 19:48:40.906
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'AddReplace'
+!STACK 1
+org.eclipse.dltk.core.ModelException: types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getHTMLContentReader(ProposalInfo.java:158)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:140)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:90)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-02-23 19:48:40.906
+!MESSAGE types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-02-23 19:49:22.658
+!MESSAGE error: Unable to determine method at current cursor position: 3908
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-02-23 19:49:25.788
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'AddReplace'
+!STACK 1
+org.eclipse.dltk.core.ModelException: types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getHTMLContentReader(ProposalInfo.java:158)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:140)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:90)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-02-23 19:49:25.788
+!MESSAGE types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-02-23 19:49:30.664
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'Append'
+!STACK 1
+org.eclipse.dltk.core.ModelException: types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getHTMLContentReader(ProposalInfo.java:158)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:140)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:90)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-02-23 19:49:30.664
+!MESSAGE types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-02-23 20:00:24.420
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roString'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-02-23 20:00:24.420
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-02-23 20:00:25.662
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roString'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-02-23 20:00:25.663
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
