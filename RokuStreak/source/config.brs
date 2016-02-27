@@ -5,13 +5,13 @@
 '   @creation-date: 2.18.2016
 
 Function Username() as String
-    return "username_here"
+    return "username"
 End Function
 
 '   TODO: This password is entered in plain text ONLY FOR DEV PURPOSES. LATER ON
 '   IT MUST BE STORED IN DIGESTED FORM (i.e, SHA1) FOR SECURITY PURPOSES. 
 Function RawPassword() as String
-    return "password_here"
+    return "password"
 End Function
 
 Function SSLCertificatePath() as String

@@ -25,6 +25,7 @@ Function Request(requestType as String, destUrl as String, aaHeaders as Object, 
     timer.Mark()
     urlTransfer.SetPort(port)
     urlTransfer.SetUrl(destUrl)
+    urlTransfer.EnableEncodings(True)
     
     packet = ConstructPacket(urlTransfer, aaHeaders, aaBody)
     
@@ -63,7 +64,7 @@ End Function
 
 Function BuildResponse(message as Object) as Object
     if message = invalid
-        LogError("UrlTransfer Message received was invalid")
+        LogError("UrlTransfer message received was invalid")
         stop
     else
         ' TODO: Think about event data that may be useful to include here. For reference, look @ 
@@ -74,8 +75,8 @@ Function BuildResponse(message as Object) as Object
         response.json = ParseJSON(message.GetString())
         response.jsonString = message.GetString()        
         response.headers = LinkAssociativeArrays(message.GetResponseHeadersArray())       
-        'LogDebug("Value of response.body -> " + response.jsonString)
-        'LogDebugObj("Value of response.json -> ", response.json)
+        LogDebug("Value of response.body -> " + response.jsonString)
+        LogDebugObj("Value of response.json -> ", response.json)
         LogDebugObj("Value of response.headers -> ", response.headers)        
            
         LogDebug("Response object build successful")
@@ -100,13 +101,10 @@ Function ConstructPacketHeader(urlTransfer as Object, aaHeaders as Object) as vo
     end if    
 End Function
 
-Function ConstructPacketBody(aaBody as Object) as String
-    if aaBody = invalid
-        bodyStr = ""
-    else
-        bodyStr = ConstructJSONStr(aaBody)
-    end if   
-    return bodyStr
+' Input: body -> roAssociativeArray or roArray
+Function ConstructPacketBody(body as Object) as String
+    ' TODO: If works, take care of 256 deep error condition
+    return FormatJSON(body)
 End Function
 
 Function InitClient(urlTransfer as Object) as void    

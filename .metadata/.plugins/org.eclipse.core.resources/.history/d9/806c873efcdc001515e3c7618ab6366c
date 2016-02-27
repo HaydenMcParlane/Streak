@@ -1,0 +1,17 @@
+'
+'   This document contains functions to help with json construction
+'   @author: Hayden McParlane
+Function ConstructJSONStr(o as Object) as String
+    json = ""  
+    if type(o) = "roAssociativeArray"  
+        firstKey = GetRandomKey(o)
+        json = "{ " + EmbedInQuotes(firstKey) + ": " + EmbedInQuotes(o[firstKey])  
+        for each key in o
+            if key <> firstKey
+                json = json + ", " + EmbedInQuotes(key) + ":" + EmbedInQuotes(o[key])
+            end if
+        end for
+        json = json + " }"
+    end if
+    return json
+End Function
