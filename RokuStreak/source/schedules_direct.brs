@@ -11,7 +11,8 @@ Function SearchSchedulesDirect() as void
     InitSchedulesDirect()
     SchedulesDirectTokenize()
     ' TODO: Modify as appropriate. Cable headends may not need fetch.    
-    GetCableHeadends("USA", "66103")
+    GetCableHeadends("USA", "66103")    
+    GetChannelFromLineup("/lineups/USA-OTA-66103")
 End Function
 
 ' TODO: GetSchedulesDirectAccountStatus()
@@ -65,10 +66,10 @@ Function GetCableHeadends(country as String, zipcode as String)
     ' How to implement?
     headers.AddReplace("token",GetSchedulesDirectToken())
     body.AddReplace("username", SchedulesDirectUsername())
-    body.AddReplace("password", SchedulesDirectPassword())                
+    body.AddReplace("password", SchedulesDirectPassword())               
     
     ' 2. Make request to API
-    response = GetRequest(SchedulesDirectCableHeadendsUrl(country, zipcode), headers, body)
+    response = GetRequest(SchedulesDirectJSONCableHeadendsUrl(country, zipcode), headers, body)
     
     ' 3. Check server status code (not HTTP status, that's checked in network module)            
     if response.headers["code"] = 3000
@@ -78,18 +79,53 @@ Function GetCableHeadends(country as String, zipcode as String)
     end if          
     
     ' 4. Store result in m-hierarchy        
-    AddUpdateSchedulesDirectCableHeadends(response.json)        
-    
-    LogDebug("Printing cable headends in response -> ")
-    for each headend in response.json
-        LogDebugObj("", headend)
-    end for        
+    AddUpdateSchedulesDirectCableHeadends(response.json)
     
     LogDebug("Printing m-hierarchy cable headends -> ")
     for each headend in GetSchedulesDirectCableHeadends()
-        LogDebugObj("", headend)
+        if headend["transport"] = "Antenna"
+            LogDebugObj("", headend)
+            for each lineup in headend["lineups"]
+            LogDebugObj("", lineup)
+            end for
+        end if
     end for
     LogDebug("Fetch cable headends succeeded")            
+End Function
+
+Function GetChannelFromLineup(lineupUri as String) as void
+    LogInfo("Fetching lineup channels")    
+    headers = CreateObject("roAssociativeArray")
+    body = CreateObject("roAssociativeArray")
+    
+    ' 1. Populate headers and body for network packet    
+    headers.AddReplace("User-Agent",SchedulesDirectUserAgentHeader())
+    ' TODO: Token may not have been populated here, or may need to be refreshed.
+    ' How to implement?
+    headers.AddReplace("token",GetSchedulesDirectToken())
+    ' TODO: Does username and password need to be supplied in body for this
+    ' or GetCableHeadends above?                   
+    body.AddReplace("username", SchedulesDirectUsername())
+    body.AddReplace("password", SchedulesDirectPassword())
+    ' 2. Make request to API
+    response = GetRequest(SchedulesDirectJSONChannelMapUrl(lineupUri), headers, body)
+    
+    ' 3. Check server status code (not HTTP status, that's checked in network module)            
+    if response.headers["code"] = 3000
+        LogErrorObj("Schedules Direct server offline. Try again later.", response.json)
+        ' TODO: Program shouldn't be halted. What should be done here?
+        stop
+    end if          
+    
+    ' 4. Store result in m-hierarchy        
+    AddUpdateSchedulesDirectChannels(response.json)
+    LogDebugObj("Printing m-hierarchy channels -> ", GetSchedulesDirectChannels())
+    LogDebug("Printing m-hierarchy channels -> ")
+    stations = GetSchedulesDirectChannels()["stations"]
+    for idx = 0 to stations.Count()
+        LogDebugObj("",stations[idx])
+    end for
+    LogDebug("Fetch channels succeeded")            
 End Function
 
 '###################################################################################
@@ -134,6 +170,7 @@ Function InitSchedulesDirect() as void
     
     headers_dir = m.schedulesAPI.network.headers
     cableHeadends_dir = m.schedulesAPI.data.cableHeadends
+    channels_dir = m.schedulesAPI.data.channels
     
     if headers_dir = invalid        
         AddUpdateSchedulesDirectHeaders(CreateObject("roAssociativeArray"))
@@ -149,6 +186,13 @@ Function InitSchedulesDirect() as void
             stop 
         end if        
     end if
+    if channels_dir = invalid
+        AddUpdateSchedulesDirectChannels(CreateObject("roAssociativeArray"))
+        if GetSchedulesDirectChannels() = invalid
+            LogError("Add/Update vs. Getter for Schedules Direct m-hierarchy are inconsistent")
+            stop
+        end if
+    end if
     
     token_loc = m.schedulesAPI.network.headers.token
     
@@ -160,6 +204,17 @@ Function InitSchedulesDirect() as void
         end if        
     end if        
 End Function
+
+Function AddUpdateSchedulesDirectChannels(aaChannels as Object) as void
+    obj = GetSchedulesDirectData()
+    obj.channels = aaChannels
+End Function
+
+Function GetSchedulesDirectChannels() as Object
+    obj= GetSchedulesDirectData()
+    return obj.channels
+End Function
+
 
 Function AddUpdateSchedulesDirectCableHeadends(aaCableHeadends as Object) as void
     obj = GetSchedulesDirectData()
@@ -251,15 +306,22 @@ Function SchedulesDirectUserAgentHeader() as String
     return "RokuStreak"
 End Function
 
-Function SchedulesDirectBaseJsonUrl() as String
+Function SchedulesDirectBaseJSONUrl() as String
     return "https://json.schedulesdirect.org/20141201"
 End Function
 
 Function SchedulesDirectJSONTokenUrl() as String
-    return SchedulesDirectBaseJsonUrl() + "/token"
+    return SchedulesDirectBaseJSONUrl() + "/token"
 End Function
 
-Function SchedulesDirectCableHeadendsUrl(country as String, zipcode as String)
+Function SchedulesDirectJSONCableHeadendsUrl(country as String, zipcode as String) as String
     ' TODO: Validate country entry style? Builder to translate entered strings into required strings?
-    return SchedulesDirectBaseJsonUrl() + "/headends?country=" + country + "&" + "postalcode=" + zipcode
+    return SchedulesDirectBaseJSONUrl() + "/headends?country=" + country + "&" + "postalcode=" + zipcode
 End Function
+
+Function SchedulesDirectJSONChannelMapUrl(lineupUri as String) as String
+    ' TODO: Validate country entry style? Builder to translate entered strings into required strings?
+    return SchedulesDirectBaseJSONUrl() + lineupUri
+End Function
+
+

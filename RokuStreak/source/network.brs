@@ -15,6 +15,9 @@ Function GetRequest(destUrl as String, aaHeaders as Object, aaBody as Object) as
     return response
 End Function
 
+' TODO: At time of writing, PUT and DELETE haven't yet been implemented for Roku urlTransfer interface.
+' When added, implement.
+
 Function Request(requestType as String, destUrl as String, aaHeaders as Object, aaBody as Object) as Object    
     urlTransfer = CreateObject("roUrlTransfer")
     port = CreateObject("roMessagePort")
@@ -43,7 +46,7 @@ Function Request(requestType as String, destUrl as String, aaHeaders as Object, 
             LogDebug("Server response received")
             LogDebugObj("Response Code is ", msg.GetResponseCode())
             ' TODO: Efficiently implement check of different response status codes here and deal
-            ' with concerning circumstances appropriately
+            ' with concerning circumstances appropriately            
             if msg.GetResponseCode() = 200 then             
                 response = BuildResponse(msg)                
                 exit while
@@ -71,8 +74,8 @@ Function BuildResponse(message as Object) as Object
         response.json = ParseJSON(message.GetString())
         response.jsonString = message.GetString()        
         response.headers = LinkAssociativeArrays(message.GetResponseHeadersArray())       
-        LogDebug("Value of response.body -> " + response.jsonString)
-        LogDebugObj("Value of response.json -> ", response.json)
+        'LogDebug("Value of response.body -> " + response.jsonString)
+        'LogDebugObj("Value of response.json -> ", response.json)
         LogDebugObj("Value of response.headers -> ", response.headers)        
            
         LogDebug("Response object build successful")
