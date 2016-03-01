@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;RokuStreak/source/tv_station.brs&apos; to &apos;tv_channel.brs&apos;" description="Rename resource &apos;tv_station.brs&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="source/tv_station.brs" name="tv_channel.brs" stamp="1456782585195" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;RokuStreak/source/tv_channel.brs&apos; to &apos;tv.brs&apos;" description="Rename resource &apos;tv_channel.brs&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="source/tv_channel.brs" name="tv.brs" stamp="1456783472260" updateReferences="true"/>
+</session>

@@ -4,4 +4,6 @@
 '   @author: Hayden McParlane
 Function FilterTVShows(aaCriteria as Object) as void ' TODO: Change return type to AA for render results
     searchResults = SearchSchedulesDirect()
+    test = CreateObject("roAssociativeArray")
+        
 End Function

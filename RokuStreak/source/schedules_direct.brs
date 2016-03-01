@@ -7,25 +7,25 @@ Function SearchSchedulesDirect() as void
     ' TODO: Some of these functions will need to be removed and placed elsewhere. I.e, GetSchedulesDirectAccountStatus() should be called
     ' when the application is first launched from the Roku shell (home screen). That way, account status can be checked asynchronously
     ' to ensure it's ready when the user begins to use it (or, if it's not, the user can be prompted to enter updated account info some
-    ' how.
-    InitSchedulesDirect()
-    SchedulesDirectTokenize()
+    ' how.    
+    PopulateSchedulesDirectToken()
     ' TODO: Modify as appropriate. Cable headends may not need fetch.    
-    GetCableHeadends("USA", "66103")    
-    GetChannelsFromLineupUri("/lineups/USA-OTA-66103")
-    GetProgramsFromStationId()
-    GetProgramInfo()
-    GetProgramDescription()
+    PopulateCableHeadends("USA", "66103")    
+    PopulateStationsFromLineupUri("/lineups/USA-OTA-66103")
+    PopulateProgramsFromStationIds()
+    PopulateProgramInfo()
+    'TODO: Server error on below call. Figure out why and how to fix.
+    'PopulateProgramDescription()
 End Function
 
-' TODO: GetSchedulesDirectAccountStatus()
-' TODO: GetSchedulesDirectVersionInfo()
-' TODO: GetSchedulesDirectServiceList()
+' TODO: PopulateSchedulesDirectAccountStatus()
+' TODO: PopulateSchedulesDirectVersionInfo()
+' TODO: PopulateSchedulesDirectServiceList()
 ' TODO: CheckSchedulesDirectAccountStatus()
 ' TODO: CheckSchedulesDirectClientVersion()
 
 ' TODO: Later on, ensure tokenize implements token refresh if needed
-Function SchedulesDirectTokenize() as void ' This may need to be changed such that it returns something
+Function PopulateSchedulesDirectToken() as void ' This may need to be changed such that it returns something
                             ' such as an associative array
     if HasSchedulesDirectToken()        
         LogInfo("Token already present. Skipping tokenize.")
@@ -55,10 +55,11 @@ Function SchedulesDirectTokenize() as void ' This may need to be changed such th
         ' 4. Store result in m-hierarchy        
         AddUpdateSchedulesDirectToken(response.json["token"])            
         LogInfo("Tokenize Complete Successfully -> " + GetSchedulesDirectToken())
-    end if   
+    end if
 End Function
 
-Function GetCableHeadends(country as String, zipcode as String)
+' TODO: What data structure to store for cable headends?
+Function PopulateCableHeadends(country as String, zipcode as String)
     LogInfo("Fetching cable headends")    
     headers = CreateObject("roAssociativeArray")
     body = CreateObject("roAssociativeArray")
@@ -68,8 +69,6 @@ Function GetCableHeadends(country as String, zipcode as String)
     ' TODO: Token may not have been populated here, or may need to be refreshed.
     ' How to implement?
     headers.AddReplace("token",GetSchedulesDirectToken())
-    body.AddReplace("username", SchedulesDirectUsername())
-    body.AddReplace("password", SchedulesDirectPassword())               
     
     ' 2. Make request to API
     response = GetRequest(SchedulesDirectJSONCableHeadendsUrl(country, zipcode), headers, body)
@@ -84,20 +83,11 @@ Function GetCableHeadends(country as String, zipcode as String)
     ' 4. Store result in m-hierarchy        
     AddUpdateSchedulesDirectCableHeadends(response.json)
     
-    LogDebug("Printing m-hierarchy cable headends -> ")
-    for each headend in GetSchedulesDirectCableHeadends()
-        if headend["transport"] = "Antenna"
-            LogDebugObj("", headend)
-            for each lineup in headend["lineups"]
-            LogDebugObj("", lineup)
-            end for
-        end if
-    end for
-    LogDebug("Fetch cable headends succeeded")            
+    LogDebug("Fetch cable headends successful")            
 End Function
 
-Function GetChannelsFromLineupUri(lineupUri as String) as void
-    LogInfo("Fetching lineup channels")    
+Function PopulateStationsFromLineupUri(lineupUri as String) as void
+    LogInfo("Fetching stations")    
     headers = CreateObject("roAssociativeArray")
     body = CreateObject("roAssociativeArray")
     
@@ -106,12 +96,9 @@ Function GetChannelsFromLineupUri(lineupUri as String) as void
     ' TODO: Token may not have been populated here, or may need to be refreshed.
     ' How to implement?
     headers.AddReplace("token",GetSchedulesDirectToken())
-    ' TODO: Does username and password need to be supplied in body for this
-    ' or GetCableHeadends above?                   
-    body.AddReplace("username", SchedulesDirectUsername())
-    body.AddReplace("password", SchedulesDirectPassword())
+    
     ' 2. Make request to API
-    response = GetRequest(SchedulesDirectJSONChannelMapUrl(lineupUri), headers, body)
+    response = GetRequest(SchedulesDirectJSONChannelMapUrl(lineupUri), headers, body)       
     
     ' 3. Check server status code (not HTTP status, that's checked in network module)            
     if response.headers["code"] = 3000
@@ -120,34 +107,36 @@ Function GetChannelsFromLineupUri(lineupUri as String) as void
         stop
     end if          
     
-    ' 4. Store result in m-hierarchy        
-    AddUpdateSchedulesDirectChannels(response.json)
-    LogDebugObj("Printing m-hierarchy channels -> ", GetSchedulesDirectChannels())
-    LogDebug("Printing m-hierarchy channels -> ")
-    stations = GetSchedulesDirectChannels()["stations"]
-    for idx = 0 to stations.Count() - 1
-        LogDebugObj("",stations[idx])
+    ' 4. Store data
+    AddUpdateSchedulesDirectStations(response.json)
+
+    list = CreateObject("roArray")
+    ' TODO: Ensure mapping isn't lost or, if it is, that that loss is inconsequential (json includes "map" key. Why if only one array every time?
+    ' TODO: Store additional metadata such as for different map types such as cable, etc. Some provide channel art.
+    ' This can be found in "channel mapping for a lineup" section in JSON documentation for SD
+    mapping = response.json["map"]    
+    for each station in mapping         
+        data = CreateObject("roAssociativeArray")
+        data.AddReplace("stationID", station["stationID"])
+        list.Push(data)        
     end for
-    LogDebug("Fetch channels succeeded")            
+    AddUpdateSchedulesDirectStationTable(list)
+    
+    LogDebug("Fetch stations successful")            
 End Function
 
-Function GetProgramsFromStationId() as void ' TODO: replace params -> stationIDs as Object
-    LogInfo("Fetching stations with channel listings")    
-    headers = CreateObject("roAssociativeArray")
-    body = CreateObject("roArray", 1, True)
+Function PopulateProgramsFromStationIds() as void ' TODO: replace params -> stationIDs as Object
+    LogInfo("Fetching programs")    
+    headers = CreateObject("roAssociativeArray")    
     station = CreateObject("roAssociativeArray")
     
     ' 1. Populate headers and body for network packet    
     headers.AddReplace("User-Agent",SchedulesDirectUserAgentHeader())
     ' TODO: Token may not have been populated here, or may need to be refreshed.
     ' How to implement?
-    headers.AddReplace("token",GetSchedulesDirectToken())
-    ' TODO: Does username and password need to be supplied in body for this
-    ' or GetCableHeadends above?                   
-    'body.AddReplace("username", SchedulesDirectUsername())
-    'body.AddReplace("password", SchedulesDirectPassword())
-    station.AddReplace("stationID","73365")
-    body.Push(station)
+    headers.AddReplace("token",GetSchedulesDirectToken())    
+    'station.AddReplace("stationID","73365")    
+    body = GetSchedulesDirectStationTable()
     ' 2. Make request to API
     response = PostRequest(SchedulesDirectJSONSchedulesUrl(), headers, body)
     
@@ -159,24 +148,19 @@ Function GetProgramsFromStationId() as void ' TODO: replace params -> stationIDs
     end if          
     
     ' 4. Store result in m-hierarchy        
-    AddUpdateSchedulesDirectStations(response.json)
-    LogDebugObj("Printing stations -> ", GetSchedulesDirectStations())
-    for each station in GetSchedulesDirectStations()
-        LogDebugObj("", station)
-        for i = 0 to station.programs.Count()
-            LogDebugObj("", station.programs[i])
-        end for
+    AddUpdateSchedulesDirectPrograms(response.json)
+    
+    stations = GetSchedulesDirectPrograms()
+    for idx = 0 to stations.Count() - 1        
+        LogDebug("Station ID -> " + stations[idx]["stationID"])
+        AddUpdateChannel(stations[idx]["stationID"], CreateObject("roAssociativeArray"))
     end for
-'    LogDebug("Printing m-hierarchy channels -> ")
-'    stations = GetSchedulesDirectStations()["stations"]
-'    for idx = 0 to stations.Count() - 1
-'        LogDebugObj("",stations[idx])
-'    end for
-    LogDebug("Fetch stations succeeded")            
+    
+    LogDebug("Fetch programs succeeded")            
 End Function
 
-Function GetProgramInfo() as void ' TODO replace these params -> aProgramIDs as Object
-    LogInfo("Fetching program data")    
+Function PopulateProgramInfo() as void ' TODO replace these params -> aProgramIDs as Object
+    LogInfo("Fetching program info")    
     headers = CreateObject("roAssociativeArray")
     body = CreateObject("roArray", 1, True)
     
@@ -190,7 +174,7 @@ Function GetProgramInfo() as void ' TODO replace these params -> aProgramIDs as 
     headers.AddReplace("token",GetSchedulesDirectToken())
     headers.AddReplace("Accept-Encoding","deflate,gzip") ' TODO: Deplate gzip due to bug, may already be fixed
     ' TODO: Does username and password need to be supplied in body for this
-    ' or GetCableHeadends above?                   
+    ' or PopulateCableHeadends above?                   
     'body.AddReplace("username", SchedulesDirectUsername())
     'body.AddReplace("password", SchedulesDirectPassword())
     
@@ -205,16 +189,12 @@ Function GetProgramInfo() as void ' TODO replace these params -> aProgramIDs as 
     end if          
     
     ' 4. Store result in m-hierarchy        
-    AddUpdateSchedulesDirectPrograms(response.json)
-    
-    for each entry in GetSchedulesDirectPrograms()
-        LogDebugObj("", entry)
-    end for
+    AddUpdateSchedulesDirectProgramInfo(response.json)    
     
     LogDebug("Fetch program data successful")            
 End Function
 
-Function GetProgramDescription() as void
+Function PopulateProgramDescription() as void
     LogInfo("Fetching program descriptions")    
     headers = CreateObject("roAssociativeArray")
     'body = CreateObject("roAssociativeArray")
@@ -259,20 +239,22 @@ End Function
 ' The following functions define the applications schedules direct
 ' data hierarchy present in m (i.e, m.schedulesAPI.data....). 
 '###################################################################################
-
+        
+        
 ' TODO: Right now, two changes are required to each change of schedules direct access
 ' because the names are used here as well as the getter/setter functions. Better way
 ' to initialize? This function should be called immediately upon app launch.
-Function InitSchedulesDirect() as void
-    LogDebug("Initializing Schedules Direct m-hierarchy and testing for run-time function consistency")
-    
+Function InitSchedulesDirectDataStore() as Boolean
+    LogDebug("Initializing Schedules Direct data store")
+    success = True
     ' !!! NOTE !!! THIS FUNCTION IS EXTREMELY SENSITIVE TO FUNCTION CALL ORDER. ONLY CHANGE
     ' IF YOU UNDERSTAND THE LOGICAL DESIGN OF THE M-HIERARCHY (I.E, m.schedulesAPI.data.... etc)
     base_dir = m.schedulesAPI         
     if base_dir = invalid        
         AddUpdateSchedulesDirectBase(CreateObject("roAssociativeArray"))
         if GetSchedulesDirectBase() = invalid
-            LogError("Add/Update vs. Getter for Schedules Direct m-hierarchy are inconsistent")
+            LogError("Add/Update vs. Getter for data store are inconsistent")
+            success = False
             stop 
         end if
     end if
@@ -283,80 +265,91 @@ Function InitSchedulesDirect() as void
     if network_dir = invalid            
         AddUpdateSchedulesDirectNetwork(CreateObject("roAssociativeArray"))
         if GetSchedulesDirectNetwork() = invalid
-            LogError("Add/Update vs. Getter for Schedules Direct m-hierarchy are inconsistent")
+            LogError("Add/Update vs. Getter for data store are inconsistent")
+            success = False
             stop 
         end if
     end if    
     if data_dir = invalid
         AddUpdateSchedulesDirectData(CreateObject("roAssociativeArray"))
         if GetSchedulesDirectData() = invalid
-            LogError("Add/Update vs. Getter for Schedules Direct m-hierarchy are inconsistent")
+            LogError("Add/Update vs. Getter for data store are inconsistent")
+            success = False
             stop 
         end if
     end if
     
     headers_dir = m.schedulesAPI.network.headers
     cableHeadends_dir = m.schedulesAPI.data.cableHeadends
-    channels_dir = m.schedulesAPI.data.channels
-    programs_dir = m.schedulesAPI.data.programs
     stations_dir = m.schedulesAPI.data.stations
+    programs_dir = m.schedulesAPI.data.programs
+    programInfo_dir = m.schedulesAPI.data.programInfo    
     
     if headers_dir = invalid        
         AddUpdateSchedulesDirectHeaders(CreateObject("roAssociativeArray"))
         if GetSchedulesDirectHeaders() = invalid
-            LogError("Add/Update vs. Getter for Schedules Direct m-hierarchy are inconsistent")
+            LogError("Add/Update vs. Getter for data store are inconsistent")
+            success = False
             stop 
         end if
     end if
     if cableHeadends_dir = invalid
         AddUpdateSchedulesDirectCableHeadends(CreateObject("roAssociativeArray"))
         if GetSchedulesDirectCableHeadends() = invalid
-            LogError("Add/Update vs. Getter for Schedules Direct m-hierarchy are inconsistent")
+            LogError("Add/Update vs. Getter for data store are inconsistent")
+            success = False
             stop 
         end if        
     end if
-    if channels_dir = invalid
-        AddUpdateSchedulesDirectChannels(CreateObject("roAssociativeArray"))
-        if GetSchedulesDirectChannels() = invalid
-            LogError("Add/Update vs. Getter for Schedules Direct m-hierarchy are inconsistent")
+    if stations_dir = invalid
+        AddUpdateSchedulesDirectStations(CreateObject("roAssociativeArray"))
+        if GetSchedulesDirectStations() = invalid
+            LogError("Add/Update vs. Getter for data store are inconsistent")
+            success = False
             stop
         end if
     end if
     if programs_dir = invalid
         AddUpdateSchedulesDirectPrograms(CreateObject("roAssociativeArray"))
         if GetSchedulesDirectPrograms() = invalid
-            LogError("Add/Update vs. Getter for Schedules Direct m-hierarchy are inconsistent")
+            LogError("Add/Update vs. Getter for data store are inconsistent")
+            success = False
             stop
         end if
     end if
-    if stations_dir = invalid
-        AddUpdateSchedulesDirectStations(CreateObject("roAssociativeArray"))
-        if GetSchedulesDirectStations() = invalid
-            LogError("Add/Update vs. Getter for Schedules Direct m-hierarchy are inconsistent")
+    if programInfo_dir = invalid
+        AddUpdateSchedulesDirectProgramInfo(CreateObject("roAssociativeArray"))
+        if GetSchedulesDirectProgramsInfo() = invalid
+            LogError("Add/Update vs. Getter for data store are inconsistent")
+            success = False
             stop
         end if
-    end if            
+    end if
     
     token_loc = m.schedulesAPI.network.headers.token
     
     if token_loc = invalid
         AddUpdateSchedulesDirectToken("")
         if GetSchedulesDirectToken() = invalid
-            LogError("Add/Update vs. Getter for Schedules Direct m-hierarchy are inconsistent")
+            LogError("Add/Update vs. Getter for data store are inconsistent")
+            success = False
             stop 
         end if        
     end if        
-End Function
-        
-Function AddUpdateSchedulesDirectStations(stations as Object) as void
+    
+    LogDebug("Initializing Schedules Direct data store successful")
+    return success
+End Function        
+
+Function AddUpdateSchedulesDirectProgramInfo(aaProgramInfo as Object) as void
     obj = GetSchedulesDirectData()
-    obj.stations = stations
+    obj.programInfo = aaProgramInfo
 End Function
 
-Function GetSchedulesDirectStations() as Object
+Function GetSchedulesDirectProgramsInfo() as Object
     obj= GetSchedulesDirectData()
-    return obj.stations
-End Function        
+    return obj.programInfo
+End Function
 
 Function AddUpdateSchedulesDirectPrograms(aaPrograms as Object) as void
     obj = GetSchedulesDirectData()
@@ -368,14 +361,25 @@ Function GetSchedulesDirectPrograms() as Object
     return obj.programs
 End Function
 
-Function AddUpdateSchedulesDirectChannels(aaChannels as Object) as void
+' TODO: Ensure more readable. this actually acts on assoc. array.
+Function AddUpdateSchedulesDirectStationTable(aaStationTable as Object) as void
     obj = GetSchedulesDirectData()
-    obj.channels = aaChannels
+    obj.stationTable = aaStationTable
 End Function
 
-Function GetSchedulesDirectChannels() as Object
+Function GetSchedulesDirectStationTable() as Object
     obj= GetSchedulesDirectData()
-    return obj.channels
+    return obj.stationTable
+End Function
+
+Function AddUpdateSchedulesDirectStations(aaStations as Object) as void
+    obj = GetSchedulesDirectData()
+    obj.stations = aaStations
+End Function
+
+Function GetSchedulesDirectStations() as Object
+    obj= GetSchedulesDirectData()
+    return obj.stations
 End Function
 
 
@@ -462,7 +466,7 @@ Function SchedulesDirectUsername() as String
 End Function
 
 Function SchedulesDirectPassword() as String
-    return Sha1Digest(RawPassword())
+    return Digest(RawPassword(), "sha1")
 End Function
 
 Function SchedulesDirectUserAgentHeader() as String
@@ -500,7 +504,7 @@ End Function
 
 Function SchedulesDirectJSONProgramDescriptionUrl() as String
     ' TODO: Validate country entry style? Builder to translate entered strings into required strings?
-    return SchedulesDirectBaseJSONUrl() + "/metadata/description"
+    return SchedulesDirectBaseJSONUrl() + "/metadata/description" 'TODO: Change back to metadata/description !!!
 End Function
 
 

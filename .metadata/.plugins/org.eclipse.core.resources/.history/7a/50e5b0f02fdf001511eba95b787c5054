@@ -1,0 +1,57 @@
+'
+'   This document contains configuration information for reuse. All common data
+'   should be entered here to avoid needing numerous code changes upon code modification.
+'   @author: Hayden McParlane
+'   @creation-date: 2.18.2016
+
+Function Username() as String
+    return "umkcsce"
+End Function
+
+'   TODO: This password is entered in plain text ONLY FOR DEV PURPOSES. LATER ON
+'   IT MUST BE STORED IN DIGESTED FORM (i.e, SHA1) FOR SECURITY PURPOSES. 
+Function RawPassword() as String
+    return "123456789"
+End Function
+
+Function SSLCertificatePath() as String
+    return "common:/certs/ca-bundle.crt"
+End Function
+
+Function XRokuReservedDevId() as String    
+    return ""
+End Function
+
+'################################################################################
+'   AppManager Application Settings
+'################################################################################
+
+Sub SetApplicationTheme()
+    ' TODO: Configure specific display properties for app
+
+    app = CreateObject("roAppManager")
+    theme = CreateObject("roAssociativeArray")
+    
+    ' Shared
+    'theme.AddReplace("BackgroundColor","#000000")
+    
+    ' Poster screen    
+    theme.AddReplace("FilterBannerActiveColor","#3F007F")
+    
+    ' Grid screen
+    theme.AddReplace("GridScreenBackgroundColor","#3F007F")
+    
+    app.SetTheme(theme)
+End Sub
+
+'################################################################################
+'   Application runtime configuration and setup
+'################################################################################
+Function ConfigureApplication() as void
+    ' TODO: Application data stores should be setup and initialized here,
+    ' not during tests.
+    ' TODO: Include tests for user credentials. If they haven't logged in,
+    ' prompt for uname and password or something
+    
+    RunAllTests()
+End Function

@@ -76,6 +76,18 @@ Function MakeAssociative(array as Object, splitChar as String) as Object
 End Function
 
 '######################################################################
+'   Crypto
+'######################################################################
+
+Function Digest(s as String, dType as String) as String
+    ba = CreateObject("roByteArray")
+    ba.FromAsciiString(s)
+    d = CreateObject("roEVPDigest")
+    d.Setup(dType)
+    return d.Process(ba)
+End Function
+
+'######################################################################
 '   MAINTENANCE HELPER FUNCTIONS
 '######################################################################
 ' TODO: Implement function to print the m.... hierarchy so that developers

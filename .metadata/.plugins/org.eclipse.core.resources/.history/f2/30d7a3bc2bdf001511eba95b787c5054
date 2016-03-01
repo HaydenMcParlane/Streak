@@ -1,0 +1,11 @@
+'
+'   This document contains reusable hashing digest functions.
+'   @author: Hayden McParlane
+
+Function Digest(s as String, dType as String) as String
+    ba = CreateObject("roByteArray")
+    ba.FromAsciiString(s)
+    digest = CreateObject("roEVPDigest")
+    digest.Setup(dType)
+    return digest.Process(ba)
+End Function

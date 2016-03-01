@@ -21,3 +21,36 @@ End Function
 Function XRokuReservedDevId() as String    
     return ""
 End Function
+
+'################################################################################
+'   AppManager Application Settings
+'################################################################################
+Sub SetApplicationTheme()
+    ' TODO: Configure specific display properties for app
+
+    app = CreateObject("roAppManager")
+    theme = CreateObject("roAssociativeArray")
+    
+    ' Shared
+    'theme.AddReplace("BackgroundColor","#000000")
+    
+    ' Poster screen    
+    theme.AddReplace("FilterBannerActiveColor","#3F007F")
+    
+    ' Grid screen
+    theme.AddReplace("GridScreenBackgroundColor","#3F007F")
+    
+    app.SetTheme(theme)
+End Sub
+
+'################################################################################
+'   Application runtime configuration and setup
+'################################################################################
+Function ConfigureApplication() as void
+    ' TODO: Application data stores should be setup and initialized here,
+    ' not during tests.
+    ' TODO: Include tests for user credentials. If they haven't logged in,
+    ' prompt for uname and password or something
+    InitSchedulesDirectDataStore()
+    InitTelevisionDataStore()    
+End Function

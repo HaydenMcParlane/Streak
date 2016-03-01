@@ -1,0 +1,17 @@
+'
+'   Television channel module
+'   @author: Hayden McParlane
+'   @creation-date: 2.29.2016
+Function GetChannels() as Object
+    
+End Function
+
+Function SetupChannelDataStore()
+End Function
+
+Function GetTV() as Object
+    return m.tv
+End Function
+
+Function InitTelevisionDataStore() as Boolean
+End Function

@@ -1,0 +1,10 @@
+'
+'   This document contains testing fixtures for use in this system.
+'   @author: Hayden McParlane
+Function RunAllTests() as Boolean
+    TestChannelModule()
+End Function
+
+Function TestChannelModule() as Boolean
+    
+End Function

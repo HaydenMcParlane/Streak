@@ -1,0 +1,44 @@
+'
+'   Television channel module
+'   @author: Hayden McParlane
+'   @creation-date: 2.29.2016
+Function SetupChannelDataStore()
+End Function
+
+Function AddUpdateEpisode(o as object) as void
+    
+End Function
+
+Function GetEpisode() as object
+End Function
+
+Function AddUpdateChannel(o as object) as void
+    base = GetChannels()
+    base.channel
+End Function
+
+Function GetChannel() as Object
+    base = GetChannels()
+    return base.channel
+End Function
+
+Function AddUpdateChannels(o as object) as void
+    base = GetTV()
+    base.channels = o
+End Function
+
+Function GetChannels() as Object
+    base = GetTV()
+    return base.channels
+End Function
+
+Function AddUpdateTV(o as Object) as void
+    m.tv = o
+End Function
+
+Function GetTV() as Object
+    return m.tv
+End Function
+
+Function InitTelevisionDataStore() as Boolean
+End Function

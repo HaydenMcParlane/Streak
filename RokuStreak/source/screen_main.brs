@@ -3,9 +3,11 @@
 '   @author: Hayden McParlane
 
 Function Main()
+    ConfigureApplication()
+
     port = CreateObject("roMessagePort")
     poster = CreateObject("roPosterScreen")
-    poster.SetBreadcrumbText("[location1]","[location2]")
+    poster.SetBreadcrumbText("RokuStreak","Main")
     poster.SetListStyle("flat-category")
     poster.SetMessagePort(port)
     
