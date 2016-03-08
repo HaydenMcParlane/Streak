@@ -2,14 +2,48 @@
 '   Television channel module
 '   @author: Hayden McParlane
 '   @creation-date: 2.29.2016
+Function AddUpdateEpisode(epChannelID as String, epProgramID as String, epTitle as String, shortDesc1 as String, shortDesc2 as String,desc as String, epRating as string, epStarRating as String, epReleaseDate as String, epLength as string, actorsArray as Object,epDirector as String)
+    o = CreateObject("roAssociativeArray")
+    o.ContentType = "episode"
+    o.Title = epTitle
+    o.ShortDescriptionLine1 = shortDesc1
+    o.ShortDescriptionLine2 = shortDesc2
+    o.Description = desc
+    o.Rating = epRating
+    o.StarRating = epStarRating
+    o.Length = epLength
+    o.Actors = actorsArray
+    o.Director = epDirector
+    o.channelID = epChannelID
+    o.programID = epProgramID
+    AppendToEpisodeList(o)
+End Function
+
+' TODO: Refactor
+Function AppendToEpisodeList(newEpisode as Object) as void
+    list = GetEpisodeList()
+    list.Push(newEpisode)
+End Function
+
+Function AddUpdateEpisodeList(o as Object) as void
+    base = GetTV()
+    base.episodeList = o
+End Function        
+
+Function GetEpisodeList() as Object
+    base = GetTV()
+    return base.episodeList
+End Function
+
+' TODO: Refactor such that more efficient and ordered predictably
 Function AddUpdateProgram(channelId as String, programId as String, o as object) as void
     base = GetChannel(channelId)
-    base[programId] = o
+    base.Push(o)
 End Function
 
 Function GetProgram(channelId as String, programId as String) as object
     base = GetChannel(channelId)
-    return base[programId]
+    return base
 End Function
 
 Function AddUpdateChannel(id as String, o as object) as void
@@ -54,10 +88,19 @@ Function InitTelevisionDataStore() as Boolean
         end if        
     end if
     
+    ep = m.tv.episodeList    
     channels = m.tv.channels
     if channels = invalid
         AddUpdateChannels(CreateObject("roAssociativeArray"))
         if GetChannels() = invalid
+            LogError("Add/Update vs. Getter for data store are inconsistent")
+            success = False
+            stop 
+        end if        
+    end if        
+    if ep = invalid
+        AddUpdateEpisodeList(CreateObject("roArray", 1, True))
+        if GetEpisodeList() = invalid
             LogError("Add/Update vs. Getter for data store are inconsistent")
             success = False
             stop 

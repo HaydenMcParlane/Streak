@@ -24,7 +24,8 @@ Function RenderSearchScreen() as void
                     LogDebug("Search text received -> " + searchText)
                     
                     ' TODO: Validate input later                    
-                    result = FilterTVShows(searchText)                                     
+                    result = FilterTVShows(searchText)
+                    RenderTVSchedule()                                 
                     'RenderTVSchedule(result)
                     return
                 else if msg.GetIndex() = 2

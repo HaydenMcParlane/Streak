@@ -1,0 +1,78 @@
+'
+'   Television channel module
+'   @author: Hayden McParlane
+'   @creation-date: 2.29.2016
+Function AddUpdateProgram(channelId as String, programId as String, o as object) as void
+    base = GetChannel(channelId)
+    base[programId] = o
+End Function
+
+Function GetProgram(channelId as String, programId as String) as object
+    base = GetChannel(channelId)
+    return base[programId]
+End Function
+
+Function AddUpdateChannel(id as String, o as object) as void
+    base = GetChannels()
+    base[id] = o
+End Function
+
+Function GetChannel(id as String) as Object
+    base = GetChannels()
+    return base[id] ' TODO: id must be key of stationID for SD
+End Function
+
+Function AddUpdateChannels(o as object) as void
+    base = GetTV()
+    base.channels = o
+End Function
+
+Function GetChannels() as Object
+    base = GetTV()
+    return base.channels
+End Function
+
+Function AddUpdateTV(o as Object) as void
+    m.tv = o
+End Function
+
+Function GetTV() as Object
+    return m.tv
+End Function
+
+Function InitTelevisionDataStore() as Boolean
+    LogDebug("Initializing TV data store")
+
+    ' Setup the data store hierarchy
+    base = m.tv
+    if base = invalid
+        AddUpdateTV(CreateObject("roAssociativeArray"))
+        if GetTV() = invalid
+            LogError("Add/Update vs. Getter for data store are inconsistent")
+            success = False
+            stop 
+        end if        
+    end if
+    
+    channels = m.tv.channels
+    if channels = invalid
+        AddUpdateChannels(CreateObject("roAssociativeArray"))
+        if GetChannels() = invalid
+            LogError("Add/Update vs. Getter for data store are inconsistent")
+            success = False
+            stop 
+        end if        
+    end if        
+    
+    channel = m.tv.channels.channel
+    if channel = invalid
+        AddUpdateChannel("NULL", CreateObject("roAssociativeArray"))
+        if GetChannel("NULL") = invalid
+            LogError("Add/Update vs. Getter for data store are inconsistent")
+            success = False
+            stop 
+        end if        
+    end if
+    
+    LogDebug("Initializing TV data store successful")    
+End Function

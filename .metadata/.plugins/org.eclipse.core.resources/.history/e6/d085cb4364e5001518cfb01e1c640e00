@@ -1,0 +1,58 @@
+'
+'   This document contains the television schedule object which will
+'   be used to encapsulate scheduling functionality such as record show,
+'   search, etc.
+'   @author: Hayden McParlane
+'   @creation-date: 2.18.2016
+
+' Perform search for tv schedule listings based on input filters
+Function RenderTVSchedule() as void    
+    port = CreateObject("roMessagePort")
+    grid = CreateObject("roGridScreen")
+    grid.SetMessagePort(port)
+    rowTitles = CreateObject("roArray", 10, true)
+    for j = 0 to 10
+        rowTitles.Push("[Row Title " + j.toStr() + " ] ")
+    end for
+    grid.SetupLists(rowTitles.Count())
+    grid.SetListNames(rowTitles)
+    for j = 0 to 10
+    list = CreateObject("roArray", 10, true)
+    for i = 0 to 10
+             o = CreateObject("roAssociativeArray")
+             o.ContentType = "episode"
+             o.Title = "[Title" + i.toStr() + "]"
+             o.ShortDescriptionLine1 = "[ShortDescriptionLine1]"
+             o.ShortDescriptionLine2 = "[ShortDescriptionLine2]"
+             o.Description = ""
+             o.Description = "[Description] "
+             o.Rating = "NR"
+             o.StarRating = "75"
+             o.ReleaseDate = "[<mm/dd/yyyy]"
+             o.Length = 5400
+             o.Actors = []
+             o.Actors.Push("[Actor1]")
+             o.Actors.Push("[Actor2]")
+             o.Actors.Push("[Actor3]")
+             o.Director = "[Director]"
+             list.Push(o)
+         end for
+         grid.SetContentList(j, list)
+     end for
+     grid.Show()
+     while true
+         msg = wait(0, port)
+         if type(msg) = "roGridScreenEvent" then
+             if msg.isScreenClosed() then
+                 return -1
+             elseif msg.isListItemFocused()
+                 print "Focused msg: ";msg.GetMessage();"row: ";msg.GetIndex();
+                 print " col: ";msg.GetData()
+             elseif msg.isListItemSelected()
+                 print "Selected msg: ";msg.GetMessage();"row: ";msg.GetIndex();
+                 print " col: ";msg.GetData()
+             endif
+         endif
+     end while
+End Function
+End Function  

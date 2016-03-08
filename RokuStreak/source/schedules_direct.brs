@@ -110,7 +110,7 @@ Function PopulateStationsFromLineupUri(lineupUri as String) as void
     ' 4. Store data
     AddUpdateSchedulesDirectStations(response.json)
 
-    list = CreateObject("roArray")
+    list = CreateObject("roArray", 1, True)
     ' TODO: Ensure mapping isn't lost or, if it is, that that loss is inconsequential (json includes "map" key. Why if only one array every time?
     ' TODO: Store additional metadata such as for different map types such as cable, etc. Some provide channel art.
     ' This can be found in "channel mapping for a lineup" section in JSON documentation for SD
@@ -134,9 +134,16 @@ Function PopulateProgramsFromStationIds() as void ' TODO: replace params -> stat
     headers.AddReplace("User-Agent",SchedulesDirectUserAgentHeader())
     ' TODO: Token may not have been populated here, or may need to be refreshed.
     ' How to implement?
-    headers.AddReplace("token",GetSchedulesDirectToken())    
-    'station.AddReplace("stationID","73365")    
-    body = GetSchedulesDirectStationTable()
+    headers.AddReplace("token",GetSchedulesDirectToken())
+    body = CreateObject("roArray", 4, True)            
+    'station.AddReplace("stationID","73365")
+    ' TODO: Implement such that stations are gathered in efficient manner (all at once slows system) 
+    table = GetSchedulesDirectStationTable()
+    keyList = table[0].Keys()    
+    for i = 0 to TempEntityCount()            
+        body.Push(table[i])
+    end for               
+ 
     ' 2. Make request to API
     response = PostRequest(SchedulesDirectJSONSchedulesUrl(), headers, body)
     
@@ -151,10 +158,18 @@ Function PopulateProgramsFromStationIds() as void ' TODO: replace params -> stat
     AddUpdateSchedulesDirectPrograms(response.json)
     
     stations = GetSchedulesDirectPrograms()
-    for idx = 0 to stations.Count() - 1        
-        LogDebug("Station ID -> " + stations[idx]["stationID"])
+    for idx = 0 to stations.Count() - 1                
         AddUpdateChannel(stations[idx]["stationID"], CreateObject("roAssociativeArray"))
     end for
+    
+    programTable = CreateObject("roArray", 1, True)    
+    for each station in stations
+        for j = 0 to station["programs"].Count() - 1
+            programTable.Push(station["programs"][j]["programID"])
+            LogDebug("Program ID -> " + station["programs"][j]["programID"])
+        end for
+    end for    
+    AddUpdateSchedulesDirectProgramTable(programTable)
     
     LogDebug("Fetch programs succeeded")            
 End Function
@@ -164,8 +179,13 @@ Function PopulateProgramInfo() as void ' TODO replace these params -> aProgramID
     headers = CreateObject("roAssociativeArray")
     body = CreateObject("roArray", 1, True)
     
-    body.Push("SH011425150000")
-    body.Push("SH019486590000")
+    table = GetSchedulesDirectProgramTable()
+    for i = 0 to TempEntityCount()
+        body.Push(table[i])
+    end for 
+    
+    'body.Push("SH011425150000")
+    'body.Push("SH019486590000")
     
     ' 1. Populate headers and body for network packet    
     headers.AddReplace("User-Agent",SchedulesDirectUserAgentHeader())
@@ -173,10 +193,6 @@ Function PopulateProgramInfo() as void ' TODO replace these params -> aProgramID
     ' How to implement?
     headers.AddReplace("token",GetSchedulesDirectToken())
     headers.AddReplace("Accept-Encoding","deflate,gzip") ' TODO: Deplate gzip due to bug, may already be fixed
-    ' TODO: Does username and password need to be supplied in body for this
-    ' or PopulateCableHeadends above?                   
-    'body.AddReplace("username", SchedulesDirectUsername())
-    'body.AddReplace("password", SchedulesDirectPassword())
     
     ' 2. Make request to API
     response = PostRequest(SchedulesDirectJSONProgramInfoUrl(), headers, body)
@@ -188,9 +204,50 @@ Function PopulateProgramInfo() as void ' TODO replace these params -> aProgramID
         stop
     end if          
     
-    ' 4. Store result in m-hierarchy        
-    AddUpdateSchedulesDirectProgramInfo(response.json)    
+    ' 4. Store result 
+    AddUpdateSchedulesDirectProgramInfo(response.json)
     
+    for each program in response.json
+        epChannelID = "temp"        
+        if program["programID"] <> invalid
+            epProgramID = program["programID"]
+        else
+            epProgramID = "was_invalid"
+        end if
+        
+        LogDebug(epProgramID)        
+        if program["titles"][0]["title120"] <> invalid
+            epTitle = program["titles"][0]["title120"]
+        else
+            epTitle = "was_invalid"
+        end if
+        LogDebug(epTitle)
+        shortDesc1 = "temp"
+        shortDesc2 = "temp"
+        'if program["descriptions"]["description1000"][0]["description"] <> invalid
+         '   desc = program["descriptions"]["description1000"][0]["description"]
+        'else
+        '    desc = "was_invalid"
+        'end if
+        desc = "description"
+        LogDebug(desc)
+        epRating = "temp"
+        epStarRating = "5"
+        if program["originalAirDate"] <> invalid
+            epReleaseDate = program["originalAirDate"]
+        else
+            epReleaseDate = "was_invalid"
+        end if
+        LogDebug(epReleaseDate)
+        epLength = "5000"
+        actorsArray = CreateObject("roArray", 1, True)
+        for each actor in program["cast"]
+            actorsArray.Push(actor["name"])
+        end for
+        epDirector = "Billy Temporrary"
+        AddUpdateEpisode(epChannelID, epProgramID, epTitle, shortDesc1, shortDesc2, desc, epRating, epStarRating, epReleaseDate, epLength, actorsArray,epDirector)
+    end for       
+
     LogDebug("Fetch program data successful")            
 End Function
 
@@ -285,6 +342,8 @@ Function InitSchedulesDirectDataStore() as Boolean
     programs_dir = m.schedulesAPI.data.programs
     programInfo_dir = m.schedulesAPI.data.programInfo    
     
+    ' TODO: Update to include station table and program table
+    
     if headers_dir = invalid        
         AddUpdateSchedulesDirectHeaders(CreateObject("roAssociativeArray"))
         if GetSchedulesDirectHeaders() = invalid
@@ -359,6 +418,17 @@ End Function
 Function GetSchedulesDirectPrograms() as Object
     obj= GetSchedulesDirectData()
     return obj.programs
+End Function
+
+' TODO: Ensure more readable. this actually acts on assoc. array.
+Function AddUpdateSchedulesDirectProgramTable(aaProgramTable as Object) as void
+    obj = GetSchedulesDirectData()
+    obj.programTable = aaProgramTable
+End Function
+
+Function GetSchedulesDirectProgramTable() as Object
+    obj= GetSchedulesDirectData()
+    return obj.programTable
 End Function
 
 ' TODO: Ensure more readable. this actually acts on assoc. array.

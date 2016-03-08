@@ -1,0 +1,121 @@
+'
+'   Television channel module
+'   @author: Hayden McParlane
+'   @creation-date: 2.29.2016
+Function AddUpdateEpisode(epChannelID as String, epProgramID as String, epTitle as String, shortDesc1 as String, shortDesc2 as String,desc as String, epRating as string, epStarRating as String, epReleaseDate as String, epLength as integer, actorsArray as Object,epDirector as String)
+    o = CreateObject("roAssociativeArray")
+    o.ContentType = "episode"
+    o.Title = epTitle
+    o.ShortDescriptionLine1 = shortDesc1
+    o.ShortDescriptionLine2 = shortDesc2
+    o.Description = desc
+    o.Rating = epRating
+    o.StarRating = epStarRating
+    o.Length = epLength
+    o.Actors = actorsArray
+    o.Director = epDirector
+    o.channelID = epChannelID
+    o.programID = epProgramID
+    AppendToEpisodeList(o)
+End Function
+
+' TODO: Refactor
+Function AppendToEpisodeList(newEpisode as Object) as void
+    list = GetEpisodeList()
+    list.Push(newEpisode)
+End Function
+
+Function AddUpdateEpisodeList(o as Object) as void
+    base = GetTV()
+    base.episodeList = o
+End Function        
+
+Function GetEpisodeList() as Object
+    base = GetTV()
+    return base.episodeList
+End Function
+
+' TODO: Refactor such that more efficient and ordered predictably
+Function AddUpdateProgram(channelId as String, programId as String, o as object) as void
+    base = GetChannel(channelId)
+    base.Push(o)
+End Function
+
+Function GetProgram(channelId as String, programId as String) as object
+    base = GetChannel(channelId)
+    return base
+End Function
+
+Function AddUpdateChannel(id as String, o as object) as void
+    base = GetChannels()
+    base[id] = o
+End Function
+
+Function GetChannel(id as String) as Object
+    base = GetChannels()
+    return base[id] ' TODO: id must be key of stationID for SD
+End Function
+
+Function AddUpdateChannels(o as object) as void
+    base = GetTV()
+    base.channels = o
+End Function
+
+Function GetChannels() as Object
+    base = GetTV()
+    return base.channels
+End Function
+
+Function AddUpdateTV(o as Object) as void
+    m.tv = o
+End Function
+
+Function GetTV() as Object
+    return m.tv
+End Function
+
+Function InitTelevisionDataStore() as Boolean
+    LogDebug("Initializing TV data store")
+
+    ' Setup the data store hierarchy
+    base = m.tv
+    if base = invalid
+        AddUpdateTV(CreateObject("roAssociativeArray"))
+        if GetTV() = invalid
+            LogError("Add/Update vs. Getter for data store are inconsistent")
+            success = False
+            stop 
+        end if        
+    end if
+    
+    ep = m.tv.episodeList    
+    channels = m.tv.channels
+    if channels = invalid
+        AddUpdateChannels(CreateObject("roAssociativeArray"))
+        if GetChannels() = invalid
+            LogError("Add/Update vs. Getter for data store are inconsistent")
+            success = False
+            stop 
+        end if        
+    end if        
+    if ep = invalid
+        AddUpdateEpisodeList(CreateObject("roArray", 1, True))
+        if GetEpisodeList() = invalid
+            LogError("Add/Update vs. Getter for data store are inconsistent")
+            success = False
+            stop 
+        end if        
+    end if        
+    
+    channel = m.tv.channels.channel
+    if channel = invalid
+        AddUpdateChannel("NULL", CreateObject("roAssociativeArray"))
+        if GetChannel("NULL") = invalid
+            LogError("Add/Update vs. Getter for data store are inconsistent")
+            success = False
+            stop 
+        end if        
+    end if
+    
+    LogDebug("Initializing TV data store successful")    
+End Function

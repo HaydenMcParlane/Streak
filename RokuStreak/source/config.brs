@@ -22,6 +22,10 @@ Function XRokuReservedDevId() as String
     return ""
 End Function
 
+Function TempEntityCount() as Integer
+    return 5
+End Function
+
 '################################################################################
 '   AppManager Application Settings
 '################################################################################
