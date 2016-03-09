@@ -26,12 +26,17 @@ Function DoubleQuotes() as String
     return Chr(34)
 End Function
 
-'   TODO: Figure out better NoneType Implementation to avoid comparisons testing for None()
-'   before invalid and introducing massive bugs into the code that are hard to find.
-'   A function to represent "No Assigned Value," similar to python None
-Function None() as Object
-    'return Chr(96)
-    return invalid
+Function CreateIfDoesntExist(o as Object, key as String, oType as String) as void
+    if o.DoesExist(key)
+        ' Do nothing
+    else
+        if oType = "roAssociativeArray"
+            new = CreateObject("roAssociativeArray")
+        else if oType = "roArray"
+            new = CreateObject("roArray", 1, True)
+        end if
+        o[key] = new
+    end if
 End Function
 
 '######################################################################

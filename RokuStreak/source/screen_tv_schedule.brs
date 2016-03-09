@@ -11,6 +11,17 @@ Function RenderTVSchedule() as integer
     grid = CreateObject("roGridScreen")
     grid.SetMessagePort(port)
     rowTitles = CreateObject("roArray", 10, true)
+    ' TODO: Below is O(num_keys_visible). Optimization can come from populating rows that aren't visible right before they become
+    ' visible instead of populating all of the rows at once.    
+    'titles = GetEpisodeTitles(EpisodeCategoryTime())
+    'episodes = GetEpisodes(EpisodeCategoryTime())
+    'for j = 0 to titles.Count() - 1 => Linear time ( O(num_keys_visible) ) 
+    '   rowTitles.Push(keys[j]) => titles will be hash values such as genre types (i.e, comedy, drama, etc)
+    '   grid.SetContentList(j,episodes[titles[j]]) => keys will hash to list for row. Filtration will occur by storing different title types
+    'end for
+    'grid.SetupLists(rowTitles.Count())
+    'grid.Show()
+        
     for j = 0 to TempEntityCount()
         rowTitles.Push("[Row Title " + j.toStr() + " ] ")
     end for
@@ -32,6 +43,10 @@ Function RenderTVSchedule() as integer
              else if msg.isListItemSelected()
                  print "Selected msg: ";msg.GetMessage();"row: ";msg.GetIndex();
                  print " col: ";msg.GetData()
+                 ' Grab list item corresponding to selection
+                 
+                 
+                 
              end if
          end if
     end while

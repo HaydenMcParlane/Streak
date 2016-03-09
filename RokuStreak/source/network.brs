@@ -27,11 +27,11 @@ Function Request(requestType as String, destUrl as String, aaHeaders as Object, 
     urlTransfer.SetUrl(destUrl)
     urlTransfer.EnableEncodings(True)
     
-    packet = ConstructPacket(urlTransfer, aaHeaders, aaBody)
+    json = ConstructPacket(urlTransfer, aaHeaders, aaBody)
     
     LogInfo("Initiating " + requestType + " request to -> " + destUrl)    
     if requestType = POST()
-        urlTransfer.AsyncPostFromString(packet)
+        urlTransfer.AsyncPostFromString(json)
     else if requestType = GET()
         ' TODO: Test a GET request using this same function
         urlTransfer.AsyncGetToString()
@@ -40,8 +40,7 @@ Function Request(requestType as String, destUrl as String, aaHeaders as Object, 
         stop
     end if
     
-    while true
-        LogDebug("Waiting for server response")
+    while true        
         msg = wait(100, port)
         if type(msg) = "roUrlEvent" then
             LogDebug("Server response received")
@@ -75,8 +74,7 @@ Function BuildResponse(message as Object) as Object
         response.json = ParseJSON(message.GetString())
         response.jsonString = message.GetString()        
         response.headers = LinkAssociativeArrays(message.GetResponseHeadersArray())       
-        LogDebug("Value of response.body -> " + response.jsonString)
-        'LogDebugObj("Value of response.json -> ", response.json)
+        LogDebug("Value of response.body -> " + response.jsonString)        
         'LogDebugObj("Value of response.headers -> ", response.headers)        
            
         LogDebug("Response object build successful")

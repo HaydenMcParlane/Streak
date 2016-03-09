@@ -135,8 +135,7 @@ Function PopulateProgramsFromStationIds() as void ' TODO: replace params -> stat
     ' TODO: Token may not have been populated here, or may need to be refreshed.
     ' How to implement?
     headers.AddReplace("token",GetSchedulesDirectToken())
-    body = CreateObject("roArray", 4, True)            
-    'station.AddReplace("stationID","73365")
+    body = CreateObject("roArray", 4, True)
     ' TODO: Implement such that stations are gathered in efficient manner (all at once slows system) 
     table = GetSchedulesDirectStationTable()
     keyList = table[0].Keys()    
@@ -154,14 +153,22 @@ Function PopulateProgramsFromStationIds() as void ' TODO: replace params -> stat
         stop
     end if          
     
-    ' 4. Store result in m-hierarchy        
+    'processedJSON = ProcessSchedulesDirectJSONStationPrograms(response.json)
+    
+    ' 4. Store result
     AddUpdateSchedulesDirectPrograms(response.json)
     
+    ' TODO: Reduce complexity?
     stations = GetSchedulesDirectPrograms()
-    for idx = 0 to stations.Count() - 1                
-        AddUpdateChannel(stations[idx]["stationID"], CreateObject("roAssociativeArray"))
+    for each station in stations
+        AddUpdateChannel(station["stationID"], CreateObject("roAssociativeArray"))
+        ' TODO: Create current station filter and populate info
+        for each program in station["programs"]
+            o = program
+            AppendToProgram(program["programID"], o)
+        end for 
     end for
-    
+        
     programTable = CreateObject("roArray", 1, True)    
     for each station in stations
         for j = 0 to station["programs"].Count() - 1
@@ -207,46 +214,7 @@ Function PopulateProgramInfo() as void ' TODO replace these params -> aProgramID
     ' 4. Store result 
     AddUpdateSchedulesDirectProgramInfo(response.json)
     
-    for each program in response.json
-        epChannelID = "temp"        
-        if program["programID"] <> invalid
-            epProgramID = program["programID"]
-        else
-            epProgramID = "was_invalid"
-        end if
-        
-        LogDebug(epProgramID)        
-        if program["titles"][0]["title120"] <> invalid
-            epTitle = program["titles"][0]["title120"]
-        else
-            epTitle = "was_invalid"
-        end if
-        LogDebug(epTitle)
-        shortDesc1 = "temp"
-        shortDesc2 = "temp"
-        'if program["descriptions"]["description1000"][0]["description"] <> invalid
-         '   desc = program["descriptions"]["description1000"][0]["description"]
-        'else
-        '    desc = "was_invalid"
-        'end if
-        desc = "description"
-        LogDebug(desc)
-        epRating = "temp"
-        epStarRating = "5"
-        if program["originalAirDate"] <> invalid
-            epReleaseDate = program["originalAirDate"]
-        else
-            epReleaseDate = "was_invalid"
-        end if
-        LogDebug(epReleaseDate)
-        epLength = "5000"
-        actorsArray = CreateObject("roArray", 1, True)
-        for each actor in program["cast"]
-            actorsArray.Push(actor["name"])
-        end for
-        epDirector = "Billy Temporrary"
-        AddUpdateEpisode(epChannelID, epProgramID, epTitle, shortDesc1, shortDesc2, desc, epRating, epStarRating, epReleaseDate, epLength, actorsArray,epDirector)
-    end for       
+    ProcessSchedulesDirectJSONProgramInfo(response.json)       
 
     LogDebug("Fetch program data successful")            
 End Function
@@ -276,7 +244,7 @@ Function PopulateProgramDescription() as void
         LogErrorObj("Schedules Direct server offline. Try again later.", response.json)
         ' TODO: Program shouldn't be halted. What should be done here?
         stop
-    end if          
+    end if
     
     ' 4. Store result in m-hierarchy
     ' TODO: Is storage of this information necessary? What to do here?        
@@ -566,7 +534,6 @@ Function SchedulesDirectJSONSchedulesUrl() as String
     return SchedulesDirectBaseJSONUrl() + "/schedules"
 End Function
 
-
 Function SchedulesDirectJSONProgramInfoUrl() as String
     ' TODO: Validate country entry style? Builder to translate entered strings into required strings?
     return SchedulesDirectBaseJSONUrl() + "/programs"
@@ -577,5 +544,56 @@ Function SchedulesDirectJSONProgramDescriptionUrl() as String
     return SchedulesDirectBaseJSONUrl() + "/metadata/description" 'TODO: Change back to metadata/description !!!
 End Function
 
+'###################################################################################
+' Helper functions for accessing json formatted by schedules direct
+'###################################################################################
 
-
+Function ProcessSchedulesDirectJSONProgramInfo(json as Object) as Object
+    for each program in json        
+        if program.DoesExist("programID")
+            epProgramID = program["programID"]
+        else
+            epProgramID = "was_invalid"
+            
+        end if
+                       
+        if program["titles"][0].DoesExist("title120")
+            epTitle = program["titles"][0]["title120"]
+        else
+            epTitle = "was_invalid"
+        end if 
+        
+        shortDesc1 = "[short 1]"
+        shortDesc2 = "[short 2]"
+        progDesc = program.descriptions
+        if program.DoesExist("descriptions")
+            if progDesc.DoesExist("description1000")
+                d = program["descriptions"]["description1000"]
+                if d[0].DoesExist("description")
+                    desc = d[0]["description"]            
+                end if            
+            else
+            desc = "description"            
+            end if
+        else
+            desc = "description"
+        end if
+        
+        epRating = "[rating]"
+        epStarRating = "5"
+        
+        if program.DoesExist("originalAirDate")
+            epReleaseDate = program["originalAirDate"]
+        else
+            epReleaseDate = "was_invalid"
+        end if
+        
+        epLength = "5000"
+        actorsArray = CreateObject("roArray", 1, True)
+        for each actor in program["cast"]
+            actorsArray.Push(actor["name"])
+        end for
+        epDirector = "[Director]"
+        AddEpisode(epProgramID, epTitle, shortDesc1, shortDesc2, desc, epRating, epStarRating, epReleaseDate, epLength, actorsArray,epDirector)
+    end for           
+End Function

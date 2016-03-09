@@ -6376,3 +6376,1911 @@ org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special
 	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
 !SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-08 15:12:27.776
 !MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+!SESSION 2016-03-09 11:23:40.782 -----------------------------------------------
+eclipse.buildId=4.5.1.M20150904-0015
+java.version=1.7.0_95
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.ui 2 0 2016-03-09 11:24:01.969
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2016-03-09 11:24:01.969
+!MESSAGE Commands should really have a category: plug-in='com.roku.brightscript.plugin', id='com.roku.brightscript.ide.eclipse.core.silentdeployment', categoryId='com.roku.brightscript.plugin.category'
+
+!ENTRY org.eclipse.ui 2 0 2016-03-09 11:24:03.187
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2016-03-09 11:24:03.187
+!MESSAGE Commands should really have a category: plug-in='com.roku.brightscript.plugin', id='com.roku.brightscript.ide.eclipse.core.silentdeployment', categoryId='com.roku.brightscript.plugin.category'
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 11:24:19.037
+!MESSAGE error: Found multiple no return values for method call expression: 'SearchSchedulesDirect()'
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 11:33:38.673
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roString'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 11:33:38.674
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 11:49:33.619
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'SetContentList'
+!STACK 1
+org.eclipse.dltk.core.ModelException: types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 11:49:33.619
+!MESSAGE types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 11:51:02.284
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roString'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 11:51:02.284
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 11:58:23.290
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'Append'
+!STACK 1
+org.eclipse.dltk.core.ModelException: types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getHTMLContentReader(ProposalInfo.java:158)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:140)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:90)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 11:58:23.290
+!MESSAGE types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 11:58:23.361
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'Peek'
+!STACK 1
+org.eclipse.dltk.core.ModelException: types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getHTMLContentReader(ProposalInfo.java:158)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:140)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:90)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 11:58:23.362
+!MESSAGE types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 11:58:23.537
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'Push'
+!STACK 1
+org.eclipse.dltk.core.ModelException: types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getHTMLContentReader(ProposalInfo.java:158)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:140)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:90)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 11:58:23.538
+!MESSAGE types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 11:59:06.135
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'AddHeader'
+!STACK 1
+org.eclipse.dltk.core.ModelException: types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getHTMLContentReader(ProposalInfo.java:158)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:140)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:90)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 11:59:06.135
+!MESSAGE types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 11:59:07.218
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'SetBreadcrumbEnabled'
+!STACK 1
+org.eclipse.dltk.core.ModelException: types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getHTMLContentReader(ProposalInfo.java:158)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:140)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:90)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 11:59:07.218
+!MESSAGE types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 11:59:08.265
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'SetCertificatesFile'
+!STACK 1
+org.eclipse.dltk.core.ModelException: types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getHTMLContentReader(ProposalInfo.java:158)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:140)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:90)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 11:59:08.265
+!MESSAGE types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 11:59:09.508
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'SetContentList'
+!STACK 1
+org.eclipse.dltk.core.ModelException: types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getHTMLContentReader(ProposalInfo.java:158)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:140)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:90)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 11:59:09.509
+!MESSAGE types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 12:05:44.711
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roInt'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 12:05:44.711
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 12:08:32.560
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roString'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 12:08:32.560
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 12:08:33.176
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roString'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 12:08:33.176
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 12:10:14.121
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roObject'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 12:10:14.122
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 12:10:59.447
+!MESSAGE error: Unable to determine method at current cursor position: 1300
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 12:22:33.124
+!MESSAGE error: Unable to determine method at current cursor position: 1427
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 12:28:45.713
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'AddHeader'
+!STACK 1
+org.eclipse.dltk.core.ModelException: types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getHTMLContentReader(ProposalInfo.java:158)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:140)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:90)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 12:28:45.713
+!MESSAGE types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 12:28:47.227
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'SetBreadcrumbEnabled'
+!STACK 1
+org.eclipse.dltk.core.ModelException: types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getHTMLContentReader(ProposalInfo.java:158)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:140)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:90)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 12:28:47.228
+!MESSAGE types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 12:28:47.459
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'Show'
+!STACK 1
+org.eclipse.dltk.core.ModelException: types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getHTMLContentReader(ProposalInfo.java:158)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:140)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:90)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 12:28:47.459
+!MESSAGE types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 12:29:01.620
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roString'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 12:29:01.620
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 12:29:17.448
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'Count'
+!STACK 1
+org.eclipse.dltk.core.ModelException: types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 12:29:17.448
+!MESSAGE types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 12:36:19.230
+!MESSAGE error: Found more than 1 user sub/function named: EpisodeCategoryGenre
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 12:36:24.545
+!MESSAGE error: Found more than 1 user sub/function named: EpisodeCategoryGenre
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 12:41:53.792
+!MESSAGE error: Found more than 1 user sub/function named: EpisodeCategoryTime
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 12:51:47.181
+!MESSAGE error: Unable to determine method at current cursor position: 1277
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 12:53:15.027
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roArray'
+!STACK 1
+org.eclipse.dltk.core.ModelException: types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:104)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 12:53:15.027
+!MESSAGE types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 13:00:54.884
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roString'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 13:00:54.884
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 13:01:27.439
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roInvalid'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 13:01:27.439
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY org.eclipse.dltk.ui 4 2 2016-03-09 13:02:35.465
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.dltk.ui".
+!STACK 0
+java.lang.NullPointerException
+	at com.roku.brightscript.ide.eclipse.core.model.ast.typedexpressions.BrightScriptDotExpression.toString(BrightScriptDotExpression.java:284)
+	at com.roku.brightscript.ide.eclipse.core.model.BrightScriptModelUtils.getLastAssignmentExpressionBeforePosition(BrightScriptModelUtils.java:760)
+	at com.roku.brightscript.ide.eclipse.core.model.BrightScriptModelUtils.getLastAssignmentExpression(BrightScriptModelUtils.java:739)
+	at com.roku.brightscript.ide.eclipse.core.model.ast.BrightScriptASTTranslator.getNewVariableReferenceForLocalAssignment(BrightScriptASTTranslator.java:2739)
+	at com.roku.brightscript.ide.eclipse.core.model.ast.BrightScriptASTTranslator.processFnCallFnRefOrVarRef(BrightScriptASTTranslator.java:2349)
+	at com.roku.brightscript.ide.eclipse.core.model.ast.BrightScriptASTTranslator.exitFnexprhead(BrightScriptASTTranslator.java:2298)
+	at com.roku.brightscript.parser.BrightScriptAnalyzer.exit(BrightScriptAnalyzer.java:1327)
+	at net.percederberg.grammatica.parser.Parser.exitNode(Parser.java:540)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:300)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:267)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseStart(RecursiveDescentParser.java:177)
+	at net.percederberg.grammatica.parser.Parser.parse(Parser.java:389)
+	at com.roku.brightscript.ide.eclipse.core.model.parsers.BrightScriptSourceParser.parse(BrightScriptSourceParser.java:101)
+	at org.eclipse.dltk.core.builder.ParserBuildParticipantFactory$ParserBuildParticipant.build(ParserBuildParticipantFactory.java:81)
+	at org.eclipse.dltk.internal.core.StructureBuilder.build(StructureBuilder.java:73)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.buildStructure(AbstractSourceModule.java:512)
+	at org.eclipse.dltk.internal.core.Openable.generateInfos(Openable.java:188)
+	at org.eclipse.dltk.internal.core.ModelElement.openWhenClosed(ModelElement.java:184)
+	at org.eclipse.dltk.internal.core.SourceModule.makeConsistent(SourceModule.java:257)
+	at org.eclipse.dltk.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:79)
+	at org.eclipse.dltk.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:58)
+	at org.eclipse.dltk.internal.core.ModelOperation.run(ModelOperation.java:698)
+	at org.eclipse.dltk.internal.core.ModelOperation.runOperation(ModelOperation.java:764)
+	at org.eclipse.dltk.internal.core.SourceModule.reconcile(SourceModule.java:309)
+	at org.eclipse.dltk.internal.ui.text.ScriptReconcilingStrategy.reconcile(ScriptReconcilingStrategy.java:164)
+	at org.eclipse.dltk.internal.ui.text.ScriptReconcilingStrategy.access$0(ScriptReconcilingStrategy.java:153)
+	at org.eclipse.dltk.internal.ui.text.ScriptReconcilingStrategy$1.run(ScriptReconcilingStrategy.java:125)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.dltk.internal.ui.text.ScriptReconcilingStrategy.reconcile(ScriptReconcilingStrategy.java:120)
+	at org.eclipse.dltk.internal.ui.text.ScriptReconcilingStrategy.reconcile(ScriptReconcilingStrategy.java:192)
+	at org.eclipse.dltk.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:97)
+	at org.eclipse.dltk.internal.ui.text.ScriptCompositeReconcilingStrategy.reconcile(ScriptCompositeReconcilingStrategy.java:74)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:77)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:206)
+
+!ENTRY org.eclipse.dltk.ui 4 10001 2016-03-09 13:02:35.677
+!MESSAGE Error in DLTK Core during reconcile
+!STACK 0
+java.lang.NullPointerException
+	at com.roku.brightscript.ide.eclipse.core.model.ast.typedexpressions.BrightScriptDotExpression.toString(BrightScriptDotExpression.java:284)
+	at com.roku.brightscript.ide.eclipse.core.model.BrightScriptModelUtils.getLastAssignmentExpressionBeforePosition(BrightScriptModelUtils.java:760)
+	at com.roku.brightscript.ide.eclipse.core.model.BrightScriptModelUtils.getLastAssignmentExpression(BrightScriptModelUtils.java:739)
+	at com.roku.brightscript.ide.eclipse.core.model.ast.BrightScriptASTTranslator.getNewVariableReferenceForLocalAssignment(BrightScriptASTTranslator.java:2739)
+	at com.roku.brightscript.ide.eclipse.core.model.ast.BrightScriptASTTranslator.processFnCallFnRefOrVarRef(BrightScriptASTTranslator.java:2349)
+	at com.roku.brightscript.ide.eclipse.core.model.ast.BrightScriptASTTranslator.exitFnexprhead(BrightScriptASTTranslator.java:2298)
+	at com.roku.brightscript.parser.BrightScriptAnalyzer.exit(BrightScriptAnalyzer.java:1327)
+	at net.percederberg.grammatica.parser.Parser.exitNode(Parser.java:540)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:300)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:267)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseElement(RecursiveDescentParser.java:333)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseAlternative(RecursiveDescentParser.java:298)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parsePattern(RecursiveDescentParser.java:218)
+	at net.percederberg.grammatica.parser.RecursiveDescentParser.parseStart(RecursiveDescentParser.java:177)
+	at net.percederberg.grammatica.parser.Parser.parse(Parser.java:389)
+	at com.roku.brightscript.ide.eclipse.core.model.parsers.BrightScriptSourceParser.parse(BrightScriptSourceParser.java:101)
+	at org.eclipse.dltk.core.builder.ParserBuildParticipantFactory$ParserBuildParticipant.build(ParserBuildParticipantFactory.java:81)
+	at org.eclipse.dltk.internal.core.StructureBuilder.build(StructureBuilder.java:73)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.buildStructure(AbstractSourceModule.java:512)
+	at org.eclipse.dltk.internal.core.Openable.generateInfos(Openable.java:188)
+	at org.eclipse.dltk.internal.core.ModelElement.openWhenClosed(ModelElement.java:184)
+	at org.eclipse.dltk.internal.core.SourceModule.makeConsistent(SourceModule.java:257)
+	at org.eclipse.dltk.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:79)
+	at org.eclipse.dltk.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:58)
+	at org.eclipse.dltk.internal.core.ModelOperation.run(ModelOperation.java:698)
+	at org.eclipse.dltk.internal.core.ModelOperation.runOperation(ModelOperation.java:764)
+	at org.eclipse.dltk.internal.core.SourceModule.reconcile(SourceModule.java:309)
+	at org.eclipse.dltk.internal.ui.text.ScriptReconcilingStrategy.reconcile(ScriptReconcilingStrategy.java:164)
+	at org.eclipse.dltk.internal.ui.text.ScriptReconcilingStrategy.access$0(ScriptReconcilingStrategy.java:153)
+	at org.eclipse.dltk.internal.ui.text.ScriptReconcilingStrategy$1.run(ScriptReconcilingStrategy.java:125)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.dltk.internal.ui.text.ScriptReconcilingStrategy.reconcile(ScriptReconcilingStrategy.java:120)
+	at org.eclipse.dltk.internal.ui.text.ScriptReconcilingStrategy.reconcile(ScriptReconcilingStrategy.java:192)
+	at org.eclipse.dltk.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:97)
+	at org.eclipse.dltk.internal.ui.text.ScriptCompositeReconcilingStrategy.reconcile(ScriptCompositeReconcilingStrategy.java:74)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:77)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:206)
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 13:02:54.228
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'Append'
+!STACK 1
+org.eclipse.dltk.core.ModelException: types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getHTMLContentReader(ProposalInfo.java:158)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:140)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:90)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 13:02:54.228
+!MESSAGE types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 13:03:24.850
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'Append'
+!STACK 1
+org.eclipse.dltk.core.ModelException: types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getHTMLContentReader(ProposalInfo.java:158)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:140)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:90)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 13:03:24.850
+!MESSAGE types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 13:03:25.906
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'Peek'
+!STACK 1
+org.eclipse.dltk.core.ModelException: types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getHTMLContentReader(ProposalInfo.java:158)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:140)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:90)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 13:03:25.906
+!MESSAGE types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 13:03:26.716
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'Pop'
+!STACK 1
+org.eclipse.dltk.core.ModelException: types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getHTMLContentReader(ProposalInfo.java:158)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:140)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:90)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 13:03:26.716
+!MESSAGE types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 13:03:26.892
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'Push'
+!STACK 1
+org.eclipse.dltk.core.ModelException: types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getHTMLContentReader(ProposalInfo.java:158)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:140)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:90)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 13:03:26.892
+!MESSAGE types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 13:03:51.604
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'Append'
+!STACK 1
+org.eclipse.dltk.core.ModelException: types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getHTMLContentReader(ProposalInfo.java:158)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:140)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:90)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 13:03:51.605
+!MESSAGE types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 13:03:52.034
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'Clear'
+!STACK 1
+org.eclipse.dltk.core.ModelException: types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getHTMLContentReader(ProposalInfo.java:158)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:140)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:90)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 13:03:52.034
+!MESSAGE types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 13:03:52.242
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'Count'
+!STACK 1
+org.eclipse.dltk.core.ModelException: types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getHTMLContentReader(ProposalInfo.java:158)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:140)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:90)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 13:03:52.242
+!MESSAGE types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 13:07:36.577
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roString'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 13:07:36.577
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 13:08:19.904
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roArray'
+!STACK 1
+org.eclipse.dltk.core.ModelException: types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 13:08:19.904
+!MESSAGE types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 13:15:36.409
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'ToStr'
+!STACK 1
+org.eclipse.dltk.core.ModelException: types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 13:15:36.409
+!MESSAGE types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 13:29:03.443
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roString'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 13:29:03.444
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 13:29:05.579
+!MESSAGE error: Found multiple no return values for method call expression: 'SearchSchedulesDirect()'
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 13:29:05.699
+!MESSAGE error: Found multiple no return values for method call expression: 'SearchSchedulesDirect()'
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 13:30:07.714
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roDynamic'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 13:30:07.714
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 13:33:12.286
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roString'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:104)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 13:33:12.286
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 13:33:12.287
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roString'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:104)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 13:33:12.287
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 13:34:35.704
+!MESSAGE error: Found multiple no return values for method call expression: 'SearchSchedulesDirect()'
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 13:34:35.789
+!MESSAGE error: Found multiple no return values for method call expression: 'SearchSchedulesDirect()'
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 13:34:36.379
+!MESSAGE error: Found multiple no return values for method call expression: 'SearchSchedulesDirect()'
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 13:34:36.869
+!MESSAGE error: Found multiple no return values for method call expression: 'SearchSchedulesDirect()'
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 13:34:36.951
+!MESSAGE error: Found multiple no return values for method call expression: 'SearchSchedulesDirect()'
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 13:34:37.531
+!MESSAGE error: Found multiple no return values for method call expression: 'SearchSchedulesDirect()'
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 13:34:38.035
+!MESSAGE error: Found multiple no return values for method call expression: 'SearchSchedulesDirect()'
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 13:34:38.116
+!MESSAGE error: Found multiple no return values for method call expression: 'SearchSchedulesDirect()'
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 13:34:38.798
+!MESSAGE error: Found multiple no return values for method call expression: 'SearchSchedulesDirect()'
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 13:34:39.019
+!MESSAGE error: Found multiple no return values for method call expression: 'SearchSchedulesDirect()'
+
+!ENTRY org.eclipse.dltk.core 4 2 2016-03-09 13:34:46.020
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.dltk.core".
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException: 1371
+	at org.eclipse.jface.text.rules.BufferedRuleBasedScanner.read(BufferedRuleBasedScanner.java:119)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptRegExpSingleLinePatternRule.evaluate(BrightScriptRegExpSingleLinePatternRule.java:133)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptRegExpSingleLinePatternRule.evaluate(BrightScriptRegExpSingleLinePatternRule.java:96)
+	at org.eclipse.jface.text.rules.RuleBasedScanner.nextToken(RuleBasedScanner.java:174)
+	at org.eclipse.jface.text.rules.RuleBasedPartitionScanner.nextToken(RuleBasedPartitionScanner.java:89)
+	at org.eclipse.jface.text.rules.FastPartitioner.initialize(FastPartitioner.java:176)
+	at org.eclipse.jface.text.rules.FastPartitioner.checkInitialization(FastPartitioner.java:151)
+	at org.eclipse.jface.text.rules.FastPartitioner.connect(FastPartitioner.java:143)
+	at org.eclipse.jface.text.rules.FastPartitioner.connect(FastPartitioner.java:125)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptFoldingStructureProvider.installDocumentStuff(BrightScriptFoldingStructureProvider.java:1622)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptFoldingStructureProvider.computeCommentsRanges(BrightScriptFoldingStructureProvider.java:1689)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptFoldingStructureProvider.computeCommentsRanges(BrightScriptFoldingStructureProvider.java:1679)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptFoldingStructureProvider.computeFoldingStructure(BrightScriptFoldingStructureProvider.java:907)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptFoldingStructureProvider.computeFoldingStructure(BrightScriptFoldingStructureProvider.java:889)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptFoldingStructureProvider.update(BrightScriptFoldingStructureProvider.java:822)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptFoldingStructureProvider.access$1(BrightScriptFoldingStructureProvider.java:815)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptFoldingStructureProvider$ElementChangedListener.elementChanged(BrightScriptFoldingStructureProvider.java:645)
+	at org.eclipse.dltk.internal.core.DeltaProcessor$3.run(DeltaProcessor.java:1700)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.dltk.internal.core.DeltaProcessor.notifyListeners(DeltaProcessor.java:1686)
+	at org.eclipse.dltk.internal.core.DeltaProcessor.fireReconcileDelta(DeltaProcessor.java:1550)
+	at org.eclipse.dltk.internal.core.DeltaProcessor.fire(DeltaProcessor.java:1506)
+	at org.eclipse.dltk.internal.core.ModelOperation.run(ModelOperation.java:743)
+	at org.eclipse.dltk.internal.core.ModelOperation.runOperation(ModelOperation.java:764)
+	at org.eclipse.dltk.internal.core.SourceModule.reconcile(SourceModule.java:309)
+	at org.eclipse.dltk.internal.ui.text.ScriptReconcilingStrategy.reconcile(ScriptReconcilingStrategy.java:164)
+	at org.eclipse.dltk.internal.ui.text.ScriptReconcilingStrategy.access$0(ScriptReconcilingStrategy.java:153)
+	at org.eclipse.dltk.internal.ui.text.ScriptReconcilingStrategy$1.run(ScriptReconcilingStrategy.java:125)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.dltk.internal.ui.text.ScriptReconcilingStrategy.reconcile(ScriptReconcilingStrategy.java:120)
+	at org.eclipse.dltk.internal.ui.text.ScriptReconcilingStrategy.reconcile(ScriptReconcilingStrategy.java:192)
+	at org.eclipse.dltk.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:97)
+	at org.eclipse.dltk.internal.ui.text.ScriptCompositeReconcilingStrategy.reconcile(ScriptCompositeReconcilingStrategy.java:74)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:77)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:206)
+
+!ENTRY org.eclipse.dltk.core 4 4 2016-03-09 13:34:46.054
+!MESSAGE Exception occurred in listener of script element change notification
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException: 1371
+	at org.eclipse.jface.text.rules.BufferedRuleBasedScanner.read(BufferedRuleBasedScanner.java:119)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptRegExpSingleLinePatternRule.evaluate(BrightScriptRegExpSingleLinePatternRule.java:133)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptRegExpSingleLinePatternRule.evaluate(BrightScriptRegExpSingleLinePatternRule.java:96)
+	at org.eclipse.jface.text.rules.RuleBasedScanner.nextToken(RuleBasedScanner.java:174)
+	at org.eclipse.jface.text.rules.RuleBasedPartitionScanner.nextToken(RuleBasedPartitionScanner.java:89)
+	at org.eclipse.jface.text.rules.FastPartitioner.initialize(FastPartitioner.java:176)
+	at org.eclipse.jface.text.rules.FastPartitioner.checkInitialization(FastPartitioner.java:151)
+	at org.eclipse.jface.text.rules.FastPartitioner.connect(FastPartitioner.java:143)
+	at org.eclipse.jface.text.rules.FastPartitioner.connect(FastPartitioner.java:125)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptFoldingStructureProvider.installDocumentStuff(BrightScriptFoldingStructureProvider.java:1622)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptFoldingStructureProvider.computeCommentsRanges(BrightScriptFoldingStructureProvider.java:1689)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptFoldingStructureProvider.computeCommentsRanges(BrightScriptFoldingStructureProvider.java:1679)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptFoldingStructureProvider.computeFoldingStructure(BrightScriptFoldingStructureProvider.java:907)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptFoldingStructureProvider.computeFoldingStructure(BrightScriptFoldingStructureProvider.java:889)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptFoldingStructureProvider.update(BrightScriptFoldingStructureProvider.java:822)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptFoldingStructureProvider.access$1(BrightScriptFoldingStructureProvider.java:815)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptFoldingStructureProvider$ElementChangedListener.elementChanged(BrightScriptFoldingStructureProvider.java:645)
+	at org.eclipse.dltk.internal.core.DeltaProcessor$3.run(DeltaProcessor.java:1700)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.dltk.internal.core.DeltaProcessor.notifyListeners(DeltaProcessor.java:1686)
+	at org.eclipse.dltk.internal.core.DeltaProcessor.fireReconcileDelta(DeltaProcessor.java:1550)
+	at org.eclipse.dltk.internal.core.DeltaProcessor.fire(DeltaProcessor.java:1506)
+	at org.eclipse.dltk.internal.core.ModelOperation.run(ModelOperation.java:743)
+	at org.eclipse.dltk.internal.core.ModelOperation.runOperation(ModelOperation.java:764)
+	at org.eclipse.dltk.internal.core.SourceModule.reconcile(SourceModule.java:309)
+	at org.eclipse.dltk.internal.ui.text.ScriptReconcilingStrategy.reconcile(ScriptReconcilingStrategy.java:164)
+	at org.eclipse.dltk.internal.ui.text.ScriptReconcilingStrategy.access$0(ScriptReconcilingStrategy.java:153)
+	at org.eclipse.dltk.internal.ui.text.ScriptReconcilingStrategy$1.run(ScriptReconcilingStrategy.java:125)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.dltk.internal.ui.text.ScriptReconcilingStrategy.reconcile(ScriptReconcilingStrategy.java:120)
+	at org.eclipse.dltk.internal.ui.text.ScriptReconcilingStrategy.reconcile(ScriptReconcilingStrategy.java:192)
+	at org.eclipse.dltk.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:97)
+	at org.eclipse.dltk.internal.ui.text.ScriptCompositeReconcilingStrategy.reconcile(ScriptCompositeReconcilingStrategy.java:74)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:77)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:206)
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 13:43:43.320
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roInvalid'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 13:43:43.321
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 13:52:46.668
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roString'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 13:52:46.668
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 13:52:47.622
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roString'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:104)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 13:52:47.623
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 13:52:47.624
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roArray'
+!STACK 1
+org.eclipse.dltk.core.ModelException: types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:104)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 13:52:47.624
+!MESSAGE types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 14:28:11.690
+!MESSAGE error: Unable to determine method at current cursor position: 22806
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 14:30:59.168
+!MESSAGE error: Unable to determine method at current cursor position: 23255
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 14:32:48.853
+!MESSAGE error: Unable to determine method at current cursor position: 23363
+
+!ENTRY org.eclipse.dltk.core 4 2 2016-03-09 14:34:08.071
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.dltk.core".
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException
+
+!ENTRY org.eclipse.dltk.core 4 4 2016-03-09 14:34:08.081
+!MESSAGE Exception occurred in listener of script element change notification
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 14:43:30.840
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roObject'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 14:43:30.840
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 14:52:01.408
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roString'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 14:52:01.409
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 14:54:56.099
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'GetIndex'
+!STACK 1
+org.eclipse.dltk.core.ModelException: types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 14:54:56.100
+!MESSAGE types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 14:54:58.600
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'SetContentList'
+!STACK 1
+org.eclipse.dltk.core.ModelException: types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 14:54:58.600
+!MESSAGE types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 14:56:03.258
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roString'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 14:56:03.258
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 15:12:17.340
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roString'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 15:12:17.341
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 15:12:24.857
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roString'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 15:12:24.858
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 15:12:30.973
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roString'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 15:12:30.973
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 15:14:34.957
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roString'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:104)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 15:14:34.958
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 15:14:34.958
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roArray'
+!STACK 1
+org.eclipse.dltk.core.ModelException: types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:104)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 15:14:34.958
+!MESSAGE types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 15:16:45.683
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roString'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 15:16:45.683
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 15:19:19.776
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roObject'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 15:19:19.776
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 15:19:33.683
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roString'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:104)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 15:19:33.684
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 15:19:33.684
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roArray'
+!STACK 1
+org.eclipse.dltk.core.ModelException: types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:104)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 15:19:33.684
+!MESSAGE types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 15:20:40.627
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roString'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 15:20:40.627
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 15:20:59.572
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'CreateObject'
+!STACK 1
+org.eclipse.dltk.core.ModelException: globals [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 15:20:59.573
+!MESSAGE globals [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 15:27:01.498
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roVoid'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 15:27:01.498
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 15:37:20.906
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roArray'
+!STACK 1
+org.eclipse.dltk.core.ModelException: types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 15:37:20.906
+!MESSAGE types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 15:40:34.485
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roDynamic'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 15:40:34.485
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY org.eclipse.dltk.core 4 2 2016-03-09 15:40:41.289
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.dltk.core".
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException
+
+!ENTRY org.eclipse.dltk.core 4 4 2016-03-09 15:40:41.301
+!MESSAGE Exception occurred in listener of script element change notification
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 15:41:31.760
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roObject'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 15:41:31.761
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 15:44:00.215
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roObject'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 15:44:00.215
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 15:57:22.679
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roString'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 15:57:22.679
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 15:59:19.537
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roBoolean'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 15:59:19.537
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 16:08:58.751
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roBoolean'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 16:08:58.752
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 16:12:01.666
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roString'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 16:12:01.667
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 16:22:44.621
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roString'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 16:22:44.621
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 16:23:59.116
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roArray'
+!STACK 1
+org.eclipse.dltk.core.ModelException: types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 16:23:59.116
+!MESSAGE types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 16:26:08.069
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roString'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 16:26:08.069
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 16:29:42.153
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roString'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 16:29:42.154
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 16:48:51.111
+!MESSAGE throwable: Couldn't retrieve the explicit source declaration line for member named: 'roString'
+!STACK 1
+org.eclipse.dltk.core.ModelException: intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:258)
+	at org.eclipse.dltk.internal.core.ExternalSourceModule.getBufferContent(ExternalSourceModule.java:137)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSource(AbstractSourceModule.java:300)
+	at org.eclipse.dltk.internal.core.SourceRefElement.getSource(SourceRefElement.java:196)
+	at com.roku.brightscript.ide.eclipse.core.elementdocs.BrightScriptDocumentationProvider.getInfo(BrightScriptDocumentationProvider.java:44)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess$1.getInfo(ScriptDocumentationAccess.java:158)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.merge(ScriptDocumentationAccess.java:106)
+	at org.eclipse.dltk.ui.documentation.ScriptDocumentationAccess.getHTMLContentReader(ScriptDocumentationAccess.java:156)
+	at com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptDocumentationHover.getHoverInfo(BrightScriptDocumentationHover.java:147)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:168)
+	at org.eclipse.dltk.internal.ui.text.hover.BestMatchHover.getHoverInfo(BestMatchHover.java:118)
+	at org.eclipse.dltk.internal.ui.text.hover.EditorTextHoverProxy.getHoverInfo(EditorTextHoverProxy.java:76)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-03-09 16:48:51.111
+!MESSAGE intrinsics_types [in builtins [in #special#brightscript_types# [in RokuStreak]]] does not exist
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 17:03:25.057
+!MESSAGE error: Unable to determine method at current cursor position: 21985
+!SESSION 2016-03-09 17:09:22.255 -----------------------------------------------
+eclipse.buildId=4.5.1.M20150904-0015
+java.version=1.7.0_95
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.ui 2 0 2016-03-09 17:09:38.779
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2016-03-09 17:09:38.779
+!MESSAGE Commands should really have a category: plug-in='com.roku.brightscript.plugin', id='com.roku.brightscript.ide.eclipse.core.silentdeployment', categoryId='com.roku.brightscript.plugin.category'
+
+!ENTRY org.eclipse.ui 2 0 2016-03-09 17:09:39.947
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2016-03-09 17:09:39.947
+!MESSAGE Commands should really have a category: plug-in='com.roku.brightscript.plugin', id='com.roku.brightscript.ide.eclipse.core.silentdeployment', categoryId='com.roku.brightscript.plugin.category'
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 17:09:59.812
+!MESSAGE error: Found multiple no return values for method call expression: 'SearchSchedulesDirect()'
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 17:10:00.279
+!MESSAGE error: Found multiple no return values for method call expression: 'SearchSchedulesDirect()'
+
+!ENTRY com.roku.brightscript.ide.eclipse.core 4 0 2016-03-09 17:10:05.611
+!MESSAGE error: Found multiple no return values for method call expression: 'SearchSchedulesDirect()'
