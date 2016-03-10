@@ -3,7 +3,7 @@
 '   open source television data service.
 '   @author: Hayden McParlane
 '   @creation-date: 2.18.2016
-Function SearchSchedulesDirect() as void
+Function FetchSchedulesDirectData() as void
     ' TODO: Some of these functions will need to be removed and placed elsewhere. I.e, GetSchedulesDirectAccountStatus() should be called
     ' when the application is first launched from the Roku shell (home screen). That way, account status can be checked asynchronously
     ' to ensure it's ready when the user begins to use it (or, if it's not, the user can be prompted to enter updated account info some
