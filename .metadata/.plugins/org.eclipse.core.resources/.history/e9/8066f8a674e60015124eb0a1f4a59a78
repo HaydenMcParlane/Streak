@@ -13,7 +13,7 @@ Function RenderTVSchedule() as integer
     ' TODO: Below is O(num_keys_visible). Optimization can come from populating rows that aren't visible right before they become
     ' visible instead of populating all of the rows at once.       
     'titles = GetEpisodeTitles(EpisodeFilterTime())    
-    episodes = GetEpisodes(EpisodeFilterGenre())
+    episodes = GetEpisodes(EpisodeFilterTime())
     titles = episodes.keys() 'TODO: Titles should be stored and retrieved. Its much Faster
     
     grid.SetupLists(titles.Count())
@@ -32,7 +32,7 @@ Function RenderTVSchedule() as integer
                  print " col: ";msg.GetData()
              else if msg.isListItemSelected()
                  print "Selected msg: ";msg.GetMessage();"row: ";msg.GetIndex();
-                 print " col: ";msg.GetData()
+                 print " col: ";msg.GetData()                 
              end if
          end if
     end while

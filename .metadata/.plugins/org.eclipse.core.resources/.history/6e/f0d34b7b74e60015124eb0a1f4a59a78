@@ -13,8 +13,11 @@ Function RenderTVSchedule() as integer
     ' TODO: Below is O(num_keys_visible). Optimization can come from populating rows that aren't visible right before they become
     ' visible instead of populating all of the rows at once.       
     'titles = GetEpisodeTitles(EpisodeFilterTime())    
-    episodes = GetEpisodes(EpisodeFilterGenre())
-    titles = episodes.keys() 'TODO: Titles should be stored and retrieved. Its much Faster
+    episodes = GetEpisodes(EpisodeFilterTime())
+    titles = episodes.keys()
+    
+    LogDebugObj("Printing row titles -> ", titles)
+    LogDebugObj("Printing row titles -> ", episodes)
     
     grid.SetupLists(titles.Count())
     grid.SetListNames(titles)  
@@ -22,6 +25,17 @@ Function RenderTVSchedule() as integer
        grid.SetContentList(i,episodes[titles[i]]) '=> keys will hash to list for row. Filtration will occur by storing different title types
        grid.Show()       
     end for                   
+    
+    'for j = 0 to TempEntityCount()
+    '    rowTitles.Push("[Row Title " + j.toStr() + " ] ")
+    'end for
+    'grid.SetupLists(rowTitles.Count())
+    'grid.SetListNames(rowTitles)    
+    'list = GetEpisodeList()    
+    'for j = 0 to TempEntityCount()
+    '    grid.SetContentList(j, list)
+    '    grid.Show()
+    'end for
     while true
          msg = wait(0, port)
          if type(msg) = "roGridScreenEvent" then
@@ -33,6 +47,10 @@ Function RenderTVSchedule() as integer
              else if msg.isListItemSelected()
                  print "Selected msg: ";msg.GetMessage();"row: ";msg.GetIndex();
                  print " col: ";msg.GetData()
+                 ' Grab list item corresponding to selection
+                 
+                 
+                 
              end if
          end if
     end while

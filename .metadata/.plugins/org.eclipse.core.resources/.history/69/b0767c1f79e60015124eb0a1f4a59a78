@@ -607,10 +607,10 @@ Function ProcessSchedulesDirectJSONProgramInfo(json as Object) as Object
     end for      
     ' TODO: Better place to do title list update?
     times = GetEpisodes(EpisodeFilterTime())    
-    genres = GetEpisodeSubcategory(EpisodeFilterGenre(), EpisodeSubcategoryData())
-    timeKeys = times.Keys()
-    AddUpdateEpisodeTitles(EpisodeFilterTime(), timeKeys)
-    AddUpdateEpisodeTitles(EpisodeFilterGenre(), genres.Keys())
+    'genres = GetEpisodeSubcategory(EpisodeFilterGenre(), EpisodeSubcategoryData())
+    keySet = times.Keys()
+    AddUpdateEpisodeTitles(EpisodeFilterTime(), keySet)
+    'AddUpdateEpisodeTitles(EpisodeFilterGenre(), genres.Keys())
 End Function
 
 Function SchedulesDirectKeyProgramID() as String

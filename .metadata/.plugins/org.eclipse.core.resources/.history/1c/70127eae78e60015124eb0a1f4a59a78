@@ -559,7 +559,8 @@ Function ProcessSchedulesDirectJSONProgramInfo(json as Object) as Object
 
         ' Append relevant key-value pairs
         AppendIfExists(program, newAA, SchedulesDirectKeyProgramID())         
-        AppendIfExists(program.titles[0], newAA, SchedulesDirectKeyTitle("120"))        
+        AppendIfExists(program.titles[0], newAA, SchedulesDirectKeyTitle("120"))
+        AppendIfExists(program, newAA, SchedulesDirectKeyGenres())
         AppendIfExists(program, newAA, SchedulesDirectKeyMD5())
         AppendIfExists(program, newAA, SchedulesDirectKeyHasImageArtwork())
         AppendIfExists(program, newAA, SchedulesDirectKeyShowType())
@@ -572,11 +573,11 @@ Function ProcessSchedulesDirectJSONProgramInfo(json as Object) as Object
         'AppendToFilterList(EpisodeFilterGenre(), current[SchedulesDirectKeyGenres()], programID)
         
         if current.DoesExist("ratings")
-            current["rating"] = current.ratings.body[0]
+            current["rating"] = current.ratings.body
         end if      
         
         for each genre in program[SchedulesDirectKeyGenres()]
-            AppendToFilterList(EpisodeFilterGenre(), genre, programID)
+            
         end for
         
         progDesc = program.descriptions
@@ -607,10 +608,10 @@ Function ProcessSchedulesDirectJSONProgramInfo(json as Object) as Object
     end for      
     ' TODO: Better place to do title list update?
     times = GetEpisodes(EpisodeFilterTime())    
-    genres = GetEpisodeSubcategory(EpisodeFilterGenre(), EpisodeSubcategoryData())
-    timeKeys = times.Keys()
-    AddUpdateEpisodeTitles(EpisodeFilterTime(), timeKeys)
-    AddUpdateEpisodeTitles(EpisodeFilterGenre(), genres.Keys())
+    'genres = GetEpisodeSubcategory(EpisodeFilterGenre(), EpisodeSubcategoryData())
+    keySet = times.Keys()
+    AddUpdateEpisodeTitles(EpisodeFilterTime(), keySet)
+    'AddUpdateEpisodeTitles(EpisodeFilterGenre(), genres.Keys())
 End Function
 
 Function SchedulesDirectKeyProgramID() as String
