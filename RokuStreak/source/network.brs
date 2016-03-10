@@ -5,14 +5,20 @@
 '   @author: Hayden McParlane
 
 '   Execute POST request at specified URL
-Function PostRequest(destUrl as String, aaHeaders as Object, aaBody as Object) as Object                                 
+Function AsyncPostRequest(destUrl as String, aaHeaders as Object, aaBody as Object) as Object                                 
     response = Request(POST(), destUrl, aaHeaders, aaBody)
     return response
 End Function
 
-Function GetRequest(destUrl as String, aaHeaders as Object, aaBody as Object) as Object                                 
+Function AsyncGetRequest(destUrl as String, aaHeaders as Object, aaBody as Object) as Object                                 
     response = Request(GET(), destUrl, aaHeaders, aaBody)
     return response
+End Function
+
+Function AsyncPutRequest(destUrl as String, aaHeaders as Object, aaBody as Object) as Object
+End Function
+
+Function AsyncDeleteRequest(destUrl as String, aaHeaders as Object, aaBody as Object) as Object
 End Function
 
 ' TODO: At time of writing, PUT and DELETE haven't yet been implemented for Roku urlTransfer interface.

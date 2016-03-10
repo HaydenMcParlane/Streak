@@ -40,7 +40,7 @@ Function PopulateSchedulesDirectToken() as void ' This may need to be changed su
         body.AddReplace("password", SchedulesDirectPassword())        
         
         ' 2. Make request to API
-        response = PostRequest(SchedulesDirectJSONTokenUrl(), headers, body)
+        response = AsyncPostRequest(SchedulesDirectJSONTokenUrl(), headers, body)
         
         ' 3. Check server status code (not HTTP status, that's checked in network module)            
         if response.headers["code"] = 3000
@@ -71,7 +71,7 @@ Function PopulateCableHeadends(country as String, zipcode as String)
     headers.AddReplace("token",GetSchedulesDirectToken())
     
     ' 2. Make request to API
-    response = GetRequest(SchedulesDirectJSONCableHeadendsUrl(country, zipcode), headers, body)
+    response = AsyncGetRequest(SchedulesDirectJSONCableHeadendsUrl(country, zipcode), headers, body)
     
     ' 3. Check server status code (not HTTP status, that's checked in network module)            
     if response.headers["code"] = 3000
@@ -98,7 +98,7 @@ Function PopulateStationsFromLineupUri(lineupUri as String) as void
     headers.AddReplace("token",GetSchedulesDirectToken())
     
     ' 2. Make request to API
-    response = GetRequest(SchedulesDirectJSONChannelMapUrl(lineupUri), headers, body)       
+    response = AsyncGetRequest(SchedulesDirectJSONChannelMapUrl(lineupUri), headers, body)       
     
     ' 3. Check server status code (not HTTP status, that's checked in network module)            
     if response.headers["code"] = 3000
@@ -144,7 +144,7 @@ Function PopulateProgramsFromStationIds() as void ' TODO: replace params -> stat
     end for               
  
     ' 2. Make request to API
-    response = PostRequest(SchedulesDirectJSONSchedulesUrl(), headers, body)
+    response = AsyncPostRequest(SchedulesDirectJSONSchedulesUrl(), headers, body)
     
     ' 3. Check server status code (not HTTP status, that's checked in network module)            
     if response.headers["code"] = 3000
@@ -202,7 +202,7 @@ Function PopulateProgramInfo() as void ' TODO replace these params -> aProgramID
     headers.AddReplace("Accept-Encoding","deflate,gzip") ' TODO: Deplate gzip due to bug, may already be fixed
     
     ' 2. Make request to API
-    response = PostRequest(SchedulesDirectJSONProgramInfoUrl(), headers, body)
+    response = AsyncPostRequest(SchedulesDirectJSONProgramInfoUrl(), headers, body)
     
     ' 3. Check server status code (not HTTP status, that's checked in network module)            
     if response.headers["code"] = 3000
@@ -237,7 +237,7 @@ Function PopulateProgramDescription() as void
     'headers.AddReplace("Accept-Encoding","deflate,gzip") ' TODO: Deplate gzip due to bug, may already be fixed       
     
     ' 2. Make request to API
-    response = PostRequest(SchedulesDirectJSONProgramDescriptionUrl(), headers, body)
+    response = AsyncPostRequest(SchedulesDirectJSONProgramDescriptionUrl(), headers, body)
     
     ' 3. Check server status code (not HTTP status, that's checked in network module)            
     if response.headers["code"] = 3000
