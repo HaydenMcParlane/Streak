@@ -9,29 +9,33 @@
 Function RenderTVSchedule() as integer
     port = CreateObject("roMessagePort")
     grid = CreateObject("roGridScreen")
-    grid.SetMessagePort(port)
-    rowTitles = CreateObject("roArray", 10, true)
+    grid.SetMessagePort(port)    
     ' TODO: Below is O(num_keys_visible). Optimization can come from populating rows that aren't visible right before they become
-    ' visible instead of populating all of the rows at once.    
-    'titles = GetEpisodeTitles(EpisodeCategoryTime())
-    'episodes = GetEpisodes(EpisodeCategoryTime())
-    'for j = 0 to titles.Count() - 1 => Linear time ( O(num_keys_visible) ) 
-    '   rowTitles.Push(keys[j]) => titles will be hash values such as genre types (i.e, comedy, drama, etc)
-    '   grid.SetContentList(j,episodes[titles[j]]) => keys will hash to list for row. Filtration will occur by storing different title types
+    ' visible instead of populating all of the rows at once.       
+    'titles = GetEpisodeTitles(EpisodeFilterTime())    
+    episodes = GetEpisodes(EpisodeFilterTime())
+    titles = episodes.keys()
+    
+    LogDebugObj("Printing row titles -> ", titles)
+    LogDebugObj("Printing row titles -> ", episodes)
+    
+    grid.SetupLists(titles.Count())
+    grid.SetListNames(titles)  
+    for i = 0 to TempEntityCount() - 1 '=> Linear time ( O(num_keys_visible) ) 
+       grid.SetContentList(i,episodes[titles[i]]) '=> keys will hash to list for row. Filtration will occur by storing different title types
+       grid.Show()       
+    end for                   
+    stop
+    'for j = 0 to TempEntityCount()
+    '    rowTitles.Push("[Row Title " + j.toStr() + " ] ")
     'end for
     'grid.SetupLists(rowTitles.Count())
-    'grid.Show()
-        
-    for j = 0 to TempEntityCount()
-        rowTitles.Push("[Row Title " + j.toStr() + " ] ")
-    end for
-    grid.SetupLists(rowTitles.Count())
-    grid.SetListNames(rowTitles)    
-    list = GetEpisodeList()    
-    for j = 0 to TempEntityCount()
-        grid.SetContentList(j, list)
-        grid.Show()
-    end for
+    'grid.SetListNames(rowTitles)    
+    'list = GetEpisodeList()    
+    'for j = 0 to TempEntityCount()
+    '    grid.SetContentList(j, list)
+    '    grid.Show()
+    'end for
     while true
          msg = wait(0, port)
          if type(msg) = "roGridScreenEvent" then

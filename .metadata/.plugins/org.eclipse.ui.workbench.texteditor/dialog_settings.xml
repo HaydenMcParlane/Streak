@@ -3,28 +3,29 @@
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="305" key="DIALOG_WIDTH"/>
 		<item value="201" key="DIALOG_Y_ORIGIN"/>
-		<item value="428" key="DIALOG_HEIGHT"/>
 		<item value="1292" key="DIALOG_X_ORIGIN"/>
+		<item value="428" key="DIALOG_HEIGHT"/>
 		<item value="1|Ubuntu|9.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="true" key="wrap"/>
-		<item value="false" key="isRegEx"/>
 		<item value="false" key="casesensitive"/>
+		<item value="false" key="isRegEx"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="GetPrograms" key="selection"/>
+		<item value="GetEpisodeTitles" key="selection"/>
 		<list key="findhistory">
-			<item value="GetPrograms"/>
-			<item value="ProcessSchedulesDirectJSONProgramInfo"/>
-			<item value="AddUpdateSchedulesDirectPrograms"/>
-			<item value="episodeList"/>
-			<item value="addupdateep"/>
-			<item value="AddUpdateSchedulesDirectStationTable"/>
-			<item value="AddUpdateSchedulesDirectStationList"/>
-			<item value="AddUpdateSchedulesDirectStations"/>
+			<item value="GetEpisodeTitles"/>
+			<item value="AddUpdateEpisodeTitles"/>
+			<item value="Printing Ep Titles "/>
+			<item value="Add"/>
+			<item value="AddUpdateEpisodeTitles(EpisodeFilterTime(), times.Keys())"/>
+			<item value="GetProgram"/>
+			<item value="category"/>
+			<item value="EpisodeList"/>
 		</list>
 		<list key="replacehistory">
+			<item value="filter"/>
 			<item value="AddUpdateSchedulesDirectStationTable"/>
 			<item value="Populate"/>
 			<item value="Stations"/>

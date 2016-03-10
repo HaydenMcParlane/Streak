@@ -34,8 +34,18 @@ Function CreateIfDoesntExist(o as Object, key as String, oType as String) as voi
             new = CreateObject("roAssociativeArray")
         else if oType = "roArray"
             new = CreateObject("roArray", 1, True)
+        else if oType = "roString"
+            new = CreateObject("roString")
         end if
         o[key] = new
+    end if
+End Function
+
+Function AppendIfExists(aaSource as Object, aaDest as Object, key as String) as void
+    if aaSource.DoesExist(key)
+        aaDest.AddReplace(key, aaSource[key])
+    else
+        'Do nothing
     end if
 End Function
 

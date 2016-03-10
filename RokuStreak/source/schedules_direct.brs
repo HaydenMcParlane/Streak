@@ -214,7 +214,7 @@ Function PopulateProgramInfo() as void ' TODO replace these params -> aProgramID
     ' 4. Store result 
     AddUpdateSchedulesDirectProgramInfo(response.json)
     
-    ProcessSchedulesDirectJSONProgramInfo(response.json)       
+    ProcessSchedulesDirectJSONProgramInfo(response.json)        
 
     LogDebug("Fetch program data successful")            
 End Function
@@ -548,52 +548,104 @@ End Function
 ' Helper functions for accessing json formatted by schedules direct
 '###################################################################################
 
-Function ProcessSchedulesDirectJSONProgramInfo(json as Object) as Object
-    for each program in json        
-        if program.DoesExist("programID")
-            epProgramID = program["programID"]
-        else
-            epProgramID = "was_invalid"
-            
-        end if
-                       
-        if program["titles"][0].DoesExist("title120")
-            epTitle = program["titles"][0]["title120"]
-        else
-            epTitle = "was_invalid"
-        end if 
+Function ProcessSchedulesDirectJSONProgramInfo(json as Object) as Object    
+    ' TODO: HIGH - Refactor and redesign such that processing of SD json data is
+    ' both asynchronous and more modularized.
+
+    for each program in json
+        programID = program.programID
+        newAA = CreateObject("roAssociativeArray")        
+        newAA.ContentType = "episode"
+
+        ' Append relevant key-value pairs
+        AppendIfExists(program, newAA, SchedulesDirectKeyProgramID())         
+        AppendIfExists(program.titles[0], newAA, SchedulesDirectKeyTitle("120"))
+        AppendIfExists(program, newAA, SchedulesDirectKeyGenres())
+        AppendIfExists(program, newAA, SchedulesDirectKeyMD5())
+        AppendIfExists(program, newAA, SchedulesDirectKeyHasImageArtwork())
+        AppendIfExists(program, newAA, SchedulesDirectKeyShowType())
         
-        shortDesc1 = "[short 1]"
-        shortDesc2 = "[short 2]"
+        ' TODO: Refactor hashing here. Where should it occur so that reuse is maximized?
+        ' This is crude implementation solely for demonstration soon to come.
+        current = GetProgram(programId)
+        'Hash results for quick access
+        AppendToFilterList(EpisodeFilterTime(), current[SchedulesDirectKeyAirDateTime()], programID)
+        'AppendToFilterList(EpisodeFilterGenre(), current[SchedulesDirectKeyGenres()], programID)
+        
+        if current.DoesExist("ratings")
+            current["rating"] = current.ratings.body
+        end if      
+        
         progDesc = program.descriptions
         if program.DoesExist("descriptions")
-            if progDesc.DoesExist("description1000")
-                d = program["descriptions"]["description1000"]
+            if progDesc.DoesExist("description100")
+                d = program["descriptions"]["description100"]
                 if d[0].DoesExist("description")
-                    desc = d[0]["description"]            
+                    desc = d[0]["description"]
+                    AppendIfExists(d[0], newAA, "description")            
                 end if            
             else
             desc = "description"            
             end if
-        else
+        else        
             desc = "description"
+            current["description"] = desc
         end if
-        
-        epRating = "[rating]"
-        epStarRating = "5"
-        
-        if program.DoesExist("originalAirDate")
-            epReleaseDate = program["originalAirDate"]
-        else
-            epReleaseDate = "was_invalid"
-        end if
-        
-        epLength = "5000"
+                        
+        AppendIfExists(program, newAA, SchedulesDirectKeyOriginalAirDate())
+
         actorsArray = CreateObject("roArray", 1, True)
         for each actor in program["cast"]
             actorsArray.Push(actor["name"])
-        end for
-        epDirector = "[Director]"
-        AddEpisode(epProgramID, epTitle, shortDesc1, shortDesc2, desc, epRating, epStarRating, epReleaseDate, epLength, actorsArray,epDirector)
-    end for           
+            LogDebug("Actor -> " + actor["name"])
+        end for        
+        LogDebugObj("Printing newAA in programs -> ", newAA)
+        AppendToProgram(programID, newAA)
+    end for      
+    ' TODO: Better place to do title list update?
+    times = GetEpisodes(EpisodeFilterTime())    
+    'genres = GetEpisodeSubcategory(EpisodeFilterGenre(), EpisodeSubcategoryData())
+    keySet = times.Keys()
+    AddUpdateEpisodeTitles(EpisodeFilterTime(), keySet)
+    'AddUpdateEpisodeTitles(EpisodeFilterGenre(), genres.Keys())
+End Function
+
+Function SchedulesDirectKeyProgramID() as String
+    return "programID"
+End Function
+
+Function SchedulesDirectKeyDuration() as String
+    return "duration"
+End Function
+
+Function SchedulesDirectKeyTitle(numStr as String) as String
+    return "title" + numStr
+End Function
+
+Function SchedulesDirectKeyRatings() as String
+    return "ratings"
+End Function
+
+Function SchedulesDirectKeyOriginalAirDate() as String
+    return "originalAirDate"
+End Function
+
+Function SchedulesDirectKeyAirDateTime() as String
+    return "airDateTime"
+End Function
+
+Function SchedulesDirectKeyGenres() as String
+    return "genres"
+End Function
+
+Function SchedulesDirectKeyHasImageArtwork() as String
+    return "hasImageArtwork"
+End Function
+
+Function SchedulesDirectKeyShowType() as String
+    return "hasImageArtwork"
+End Function
+
+Function SchedulesDirectKeyMD5() as String
+    return "md5"
 End Function

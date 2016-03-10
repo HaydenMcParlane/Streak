@@ -1,0 +1,103 @@
+'
+'   This document contains utility functions to increase code reuse
+'   @author: Hayden McParlane
+
+'######################################################################
+'   STRING HELPER FUNCTIONS
+'######################################################################
+
+Function EmbedBetweenChr(s as String, ch as Integer) as String
+    return Chr(ch) + s + Chr(ch)
+End Function
+
+Function EmbedBetweenStr(inside as String, encap as String) as String
+    return encap + inside + encap
+End Function
+
+Function EmbedInQuotes(s as String) as String
+    return EmbedBetweenStr(s, DoubleQuotes())
+End Function
+
+Function NewLine() as String
+    return Chr(10)
+End Function
+
+Function DoubleQuotes() as String
+    return Chr(34)
+End Function
+
+Function CreateIfDoesntExist(o as Object, key as String, oType as String) as void
+    if o.DoesExist(key)
+        ' Do nothing
+    else
+        if oType = "roAssociativeArray"
+            new = CreateObject("roAssociativeArray")
+        else if oType = "roArray"
+            new = CreateObject("roArray", 1, True)
+        else if oType = "roString"
+            new = CreateObject("roString")
+        end if
+        o[key] = new
+    end if
+End Function
+
+'######################################################################
+'   ASSOCIATIVE ARRAY HELPER FUNCTIONS
+'######################################################################
+
+' Get an arbitrary key in an associative array. This can be used to start for loops to construct
+' strings iteratively. Otherwise, there's no way to retrieve the key on 2.20.2016. I decided not
+' to use the provided Keys() method because the results are sorted in lexicographical order which
+' adds heavy computation to a simple use case.
+Function GetRandomKey(aa as Object) as Object
+    for each key in aa
+        return key
+    end for
+End Function
+
+Function LinkAssociativeArrays(array as Object) as Object
+    aa = CreateObject("roAssociativeArray")
+    for each row in array
+        aa.Append(row)
+    end for
+    return aa
+End Function
+
+'######################################################################
+'   ARRAY HELPER FUNCTIONS
+'######################################################################
+
+' TODO: Review for correctness. Particularly to ensure that the ordering of returned strings is
+' static. If used with headers and order not consistent, could result in header value and header
+' name being swapped.
+Function MakeAssociative(array as Object, splitChar as String) as Object
+    regex = CreateObject("roRegex", splitChar, "")
+    aa = CreateObject("roAssociativeArray")
+    for each row in array    
+        tempArr = regex.Split(row)
+        for each entry in tempArr            
+            entry = entry.trim()
+        end for        
+        aa.AddReplace(tempArr[0],tempArr[1])
+    end for
+End Function
+
+'######################################################################
+'   Crypto
+'######################################################################
+
+Function Digest(s as String, dType as String) as String
+    ba = CreateObject("roByteArray")
+    ba.FromAsciiString(s)
+    d = CreateObject("roEVPDigest")
+    d.Setup(dType)
+    return d.Process(ba)
+End Function
+
+'######################################################################
+'   MAINTENANCE HELPER FUNCTIONS
+'######################################################################
+' TODO: Implement function to print the m.... hierarchy so that developers
+' can visualize system.
+Function PrintMHierarchy() as void
+End Function

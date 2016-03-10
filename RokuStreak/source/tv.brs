@@ -2,26 +2,8 @@
 '   Television channel module
 '   @author: Hayden McParlane
 '   @creation-date: 2.29.2016
-Function AddEpisode(epProgramID as String, epTitle as String, shortDesc1 as String, shortDesc2 as String,desc as String, epRating as string, epStarRating as String, epReleaseDate as String, epLength as string, actorsArray as Object,epDirector as String)
-    o = CreateObject("roAssociativeArray")
-    o.ContentType = "episode"
-    o.Title = epTitle
-    o.ShortDescriptionLine1 = shortDesc1
-    o.ShortDescriptionLine2 = shortDesc2
-    o.Description = desc
-    o.Rating = epRating
-    o.StarRating = epStarRating
-    o.Length = epLength
-    o.Actors = actorsArray
-    o.Director = epDirector
-    o.programID = epProgramID
-    AppendToProgram(epProgramID, o)
-End Function
 
 ' TODO: Refactor such that more efficient and ordered predictably
-' TODO: Are below objects necessary? Remove unecessary objects. All values stored
-' here should specifically be those that will populate tv objects. No need to create
-' analogs to schedules direct api.
 Function AddProgramKeyValue(programId as String, key as String, value as Object) as void
     base = GetPrograms()
     CreateIfDoesntExist(base, programId, "roAssociativeArray")
@@ -30,10 +12,10 @@ Function AddProgramKeyValue(programId as String, key as String, value as Object)
 End Function
 
 Function AppendToProgram(programId as String, o as object)
-    base = GetProgram(programId)
+    base = GetPrograms()
     CreateIfDoesntExist(base, programId, "roAssociativeArray")
-    oKeyMapped = MapFromSchedulesDirect(o)
-    base.Append(oKeyMapped)
+    oMapped = MapFromSchedulesDirect(o)
+    base[programId].Append(oMapped)
 End Function
 
 Function GetProgram(programId as String) as Object
@@ -85,89 +67,75 @@ End Function
 
 ' TODO: REFACTOR EPISODES METHODS. TOo many references to Episode objects. It'll be confusing
 ' without knowing the internals. Come up with better names to differentiate.
-
-Function GetEpisodes(category as String) as Object
-    base = GetEpisodeSubcategory(category, EpisodeSubcategoryData())
-    return base.episodes
+Function AppendToFilterList(filter as String, hash as String, programID as String) as void
+    base = GetEpisodeSubcategory(filter, EpisodeSubcategoryData())
+    CreateIfDoesntExist(base, hash, "roArray")
+    base[hash].Push(GetProgram(programID))
 End Function
 
-'Function AddUpdateEpisodes(category as String, aa as Object) as void
-'    base = GetEpisodeSubcategory(category, EpisodeSubcategoryData())
-'    base = 
-'End Function
-
-Function GetEpisodeTitles(category as String) as Object
-    base = GetEpisodeSubcategory(category, EpisodeSubcategoryTitles())
-    return base.episodes
+Function GetEpisodes(filter as String) as Object     
+    return GetEpisodeSubcategory(filter, EpisodeSubcategoryData())
 End Function
 
-Function AppendToEpisodeList(newEpisode as Object) as void
-    list = GetEpisodeList()
-    list.Push(newEpisode)
+Function AddUpdateEpisodes(filter as String, o as Object) as Object     
+    base = GetEpisodeSubcategory(filter, EpisodeSubcategoryData())
+    base = o
 End Function
 
-Function AddUpdateEpisodeList(o as Object) as void
+Function GetEpisodeTitles(filter as String) as Object
+    return GetEpisodeSubcategory(filter, EpisodeSubcategoryTitles())    
+End Function
+
+Function AddUpdateEpisodeTitles(filter as String, o as Object) as void    
+    base = GetEpisodeSubcategory(filter, EpisodeSubcategoryTitles())
+    LogDebugObj("Printing Ep Titles -> ", o)
+    base = o
+End Function
+
+Function AddEpisodeSubcategory(filter as String, subcategory as String, catType as String) as void
+    base = GetEpisodeFilter(filter)
+    CreateIfDoesntExist(base, subcategory, catType)
+End Function
+
+Function GetEpisodeSubcategory(filter as String, subcategory as String) as Object
+    base = GetEpisodeFilter(filter)
+    CreateIfDoesntExist(base, subcategory, "roAssociativeArray")
+    return base[subcategory]    
+End Function
+
+Function AddUpdateEpisodeFilter(filter as String, o as Object) as void
+    base = GetEpisodeFilters()
+    CreateIfDoesntExist(base, filter, "roAssociativeArray")
+    base[filter] = o
+End Function
+
+Function GetEpisodeFilter(filter as String) as Object
+    base = GetEpisodeFilters()
+    CreateIfDoesntExist(base, filter, "roAssociativeArray")
+    return base[filter]
+End Function
+
+Function AddUpdateEpisodeFilters(o as Object) as void
     base = GetTV()
-    base.episodes = o
-End Function        
+    CreateIfDoesntExist(base, "filters", "roAssociativeArray")
+    base.filters = o
+End Function
 
-Function GetEpisodeList() as Object
+Function GetEpisodeFilters() as Object
     base = GetTV()
-    return base.episodes
+    CreateIfDoesntExist(base, "filters", "roAssociativeArray")
+    return base.filters
 End Function
 
-Function AddEpisodeSubcategory(category as String, subcategory as String, catType as String) as void
-    base = GetEpisodeCategories()
-    if catType = "roArray"
-        o = CreateObject(catType, 1, True)
-    else if catType = "roAssociativeArray"
-        o = CreateObject("roAssociativeArray")
-    end if
-    base[category][subcategory] = o
-End Function
-
-Function GetEpisodeSubcategory(category as String, subcategory as String) as Object
-    base = GetEpisodeCategories()
-    if base[category][subcategory] <> invalid
-        return base[category][subcategory]
-    else
-        return invalid
-    end if
-End Function
-
-Function AddUpdateEpisodeCategory(category as String) as void
-    base = GetEpisodeCategories()
-    base[category] = CreateObject("roAssociativeArray")
-End Function
-
-Function GetEpisodeCategory(category as String) as Object
-    base = GetEpisodeCategories()
-    if base[category] <> invalid
-        return base[category]
-    else
-        return invalid
-    end if
-End Function
-
-Function AddUpdateEpisodeCategories(o as Object) as void
-    base = GetTV()
-    base.categories = o
-End Function
-
-Function GetEpisodeCategories() as Object
-    base = GetTV()
-    return base.categories
-End Function
-
-Function EpisodeCategoryGenre() as String
+Function EpisodeFilterGenre() as String
     return "genre"
 End Function
 
-Function EpisodeCategoryTime() as String
+Function EpisodeFilterTime() as String
     return "time"
 End Function
 
-Function EpisodeCategoryDate() as String
+Function EpisodeFilterDate() as String
     return "date"
 End Function
 
@@ -206,8 +174,11 @@ End Function
 Function InitKeyToKeyMapper() as void
     m.keymap = CreateObject("roAssociativeArray")
     map = m.keymap
-    map.AddReplace("airDateTime", "airDateTime")
-    map.AddReplace("duration", "Length")    
+    map.AddReplace(SchedulesDirectKeyAirDateTime(), "airDateTime")
+    map.AddReplace(SchedulesDirectKeyDuration(), "Length")
+    map.AddReplace(SchedulesDirectKeyOriginalAirDate(), "ReleaseDate")
+    map.AddReplace(SchedulesDirectKeyRatings(), "rating")
+    map.AddReplace("title120", "Title")        
 End Function
 
 Function InitTelevisionDataStore() as Boolean
@@ -223,9 +194,8 @@ Function InitTelevisionDataStore() as Boolean
             stop 
         end if        
     end if
-    
-    ep = m.tv.episodes
-    cat = m.tv.categories
+        
+    filters = m.tv.filters
     channels = m.tv.channels
     prog = m.tv.programs
     if channels = invalid
@@ -235,18 +205,10 @@ Function InitTelevisionDataStore() as Boolean
             success = False
             stop 
         end if        
-    end if        
-    if ep = invalid
-        AddUpdateEpisodeList(CreateObject("roArray", 1, True))
-        if GetEpisodeList() = invalid
-            LogError("Add/Update vs. Getter for data store are inconsistent")
-            success = False
-            stop 
-        end if        
-    end if
-    if cat = invalid
-        AddUpdateEpisodeCategories(CreateObject("roAssociativeArray"))
-        if GetEpisodeCategories() = invalid
+    end if            
+    if filters = invalid
+        AddUpdateEpisodeFilters(CreateObject("roAssociativeArray"))
+        if GetEpisodeFilters() = invalid
             LogError("Add/Update vs. Getter for data store are inconsistent")
             success = False
             stop 
@@ -271,14 +233,14 @@ Function InitTelevisionDataStore() as Boolean
         end if        
     end if
     
-    ' TODO: Figure out way to ensure categories and subcategories are defined when referenced
-    ' Create two standard categories to display
+    ' TODO: Figure out way to ensure filters and subcategories are defined when referenced
+    ' Create two standard filters to display
     o = CreateObject("roArray", 1, True)
-    o.Push(EpisodeCategoryGenre())
-    o.Push(EpisodeCategoryTime())
+    o.Push(EpisodeFilterGenre())
+    o.Push(EpisodeFilterTime())
     
     for i = 0 to o.Count() - 1
-        AddUpdateEpisodeCategory(o[i])
+        AddUpdateEpisodeFilter(o[i], CreateObject("roAssociativeArray"))
         AddEpisodeSubcategory(o[i], EpisodeSubcategoryTitles(), "roArray")
         AddEpisodeSubcategory(o[i], EpisodeSubcategoryData(), "roAssociativeArray")
     end for    
