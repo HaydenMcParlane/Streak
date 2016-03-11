@@ -4,11 +4,10 @@
 ' TODO: HIGH Refactor screen so that they can be reused. Can buttons be passed
 ' in array or assoc. arr. with value being result of click? How to do?
 ' TODO: At application Launch, begin populating data
-Function RunUserInterface(aa as Object)
-    ShowWelcomeScreen()
+Function RunUserInterface(aa as Object)    
     ConfigureApplication()
-    PopulateTVData()
-    RenderTVSchedule()
+    'PopulateTVData()        
+    ShowWelcomeScreen()
 End Function
 
 ' TODO: Is function main actually needed?
@@ -62,3 +61,28 @@ End Function
 '        endif
 '    endwhile        
 'End Function
+
+Function ConstructButton(id as integer, title as String, command as String, args as Object) as Object
+    button = CreateObject("roAssociativeArray")
+    button[ButtonID()] = id
+    button[ButtonTitle()] = title
+    button[ButtonCommand()] = command
+    button[ButtonCommandArgs()] = args    
+    return button
+End Function
+
+Function ButtonID() as String
+    return "id"    
+End Function
+
+Function ButtonTitle() as String
+    return "title"    
+End Function
+
+Function ButtonCommand() as String
+    return "command"    
+End Function
+
+Function ButtonCommandArgs() as String
+    return "args"    
+End Function

@@ -71,6 +71,27 @@ Function LinkAssociativeArrays(array as Object) as Object
     return aa
 End Function
 
+' TODO: Remove if not used
+Function ShallowCopy(aa as Object) as Object
+    newAA = CreateObject("roAssociativeArray")
+    for each key in aa
+        newAA[key] = aa[key]
+    end for    
+    return newAA
+End Function
+
+Function VerifyKeys(aa as Object, keys as Object) as Boolean
+    verified = True
+    LogDebugObj("Printing aa in VerifyKeys -> ", aa)
+    for each key in keys
+        LogDebugObj("Printing key in VerifyKeys -> ", key)
+        if not aa.DoesExist(key)
+            verified = False
+        end if
+    end for
+    return verified
+End Function
+
 '######################################################################
 '   ARRAY HELPER FUNCTIONS
 '######################################################################

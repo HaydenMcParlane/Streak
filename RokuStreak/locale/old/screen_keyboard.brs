@@ -13,8 +13,7 @@ Function RenderKeyboardScreen(title as String, displayText as String, buttons as
     screen.SetDisplayText(displayText)
     screen.SetMaxLength(20)        
     
-    AddButtons(screen, buttons)
-            
+    AddButtons(screen, buttons)    
     screen.Show()
     
     while true

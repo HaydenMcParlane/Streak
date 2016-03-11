@@ -86,6 +86,8 @@ Function GetEpisodeTitles(filter as String) as Object
     return GetEpisodeSubcategory(filter, EpisodeSubcategoryTitles())    
 End Function
 
+' TODO: Bug found related to using same level get. Pass by value maybe?
+' Fix in commands module was to include base.cur_level = o. How to do here?
 Function AddUpdateEpisodeTitles(filter as String, o as Object) as void    
     base = GetEpisodeSubcategory(filter, EpisodeSubcategoryTitles())
     LogDebugObj("Printing Ep Titles -> ", o)
