@@ -55,6 +55,7 @@ Function ConfigureApplication() as void
     ' not during tests.
     ' TODO: Include tests for user credentials. If they haven't logged in,
     ' prompt for uname and password or something
+    InitCommandRegistry()
     InitSchedulesDirectDataStore()
     InitTelevisionDataStore()    
 End Function

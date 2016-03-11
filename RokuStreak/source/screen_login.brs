@@ -31,6 +31,12 @@ Function ShowDialog(title as String, text as String, buttons as Object) As Void
     end while
 End Function
 
+Function AddParagraphs(screen as Object, paragraphs as Object) as void
+    for each paragraph in paragraphs
+        screen.AddParagraph(paragraph.text)
+    end for
+End Function
+
 ' buttons = { { "id":1, "title": "example", "command":"nameOfFunction" }, ... }
 Function AddButtons(screen as Object, buttons as Object) as void
     for each button in buttons
