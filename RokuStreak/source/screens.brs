@@ -50,9 +50,8 @@ Function RenderKeyboardScreen(title as String, displayText as String, buttons as
     screen.SetMessagePort(port)
     screen.SetTitle(title)     
     screen.SetDisplayText(displayText)
-    screen.SetMaxLength(20)        
-    
-    AddButtons(screen, buttons)    
+    screen.SetMaxLength(20)            
+    AddButtons(screen, buttons)
     screen.Show()
     
     while true
@@ -62,11 +61,7 @@ Function RenderKeyboardScreen(title as String, displayText as String, buttons as
                 return
             else if msg.isButtonPressed() then
                 btnId = msg.GetIndex()
-                for each button in buttons
-                    if button.id = btnId
-                        ExecuteCommand(button["command"])
-                    end if
-                end for                
+                HandleButtonSelect(btnID, buttons)                
             endif
         endif
     endwhile
@@ -137,11 +132,11 @@ Function ShowWelcomeScreen() As Void
                     args1 = CreateObject("roAssociativeArray")
                     args1.AddReplace("title","Enter Username")
                     args1.AddReplace("displayText","[Sample Display Text]")                    
-                    testbutton = ConstructButton(1, "Finished", CommandStoreUsername(), CreateObject("roAssociativeArray"))
+                    testbutton = ConstructButton(1, "Finished", CommandStoreUsername()) 'TODO: Enter command args
                     testbuttons = CreateObject("roArray", 1, True)                    
                     testbuttons.Push(testbutton)          
                     args1.AddReplace("buttons",testbuttons)
-                    button1 = ConstructButton(1, "Username", CommandRenderKeyboardScreen(), args1)
+                    button1 = ConstructButton(1, "Enter Username", CommandRenderKeyboardScreen()) 'TODO: Enter command args
                     'button2 = ConstructButton(2, "Password", "storePassword", {})
                     'button3 = ConstructButton(3, "Login", "login", {})                    
                     buttons.Push(button1)
@@ -164,12 +159,9 @@ Function RenderParagraphScreen(title as String, headerText as String, buttons as
     screen = CreateObject("roParagraphScreen")
     screen.SetMessagePort(port)
     screen.SetTitle(title)
-    screen.AddHeaderText(headerText)
-    'AddParagraphs(screen, paragraphs as Object)
-    screen.AddParagraph("[Paragraph text 1 - Text in the paragraph screen is justified to the right and left edges]")
-    screen.AddParagraph("[Paragraph text 2 - Multiple paragraphs may be added to the screen by simply making additional calls]")
-    screen.AddButton(1, "Login to Schedules Direct")
-    screen.AddButton(2, "Browse TV Listings")
+    screen.AddHeaderText(headerText)    
+    'AddParagraphs(screen, paragraphs as Object)    
+    AddButtons(screen, buttons)
     screen.SetDefaultMenuItem(1)
     screen.Show()
     while true
@@ -178,20 +170,95 @@ Function RenderParagraphScreen(title as String, headerText as String, buttons as
             if msg.isScreenClosed()
                 return
             else if msg.isButtonPressed() then                
-                if msg.GetIndex() = 1
-                    buttons = CreateObject("")
-                    ShowDialog()
-                    return
-                else if msg.GetIndex() = 2
-                    
-                    return
-                endif
+                btnId = msg.GetIndex()
+                HandleButtonSelect(btnID, buttons)
             endif
         endif
     end while
 End Function
 
 
+'#######################################################################################
+'#-------------------Facade screen (keeps app from closing) ---------------------------- 
+'#  see https://sdkdocs.roku.com/display/sdkdoc/Working+with+Screens
+'#######################################################################################
+'TODO: Implement facade screen
+Function RenderFacadeScreen() as void
+    facade = CreateObject("roParagraphScreen")
+    port = CreateObject("roMessagePort")
+    facade.SetMessagePort(port)
+    facade.AddParagraph("please wait...")
+    facade.show()
+End Function
+
+
+'#######################################################################################
+'#----------------------- Screen path definition functions------------------------------
+'#  These functions are used to provide easy construction of screen pathways instead
+'#  of having to write code for every new screen that's needed.
+'#######################################################################################
+Function ParagraphScreen(id as String,title as String, headerText as String, buttons as Object, paragraphs as Object) as void
+    screen = CreateObject("roAssociativeArray")
+    
+    ' TODO: HIGH Better way to do? Achieve more code reuse?
+    ' TODO: HIGH Should "factory" be used to handle screen type?
+    screen.screenType = "ParagraphScreen"
+    screen.title = title
+    screen.headerText = headerText
+    screen.buttons = buttons
+    screen.paragraphs = paragraphs    
+    LogDebugObj("Value of Paragraph Screen -> ", screen)
+    BufferScreen(id, screen)
+End Function
+
+Function RenderNextScreen(nextID as String) as void    
+    ' TODO: HIGH Refactor/redesign such that screen differences are
+    ' efficiently dealt with. Avoid if? What other designs?
+    screen = RetrieveScreen(nextID)
+    LogDebug("Rendering next screen -> " + nextID + ", type -> " + screen.screenType)
+    if screen.screenType = "ParagraphScreen"
+        RenderParagraphScreen(screen.title, screen.headerText, screen.buttons, screen.paragraphs)
+    else
+        LogError("Screen type either not valid or unimplemented -> " + screen.screenType)
+        stop
+    end if
+End Function
+
+'ParagraphScreen("welcome" ,"Roku Streak", "[this]", pButtons, paragraphs)
+'DialogScreen("login", "Login to Schedules Direct", "[Testing text]", dButtons)
+'KeyboardScreen("username", "Enter Username", "[displayText]", kButtonsUsername)
+'KeyboardScreen("password", "Enter Password", "[displayText]", kButtonsPassword)
+
+Function BufferScreen(screenID as String, screen as Object) as void
+    LogDebugObj("Buffering screen -> " + screenID, screen)
+    ' TODO: HIGH Determine whether screen key verification should occur here    
+    base = GetScreenPathBase()
+    base[screenID] = screen
+End Function
+
+Function RetrieveScreen(screenID as String) as Object
+    LogDebug("Retrieving screen -> " + screenID) 
+    base = GetScreenPathBase()
+    CreateIfDoesntExist(m, "screenID", "roAssociativeArray")
+    return base[screenID]
+End Function
+
+
+Function GetScreenPathBase() as Object
+    CreateIfDoesntExist(m, "screenPath", "roAssociativeArray")
+    return m.screenPath
+End Function
+
+Function SetScreenPathBase(o as Object) as void
+    CreateIfDoesntExist(m, "screenPath", "roAssociativeArray")
+    m.screenPath = o
+End Function
+
+Function RenderScreenSet(startID as String) as void
+    ' TODO: Setup so that screen set first is initiated first. Right now, hard coded.
+    ExecuteRenderNextScreen(startID)
+End Function
+    
 '#######################################################################################
 '#  Helper functions
 '#######################################################################################
@@ -215,24 +282,28 @@ Function HandleButtonSelect(btnID as Integer, buttons as Object) as void
     for each button in buttons
         LogDebugObj("Printing button -> ", button)   
         if button[ButtonID()] = btnID
-            ExecuteCommand(button[ButtonCommand()], button[ButtonCommandArgs()])
+            ExecuteCommand(button[ButtonCommand()])
         end if
     end for
 End Function
 
-' TODO: Implement dynamically generatable message handling
-Function HandleMessage(screen as Object, buttons as Object) as void
-    While True
-        msg = wait(0, screen.GetMessagePort())
-        ' TODO: HIGH Figure out manner of handling multiple events dynamically
-        If type(msg) = "roMessageDialogEvent"
-            if msg.isButtonPressed()
-                if msg.GetIndex() = 1
-                    exit while
-                end if
-            else if dlgMsg.isScreenClosed()
-                exit while
-            end if
-        end if
-    end while
+' TODO: Abstract away button id so that all that matters is command and title
+Function ConstructButton(id as integer, title as String, command as String) as Object
+    button = CreateObject("roAssociativeArray")
+    button[ButtonID()] = id
+    button[ButtonTitle()] = title
+    button[ButtonCommand()] = command    
+    return button
+End Function
+
+Function ButtonID() as String
+    return "id"    
+End Function
+
+Function ButtonTitle() as String
+    return "title"    
+End Function
+
+Function ButtonCommand() as String
+    return "command"    
 End Function

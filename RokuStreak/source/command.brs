@@ -4,7 +4,7 @@
 '   @creation-date: 3.10.2016
 ' TODO: Return boolean
 
-Function ExecuteCommand(command as String, args as Object) as void
+Function ExecuteCommand(command as String) as void
     ' 1. Store arguments in shared data structure. This allows
     ' for dynamic command execution
     SetCommandArguments(args)
@@ -12,7 +12,9 @@ Function ExecuteCommand(command as String, args as Object) as void
     ' TODO: HIGH Implement dynamic command registry
     'if commands.DoesExist(command)
     '    commands[command]
-    if command = CommandRenderKeyboardScreen()
+    if command = CommandNextScreen()
+        ExecuteNextScreen()
+    else if command = CommandRenderKeyboardScreen()
         ExecuteRenderKeyboardScreen()
     else if command = CommandStoreUsername()
         ExecuteStoreUsername()
@@ -77,11 +79,50 @@ End Function
 '#   before executing, unless args aren't passed. Follow command
 '#   implementations below.
 '###########################################################################
+' TODO: MID Implement command parameter indexing to plan for future
+' concurrency. This will be needed to ensure that parameters are
+' matched to the appropriate screen pathway. Otherwise, the wrong
+' parameters could be erroneously used during invokation
+
+' TODO: HIGH Should this command involve direct base.nextScreen.nextID
+' or should that be abstracted away? Will other screens need to know
+' the type of screen they are being called from or other similar info?
+Function CommandNextScreen(nextID as String) as String
+    LogDebug("Setting command data -> " + nextID)
+    base = GetCommandBase()
+    CreateIfDoesntExist(base, "nextScreen", "roAssociativeArray")
+    ' TODO: HIGH If collision occurs here (two screens of same type)
+    ' can't assign to nextID directly, because need to differentiate
+    ' between two screens. Append? How?
+    base.nextScreen["nextID"] = nextID
+    LogDebugObj("Command data ->", base.nextScreen.nextID)
+    return "RenderNextScreen"
+End Function
+
+' TODO: HIGH Redesign. Should nextID just be passed in here? Is storage necessary
+' for this command?
+Function ExecuteRenderNextScreen(nextID as String) as void
+    ' Setup execution
+    'requiredKeys = CreateObject("roArray", 1, True)
+    'base = GetCommandBase()
+    'args = base.nextScreen
+    
+    ' Verify data    
+    'requiredKeys.Push("nextID")
+    'success = VerifyKeys(args, requiredKeys)    
+    'if not success
+    '    LogCommandArgsFailedVerify("ExecuteRenderNextScreen")
+    'end if    
+    
+    'RenderNextScreen(args.nextID)
+    RenderNextScreen(nextID)
+End Function        
+
 Function CommandRenderKeyboardScreen() as String
     return "RenderKeyboardScreen"
 End Function
 
-Function ExecuteRenderKeyboardScreen() as String
+Function ExecuteRenderKeyboardScreen() as void
     args = GetCommandArguments()
     requiredKeys = CreateObject("roArray", 3, True)
     requiredKeys.Push("title")
