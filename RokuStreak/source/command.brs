@@ -4,26 +4,15 @@
 '   @creation-date: 3.10.2016
 ' TODO: Return boolean
 
-Function ExecuteCommand(command as String) as void
+Function ExecuteCommand(id as String) as void
     ' 1. Store arguments in shared data structure. This allows
-    ' for dynamic command execution
-    SetCommandArguments(args)
-    'commands = GetCommandRegistry()
-    ' TODO: HIGH Implement dynamic command registry
-    'if commands.DoesExist(command)
-    '    commands[command]
-    if command = CommandNextScreen()
-        ExecuteNextScreen()
-    else if command = CommandRenderKeyboardScreen()
-        ExecuteRenderKeyboardScreen()
-    else if command = CommandStoreUsername()
-        ExecuteStoreUsername()
-    else if command = CommandStorePassword()
-        ExecuteStorePassword()
-    else if command = CommandLogin()
-        ExecuteLogin()    
+    ' for dynamic command execution    
+    'commands = GetCommandRegistry()    
+    reg = GetCommandRegistry()
+    if reg.DoesExist(id)
+        command = reg[id]
     else
-        LogError("Command does not exist -> " + command)
+        LogError("Command does not exist. ID: " + id)
         stop
     end if
 End Function
@@ -40,14 +29,26 @@ Function SetCommandArguments(args as Object) as void
         base.args = args
 End Function 
 
+Function RegisterCommand(id as String, func as Object) as void
+    LogDebug("Registering command. ID: " + id)    
+    reg = GetCommandRegistry()
+    reg[id] = func        
+End Function
+
+Function GetCommand(id as String) as Object
+    reg = GetCommandRegistry()
+    return reg[id]
+End Function
+
 Function GetCommandRegistry() as Object
-    CreateIfDoesntExist(m, "commands", "roAssociativeArray")
-    return m.commands
+    base = GetCommandBase()
+    CreateIfDoesntExist(base, "reg", "roAssociativeArray")
+    return base.reg
 End Function
 
 Function SetCommandRegistry(o as Object) as void
-    base = GetCommandRegistry()
-    base = o
+    base = GetCommandBase()
+    base.reg = o
 End Function
 
 Function GetCommandBase() as Object
@@ -56,21 +57,8 @@ Function GetCommandBase() as Object
 End Function
 
 Function SetCommandBase(o as Object) as Object
-    base = GetCommandBase()    
-    base = o
-End Function
-    
-' TODO: HIGH possible implementation of data passing from caller to command
-' -> use m getter and setter methods to standardize interface in same way
-' as "get command' interface. Same method signature.
-Function InitCommandRegistry() as Boolean
-    LogDebug("Initializing command registry")
-    commandRegistry = CreateObject("roAssociativeArray")
-    
-    ' TODO: Is storing function in AA possible?
-    'commandRegistry.AddReplace("storeUsername", GetSub())
-    
-    LogDebug("Initializing command registry successful")
+    CreateIfDoesntExist(m, "commands", "roAssociativeArray")
+    return m.commands
 End Function
 
 '###########################################################################
@@ -83,20 +71,13 @@ End Function
 ' concurrency. This will be needed to ensure that parameters are
 ' matched to the appropriate screen pathway. Otherwise, the wrong
 ' parameters could be erroneously used during invokation
-
-' TODO: HIGH Should this command involve direct base.nextScreen.nextID
-' or should that be abstracted away? Will other screens need to know
-' the type of screen they are being called from or other similar info?
-Function CommandNextScreen(nextID as String) as String
-    LogDebug("Setting command data -> " + nextID)
-    base = GetCommandBase()
-    CreateIfDoesntExist(base, "nextScreen", "roAssociativeArray")
-    ' TODO: HIGH If collision occurs here (two screens of same type)
-    ' can't assign to nextID directly, because need to differentiate
-    ' between two screens. Append? How?
-    base.nextScreen["nextID"] = nextID
-    LogDebugObj("Command data ->", base.nextScreen.nextID)
+Function CommandNextScreen() as String
     return "RenderNextScreen"
+End Function
+
+Function ExecuteNextScreen() as Boolean
+    args = m.commands.nextScreen
+    ExecuteRenderNextScreen(args["nextID"])
 End Function
 
 ' TODO: HIGH Redesign. Should nextID just be passed in here? Is storage necessary

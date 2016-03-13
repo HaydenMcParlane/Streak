@@ -117,7 +117,7 @@ Function ShowWelcomeScreen() As Void
     screen.AddHeaderText("[Header Text]")
     screen.AddParagraph("[Paragraph text 1 - Text in the paragraph screen is justified to the right and left edges]")
     screen.AddParagraph("[Paragraph text 2 - Multiple paragraphs may be added to the screen by simply making additional calls]")
-    screen.AddButton(1, "Login to Schedules Direct")
+    screen.AddButton(10, "Login to Schedules Direct")
     screen.AddButton(2, "Browse TV Listings")
     screen.SetDefaultMenuItem(1)
     screen.Show()
@@ -127,26 +127,27 @@ Function ShowWelcomeScreen() As Void
             if msg.isScreenClosed()
                 return
             else if msg.isButtonPressed() then                
-                if msg.GetIndex() = 1                    
-                    buttons = CreateObject("roArray", 2, True)                    
-                    args1 = CreateObject("roAssociativeArray")
-                    args1.AddReplace("title","Enter Username")
-                    args1.AddReplace("displayText","[Sample Display Text]")                    
-                    testbutton = ConstructButton(1, "Finished", CommandStoreUsername()) 'TODO: Enter command args
-                    testbuttons = CreateObject("roArray", 1, True)                    
-                    testbuttons.Push(testbutton)          
-                    args1.AddReplace("buttons",testbuttons)
-                    button1 = ConstructButton(1, "Enter Username", CommandRenderKeyboardScreen()) 'TODO: Enter command args
+                if msg.GetIndex() = 10
+                    LogDebugObj("Button id 10 hit", msg.GetIndex())  
+                    'buttons = CreateObject("roArray", 2, True)                    
+                    'args1 = CreateObject("roAssociativeArray")
+                    'args1.AddReplace("title","Enter Username")
+                    'args1.AddReplace("displayText","[Sample Display Text]")                    
+                    'testbutton = ConstructButton(1, "Finished", CommandStoreUsername()) 'TODO: Enter command args
+                    'testbuttons = CreateObject("roArray", 1, True)                    
+                    'testbuttons.Push(testbutton)          
+                    'args1.AddReplace("buttons",testbuttons)
+                    'button1 = ConstructButton(1, "Enter Username", CommandRenderKeyboardScreen()) 'TODO: Enter command args
                     'button2 = ConstructButton(2, "Password", "storePassword", {})
                     'button3 = ConstructButton(3, "Login", "login", {})                    
-                    buttons.Push(button1)
+                    'buttons.Push(button1)
                     'buttons.Push(button2)
                     'buttons.Push(button3) 
-                    RenderDialogScreen("Login to Schedules Direct", "[Testing Text]", buttons)
+                    'RenderDialogScreen("Login to Schedules Direct", "[Testing Text]", buttons)
                     return
                 else if msg.GetIndex() = 2
                     ' TODO: Refactor so that render TV sched. uses above syntax if possible                   
-                    RenderTVSchedule()
+                    'RenderTVSchedule()
                     return
                 endif
             endif
@@ -160,7 +161,7 @@ Function RenderParagraphScreen(title as String, headerText as String, buttons as
     screen.SetMessagePort(port)
     screen.SetTitle(title)
     screen.AddHeaderText(headerText)    
-    'AddParagraphs(screen, paragraphs as Object)    
+    AddParagraphs(screen, paragraphs)    
     AddButtons(screen, buttons)
     screen.SetDefaultMenuItem(1)
     screen.Show()
@@ -202,7 +203,9 @@ Function ParagraphScreen(id as String,title as String, headerText as String, but
     
     ' TODO: HIGH Better way to do? Achieve more code reuse?
     ' TODO: HIGH Should "factory" be used to handle screen type?
-    screen.screenType = "ParagraphScreen"
+    stop
+    screen.id = id
+    screen.screenType = "roParagraphScreen"
     screen.title = title
     screen.headerText = headerText
     screen.buttons = buttons
@@ -216,7 +219,8 @@ Function RenderNextScreen(nextID as String) as void
     ' efficiently dealt with. Avoid if? What other designs?
     screen = RetrieveScreen(nextID)
     LogDebug("Rendering next screen -> " + nextID + ", type -> " + screen.screenType)
-    if screen.screenType = "ParagraphScreen"
+    LogDebugObj("", screen)       
+    if screen.screenType = "roParagraphScreen"
         RenderParagraphScreen(screen.title, screen.headerText, screen.buttons, screen.paragraphs)
     else
         LogError("Screen type either not valid or unimplemented -> " + screen.screenType)
@@ -239,22 +243,22 @@ End Function
 Function RetrieveScreen(screenID as String) as Object
     LogDebug("Retrieving screen -> " + screenID) 
     base = GetScreenPathBase()
-    CreateIfDoesntExist(m, "screenID", "roAssociativeArray")
+    CreateIfDoesntExist(m, screenID, "roAssociativeArray")
     return base[screenID]
 End Function
 
 
 Function GetScreenPathBase() as Object
-    CreateIfDoesntExist(m, "screenPath", "roAssociativeArray")
-    return m.screenPath
+    CreateIfDoesntExist(m, "screens", "roAssociativeArray")
+    return m.screens
 End Function
 
 Function SetScreenPathBase(o as Object) as void
-    CreateIfDoesntExist(m, "screenPath", "roAssociativeArray")
-    m.screenPath = o
+    CreateIfDoesntExist(m, "screens", "roAssociativeArray")
+    m.screens = o
 End Function
 
-Function RenderScreenSet(startID as String) as void
+Function RenderScreen(startID as String) as void
     ' TODO: Setup so that screen set first is initiated first. Right now, hard coded.
     ExecuteRenderNextScreen(startID)
 End Function
@@ -264,36 +268,105 @@ End Function
 '#######################################################################################
 Function AddParagraphs(screen as Object, paragraphs as Object) as void
     for each paragraph in paragraphs
-        screen.AddParagraph(paragraph.text)
+        screen.AddParagraph(paragraph)
     end for
 End Function
 
 ' buttons = { { "id":integer, "title": "example", "command":"nameOfFunction", "args":{ command_arguments } }, ... }
 Function AddButtons(screen as Object, buttons as Object) as void
-    LogDebugObj("Printing screen before button add -> ", screen)   
+    LogDebugObj("Printing screen before button add -> ", screen)    
     for each button in buttons
         screen.AddButton(button[ButtonID()], button[ButtonTitle()])
     end for
     LogDebugObj("Printing screen after button add -> ", screen)
 End Function
 
-Function HandleButtonSelect(btnID as Integer, buttons as Object) as void
-    LogDebugObj("Printing button id ->",btnID)    
-    for each button in buttons
-        LogDebugObj("Printing button -> ", button)   
-        if button[ButtonID()] = btnID
-            ExecuteCommand(button[ButtonCommand()])
-        end if
-    end for
+Function HandleButtonSelect(id as Integer, buttons as Object) as void
+    LogDebugObj("Printing button id ->", id)    
+    'for each button in buttons
+    '    LogDebugObj("Printing button -> ", button)   
+    '    if button[ButtonID()] = btnID
+    '        data =  GetButtonData()
+    '        ExecuteCommand(button[ButtonCommand()])
+    '    end if
+    'end for
+    data = GetButtonData(id)
+    ExecuteButtonCommand(data[ButtonCommand()], data[ButtonCommandArguments()])
 End Function
 
 ' TODO: Abstract away button id so that all that matters is command and title
-Function ConstructButton(id as integer, title as String, command as String) as Object
+Function ConstructButton(title as String, command as Object, args as Object) as Object
+    ' TODO: Remove redundent command key?
     button = CreateObject("roAssociativeArray")
-    button[ButtonID()] = id
-    button[ButtonTitle()] = title
-    button[ButtonCommand()] = command    
+    button[ButtonID()] = GenerateButtonID()
+    button[ButtonTitle()] = title    
+    
+    ' Associate command and arguments with button
+    current = CreateObject("roAssociativeArray")   
+    currentID = button[ButtonID()]
+    LogDebugObj("Current ID is -> ", currentID)
+    current[ButtonCommand()] = command
+    current[ButtonCommandArguments()] = args   
+    SetButtonData( currentID, current )
+    
     return button
+End Function
+
+' TODO: HIGH Refactor id generation such that unused IDs are re-entered into ID pool.
+' This takes care of quite unlikely case of application with huge numbers of buttons,
+' but will, nonetheless, guarentee application bugs won't be related to button ID
+' assignment.
+Function GenerateButtonID() as integer
+    base = GetButtonBase()
+    CreateIfDoesntExist(base, "id", "roInt")
+    gid = GetGlobalButtonID()
+    LogDebugObj("Button gid before inc-> ", gid)
+    id = gid
+    SetGlobalButtonID( gid + 1 )
+    LogDebugObj("Button gid after inc -> ", GetGlobalButtonID())
+    return id
+End Function
+
+' TODO: CreateIfDoesntExist only accepts string values. How to implement if array is used?
+Function GetButtonData( id as integer) as Object
+    base = GetButtonIDList()    
+    return base[id]
+End Function
+
+Function SetButtonData( id as integer, o as Object) as void
+    base = GetButtonIDList()    
+    base[id] = o
+End Function
+
+Function GetGlobalButtonID() as integer
+    base = GetButtonBase()
+    CreateIfDoesntExist(base, "gid", "roInt")
+    return base.gid
+End Function
+
+Function SetGlobalButtonID(id as integer) as Object
+    base = GetButtonBase()    
+    base.gid = id
+End Function
+
+Function GetButtonIDList() as Object
+    base = GetButtonBase()
+    CreateIfDoesntExist(base, "ids", "roArray")
+    return base.ids
+End Function
+
+Function SetButtonIDList(o as object) as Object
+    base = GetButtonBase()    
+    base.ids = o
+End Function
+
+Function GetButtonBase() as Object
+    CreateIfDoesntExist(m, "buttons", "roAssociativeArray")
+    return m.buttons
+End Function
+
+Function SetButtonBase(o as Object) as Object
+    return m.buttons
 End Function
 
 Function ButtonID() as String
@@ -306,4 +379,31 @@ End Function
 
 Function ButtonCommand() as String
     return "command"    
+End Function
+
+Function ButtonCommandArguments() as String
+    return "args"
+End Function
+
+'#######################################################################################
+'#  Screen-related commands
+'#######################################################################################
+' TODO: HIGH Should this command involve direct base.nextScreen.nextID
+' or should that be abstracted away? Will other screens need to know
+' the type of screen they are being called from or other similar info?
+Function ShowNextScreen() as Object
+    return CommandShowNextScreen.GetSub()
+End Function
+
+Function CommandShowNextScreen(nextScreenID as String)
+    LogDebug("Executing command: ShowNextScreen")    
+    ' TODO: HIGH If collision occurs here (two screens of same type)
+    ' can't assign to nextID directly, because need to differentiate
+    ' between two screens. Append? How?        
+    RenderNextScreen(nextScreenID)
+End Function
+
+Function ExecuteButtonCommand( command as Object, args as Object ) as Object
+    result = command(args)
+    return result
 End Function

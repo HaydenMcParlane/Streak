@@ -54,8 +54,7 @@ Function ConfigureApplication() as void
     ' TODO: Application data stores should be setup and initialized here,
     ' not during tests.
     ' TODO: Include tests for user credentials. If they haven't logged in,
-    ' prompt for uname and password or something
-    InitCommandRegistry()
+    ' prompt for uname and password or something    
     InitSchedulesDirectDataStore()
     InitTelevisionDataStore()    
 End Function

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_EayIAOZQEeWbeeu44aqAZw" elementId="org.eclipse.e4.legacy.ide.application" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_EayIAeZQEeWbeeu44aqAZw" bindingContexts="_Eaz9-eZQEeWbeeu44aqAZw">
-  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;workbench>&#xA;&lt;mruList>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor&quot; name=&quot;network.brs&quot; tooltip=&quot;RokuStreak/source/network.brs&quot;>&#xA;&lt;persistable path=&quot;/RokuStreak/source/network.brs&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor&quot; name=&quot;schedules_direct.brs&quot; tooltip=&quot;RokuStreak/source/schedules_direct.brs&quot;>&#xA;&lt;persistable path=&quot;/RokuStreak/source/schedules_direct.brs&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor&quot; name=&quot;util.brs&quot; tooltip=&quot;RokuStreak/source/util.brs&quot;>&#xA;&lt;persistable path=&quot;/RokuStreak/source/util.brs&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor&quot; name=&quot;screen_tv_schedule.brs&quot; tooltip=&quot;RokuStreak/source/screen_tv_schedule.brs&quot;>&#xA;&lt;persistable path=&quot;/RokuStreak/source/screen_tv_schedule.brs&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor&quot; name=&quot;tv.brs&quot; tooltip=&quot;RokuStreak/source/tv.brs&quot;>&#xA;&lt;persistable path=&quot;/RokuStreak/source/tv.brs&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.roku.brightscript.ide.eclipse.core.editors.BrightScriptManifestEditor&quot; name=&quot;manifest&quot; tooltip=&quot;RokuStreak/manifest&quot;>&#xA;&lt;persistable path=&quot;/RokuStreak/manifest&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor&quot; name=&quot;logger.brs&quot; tooltip=&quot;RokuStreak/source/logger.brs&quot;>&#xA;&lt;persistable path=&quot;/RokuStreak/source/logger.brs&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.ui.DefaultTextEditor&quot; name=&quot;sample1.json&quot; tooltip=&quot;RokuStreak/locale/json/sample1.json&quot;>&#xA;&lt;persistable path=&quot;/RokuStreak/locale/json/sample1.json&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor&quot; name=&quot;main.brs&quot; tooltip=&quot;RokuStreak/locale/main.brs&quot;>&#xA;&lt;persistable path=&quot;/RokuStreak/locale/main.brs&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor&quot; name=&quot;config.brs&quot; tooltip=&quot;RokuStreak/source/config.brs&quot;>&#xA;&lt;persistable path=&quot;/RokuStreak/source/config.brs&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor&quot; name=&quot;screen_main.brs&quot; tooltip=&quot;RokuStreak/source/screen_main.brs&quot;>&#xA;&lt;persistable path=&quot;/RokuStreak/source/screen_main.brs&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor&quot; name=&quot;json.brs&quot; tooltip=&quot;RokuStreak/source/json.brs&quot;>&#xA;&lt;persistable path=&quot;/RokuStreak/source/json.brs&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor&quot; name=&quot;test.brs&quot; tooltip=&quot;RokuStreak/source/test.brs&quot;>&#xA;&lt;persistable path=&quot;/RokuStreak/source/test.brs&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor&quot; name=&quot;schedules_api.brs&quot; tooltip=&quot;RokuStreak/source/schedules_api.brs&quot;>&#xA;&lt;persistable path=&quot;/RokuStreak/source/schedules_api.brs&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor&quot; name=&quot;screen_search.brs&quot; tooltip=&quot;RokuStreak/source/screen_search.brs&quot;>&#xA;&lt;persistable path=&quot;/RokuStreak/source/screen_search.brs&quot;/>&#xA;&lt;/file>&#xA;&lt;/mruList>&#xA;&lt;/workbench>"/>
+  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;workbench>&#xA;&lt;mruList>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor&quot; name=&quot;screens.brs&quot; tooltip=&quot;RokuStreak/source/screens.brs&quot;>&#xA;&lt;persistable path=&quot;/RokuStreak/source/screens.brs&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor&quot; name=&quot;util.brs&quot; tooltip=&quot;RokuStreak/source/util.brs&quot;>&#xA;&lt;persistable path=&quot;/RokuStreak/source/util.brs&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor&quot; name=&quot;config.brs&quot; tooltip=&quot;RokuStreak/source/config.brs&quot;>&#xA;&lt;persistable path=&quot;/RokuStreak/source/config.brs&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor&quot; name=&quot;command.brs&quot; tooltip=&quot;RokuStreak/source/command.brs&quot;>&#xA;&lt;persistable path=&quot;/RokuStreak/source/command.brs&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor&quot; name=&quot;entry.brs&quot; tooltip=&quot;RokuStreak/source/entry.brs&quot;>&#xA;&lt;persistable path=&quot;/RokuStreak/source/entry.brs&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor&quot; name=&quot;network.brs&quot; tooltip=&quot;RokuStreak/source/network.brs&quot;>&#xA;&lt;persistable path=&quot;/RokuStreak/source/network.brs&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor&quot; name=&quot;schedules_direct.brs&quot; tooltip=&quot;RokuStreak/source/schedules_direct.brs&quot;>&#xA;&lt;persistable path=&quot;/RokuStreak/source/schedules_direct.brs&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor&quot; name=&quot;screen_paths.brs&quot; tooltip=&quot;RokuStreak/source/screen_paths.brs&quot;>&#xA;&lt;persistable path=&quot;/RokuStreak/source/screen_paths.brs&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor&quot; name=&quot;screen_tv_schedule.brs&quot; tooltip=&quot;RokuStreak/source/screen_tv_schedule.brs&quot;>&#xA;&lt;persistable path=&quot;/RokuStreak/source/screen_tv_schedule.brs&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor&quot; name=&quot;tv.brs&quot; tooltip=&quot;RokuStreak/source/tv.brs&quot;>&#xA;&lt;persistable path=&quot;/RokuStreak/source/tv.brs&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.roku.brightscript.ide.eclipse.core.editors.BrightScriptManifestEditor&quot; name=&quot;manifest&quot; tooltip=&quot;RokuStreak/manifest&quot;>&#xA;&lt;persistable path=&quot;/RokuStreak/manifest&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor&quot; name=&quot;logger.brs&quot; tooltip=&quot;RokuStreak/source/logger.brs&quot;>&#xA;&lt;persistable path=&quot;/RokuStreak/source/logger.brs&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.ui.DefaultTextEditor&quot; name=&quot;sample1.json&quot; tooltip=&quot;RokuStreak/locale/json/sample1.json&quot;>&#xA;&lt;persistable path=&quot;/RokuStreak/locale/json/sample1.json&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor&quot; name=&quot;main.brs&quot; tooltip=&quot;RokuStreak/locale/main.brs&quot;>&#xA;&lt;persistable path=&quot;/RokuStreak/locale/main.brs&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor&quot; name=&quot;screen_main.brs&quot; tooltip=&quot;RokuStreak/source/screen_main.brs&quot;>&#xA;&lt;persistable path=&quot;/RokuStreak/source/screen_main.brs&quot;/>&#xA;&lt;/file>&#xA;&lt;/mruList>&#xA;&lt;/workbench>"/>
   <tags>activeSchemeId:org.eclipse.ui.defaultAcceleratorConfiguration</tags>
   <tags>ModelMigrationProcessor.001</tags>
   <children xsi:type="basic:TrimmedWindow" xmi:id="_EayIAeZQEeWbeeu44aqAZw" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_EayIAuZQEeWbeeu44aqAZw" label="%trimmedwindow.label.eclipseSDK" x="0" y="0" width="1024" height="768">
@@ -138,252 +138,56 @@
       <tags>categoryTag:Help</tags>
     </sharedElements>
     <sharedElements xsi:type="advanced:Area" xmi:id="_EaywP-ZQEeWbeeu44aqAZw" elementId="org.eclipse.ui.editorss" selectedElement="_EaywQOZQEeWbeeu44aqAZw">
-      <children xsi:type="basic:PartStack" xmi:id="_EaywQOZQEeWbeeu44aqAZw" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_Eaywi-ZQEeWbeeu44aqAZw">
+      <children xsi:type="basic:PartStack" xmi:id="_EaywQOZQEeWbeeu44aqAZw" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_5MqX0OjCEeWvV-Xg_p_WCw">
         <tags>org.eclipse.e4.primaryDataStack</tags>
         <tags>EditorStack</tags>
         <tags>active</tags>
-        <children xsi:type="basic:Part" xmi:id="_EaywQeZQEeWbeeu44aqAZw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="config.brs" iconURI="platform:/plugin/com.roku.brightscript.plugin/icons/roku_16x16.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor&quot; name=&quot;config.brs&quot; partName=&quot;config.brs&quot; title=&quot;config.brs&quot; tooltip=&quot;RokuStreak/source/config.brs&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/RokuStreak/source/config.brs&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;742&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
+        <children xsi:type="basic:Part" xmi:id="_7h7mEOjCEeWvV-Xg_p_WCw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="entry.brs" iconURI="platform:/plugin/com.roku.brightscript.plugin/icons/roku_16x16.png" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor&quot; name=&quot;entry.brs&quot; partName=&quot;entry.brs&quot; title=&quot;entry.brs&quot; tooltip=&quot;RokuStreak/source/entry.brs&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/RokuStreak/source/entry.brs&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;496&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor</tags>
           <tags>removeOnHide</tags>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_EaywQuZQEeWbeeu44aqAZw" elementId="#EditorContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#EditorContext</tags>
-            <tags>popup:com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor.EditorContext</tags>
-            <tags>popup:#AbstractTextEditorContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_EaywQ-ZQEeWbeeu44aqAZw" elementId="#RulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#RulerContext</tags>
-            <tags>popup:com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor.RulerContext</tags>
-            <tags>popup:#AbstractTextEditorRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_EaywROZQEeWbeeu44aqAZw" elementId="#OverviewRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#OverviewRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_EaywReZQEeWbeeu44aqAZw" elementId="#EditorContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#EditorContext</tags>
-            <tags>popup:com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor.EditorContext</tags>
-            <tags>popup:#AbstractTextEditorContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_EaywRuZQEeWbeeu44aqAZw" elementId="#RulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#RulerContext</tags>
-            <tags>popup:com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor.RulerContext</tags>
-            <tags>popup:#AbstractTextEditorRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_EaywR-ZQEeWbeeu44aqAZw" elementId="#OverviewRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#OverviewRulerContext</tags>
-          </menus>
         </children>
-        <children xsi:type="basic:Part" xmi:id="_EaywXeZQEeWbeeu44aqAZw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="schedules_direct.brs" iconURI="platform:/plugin/com.roku.brightscript.plugin/icons/roku_16x16.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor&quot; name=&quot;schedules_direct.brs&quot; partName=&quot;schedules_direct.brs&quot; title=&quot;schedules_direct.brs&quot; tooltip=&quot;RokuStreak/source/schedules_direct.brs&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/RokuStreak/source/schedules_direct.brs&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;24265&quot; selectionTopPixel=&quot;9919&quot;/>&#xA;&lt;/editor>"/>
-          <tags>Editor</tags>
-          <tags>com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor</tags>
-          <tags>removeOnHide</tags>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_EaywXuZQEeWbeeu44aqAZw" elementId="#EditorContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#EditorContext</tags>
-            <tags>popup:com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor.EditorContext</tags>
-            <tags>popup:#AbstractTextEditorContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_EaywX-ZQEeWbeeu44aqAZw" elementId="#RulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#RulerContext</tags>
-            <tags>popup:com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor.RulerContext</tags>
-            <tags>popup:#AbstractTextEditorRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_EaywYOZQEeWbeeu44aqAZw" elementId="#OverviewRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#OverviewRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_EaywYeZQEeWbeeu44aqAZw" elementId="#EditorContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#EditorContext</tags>
-            <tags>popup:com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor.EditorContext</tags>
-            <tags>popup:#AbstractTextEditorContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_EaywYuZQEeWbeeu44aqAZw" elementId="#RulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#RulerContext</tags>
-            <tags>popup:com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor.RulerContext</tags>
-            <tags>popup:#AbstractTextEditorRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_EaywY-ZQEeWbeeu44aqAZw" elementId="#OverviewRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#OverviewRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_EaywZOZQEeWbeeu44aqAZw" elementId="#EditorContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#EditorContext</tags>
-            <tags>popup:com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor.EditorContext</tags>
-            <tags>popup:#AbstractTextEditorContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_EaywZeZQEeWbeeu44aqAZw" elementId="#RulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#RulerContext</tags>
-            <tags>popup:com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor.RulerContext</tags>
-            <tags>popup:#AbstractTextEditorRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_EaywZuZQEeWbeeu44aqAZw" elementId="#OverviewRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#OverviewRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_EaywZ-ZQEeWbeeu44aqAZw" elementId="#EditorContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#EditorContext</tags>
-            <tags>popup:com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor.EditorContext</tags>
-            <tags>popup:#AbstractTextEditorContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_EaywaOZQEeWbeeu44aqAZw" elementId="#RulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#RulerContext</tags>
-            <tags>popup:com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor.RulerContext</tags>
-            <tags>popup:#AbstractTextEditorRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_EaywaeZQEeWbeeu44aqAZw" elementId="#OverviewRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#OverviewRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_EaywauZQEeWbeeu44aqAZw" elementId="#EditorContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#EditorContext</tags>
-            <tags>popup:com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor.EditorContext</tags>
-            <tags>popup:#AbstractTextEditorContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_Eaywa-ZQEeWbeeu44aqAZw" elementId="#RulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#RulerContext</tags>
-            <tags>popup:com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor.RulerContext</tags>
-            <tags>popup:#AbstractTextEditorRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_EaywbOZQEeWbeeu44aqAZw" elementId="#OverviewRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#OverviewRulerContext</tags>
-          </menus>
-        </children>
-        <children xsi:type="basic:Part" xmi:id="_EaywgeZQEeWbeeu44aqAZw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="tv.brs" iconURI="platform:/plugin/com.roku.brightscript.plugin/icons/roku_16x16.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor&quot; name=&quot;tv.brs&quot; partName=&quot;tv.brs&quot; title=&quot;tv.brs&quot; tooltip=&quot;RokuStreak/source/tv.brs&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/RokuStreak/source/tv.brs&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;1750&quot; selectionTopPixel=&quot;769&quot;/>&#xA;&lt;/editor>"/>
-          <tags>Editor</tags>
-          <tags>com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor</tags>
-          <tags>removeOnHide</tags>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_EaywguZQEeWbeeu44aqAZw" elementId="#EditorContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#EditorContext</tags>
-            <tags>popup:com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor.EditorContext</tags>
-            <tags>popup:#AbstractTextEditorContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_Eaywg-ZQEeWbeeu44aqAZw" elementId="#RulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#RulerContext</tags>
-            <tags>popup:com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor.RulerContext</tags>
-            <tags>popup:#AbstractTextEditorRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_EaywhOZQEeWbeeu44aqAZw" elementId="#OverviewRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#OverviewRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_EaywheZQEeWbeeu44aqAZw" elementId="#EditorContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#EditorContext</tags>
-            <tags>popup:com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor.EditorContext</tags>
-            <tags>popup:#AbstractTextEditorContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_EaywhuZQEeWbeeu44aqAZw" elementId="#RulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#RulerContext</tags>
-            <tags>popup:com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor.RulerContext</tags>
-            <tags>popup:#AbstractTextEditorRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_Eaywh-ZQEeWbeeu44aqAZw" elementId="#OverviewRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#OverviewRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_EaywiOZQEeWbeeu44aqAZw" elementId="#EditorContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#EditorContext</tags>
-            <tags>popup:com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor.EditorContext</tags>
-            <tags>popup:#AbstractTextEditorContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_EaywieZQEeWbeeu44aqAZw" elementId="#RulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#RulerContext</tags>
-            <tags>popup:com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor.RulerContext</tags>
-            <tags>popup:#AbstractTextEditorRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_EaywiuZQEeWbeeu44aqAZw" elementId="#OverviewRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#OverviewRulerContext</tags>
-          </menus>
-        </children>
-        <children xsi:type="basic:Part" xmi:id="_Eaywi-ZQEeWbeeu44aqAZw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="screen_tv_schedule.brs" iconURI="platform:/plugin/com.roku.brightscript.plugin/icons/roku_16x16.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor&quot; name=&quot;screen_tv_schedule.brs&quot; partName=&quot;screen_tv_schedule.brs&quot; title=&quot;screen_tv_schedule.brs&quot; tooltip=&quot;RokuStreak/source/screen_tv_schedule.brs&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/RokuStreak/source/screen_tv_schedule.brs&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;1392&quot; selectionTopPixel=&quot;20&quot;/>&#xA;&lt;/editor>"/>
+        <children xsi:type="basic:Part" xmi:id="_5MqX0OjCEeWvV-Xg_p_WCw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="screen_paths.brs" iconURI="platform:/plugin/com.roku.brightscript.plugin/icons/roku_16x16.png" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor&quot; name=&quot;screen_paths.brs&quot; partName=&quot;screen_paths.brs&quot; title=&quot;screen_paths.brs&quot; tooltip=&quot;RokuStreak/source/screen_paths.brs&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/RokuStreak/source/screen_paths.brs&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;1257&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor</tags>
           <tags>removeOnHide</tags>
           <tags>active</tags>
           <tags>activeOnClose</tags>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_EaywjOZQEeWbeeu44aqAZw" elementId="#EditorContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#EditorContext</tags>
-            <tags>popup:com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor.EditorContext</tags>
-            <tags>popup:#AbstractTextEditorContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_EaywjeZQEeWbeeu44aqAZw" elementId="#RulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#RulerContext</tags>
-            <tags>popup:com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor.RulerContext</tags>
-            <tags>popup:#AbstractTextEditorRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_EaywjuZQEeWbeeu44aqAZw" elementId="#OverviewRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#OverviewRulerContext</tags>
-          </menus>
         </children>
-        <children xsi:type="basic:Part" xmi:id="_Eaywj-ZQEeWbeeu44aqAZw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="util.brs" iconURI="platform:/plugin/com.roku.brightscript.plugin/icons/roku_16x16.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor&quot; name=&quot;util.brs&quot; partName=&quot;util.brs&quot; title=&quot;util.brs&quot; tooltip=&quot;RokuStreak/source/util.brs&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/RokuStreak/source/util.brs&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;30&quot; selectionOffset=&quot;1275&quot; selectionTopPixel=&quot;223&quot;/>&#xA;&lt;/editor>"/>
+        <children xsi:type="basic:Part" xmi:id="_5sSTEOjCEeWvV-Xg_p_WCw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="screens.brs" iconURI="platform:/plugin/com.roku.brightscript.plugin/icons/roku_16x16.png" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor&quot; name=&quot;screens.brs&quot; partName=&quot;screens.brs&quot; title=&quot;screens.brs&quot; tooltip=&quot;RokuStreak/source/screens.brs&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/RokuStreak/source/screens.brs&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;9289&quot; selectionTopPixel=&quot;4974&quot;/>&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor</tags>
           <tags>removeOnHide</tags>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_EaywkOZQEeWbeeu44aqAZw" elementId="#EditorContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#EditorContext</tags>
-            <tags>popup:com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor.EditorContext</tags>
-            <tags>popup:#AbstractTextEditorContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_EaywkeZQEeWbeeu44aqAZw" elementId="#RulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#RulerContext</tags>
-            <tags>popup:com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor.RulerContext</tags>
-            <tags>popup:#AbstractTextEditorRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_EaywkuZQEeWbeeu44aqAZw" elementId="#OverviewRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#OverviewRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_Eaywk-ZQEeWbeeu44aqAZw" elementId="#EditorContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#EditorContext</tags>
-            <tags>popup:com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor.EditorContext</tags>
-            <tags>popup:#AbstractTextEditorContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_EaywlOZQEeWbeeu44aqAZw" elementId="#RulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#RulerContext</tags>
-            <tags>popup:com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor.RulerContext</tags>
-            <tags>popup:#AbstractTextEditorRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_EaywleZQEeWbeeu44aqAZw" elementId="#OverviewRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#OverviewRulerContext</tags>
-          </menus>
         </children>
-        <children xsi:type="basic:Part" xmi:id="_h87FgOZ3EeW5SuO8WkYFuA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="network.brs" iconURI="platform:/plugin/com.roku.brightscript.plugin/icons/roku_16x16.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor&quot; name=&quot;network.brs&quot; partName=&quot;network.brs&quot; title=&quot;network.brs&quot; tooltip=&quot;RokuStreak/source/network.brs&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/RokuStreak/source/network.brs&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;465&quot; selectionTopPixel=&quot;1191&quot;/>&#xA;&lt;/editor>"/>
+        <children xsi:type="basic:Part" xmi:id="_e_iU4OjIEeWvV-Xg_p_WCw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="command.brs" iconURI="platform:/plugin/com.roku.brightscript.plugin/icons/roku_16x16.png" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor&quot; name=&quot;command.brs&quot; partName=&quot;command.brs&quot; title=&quot;command.brs&quot; tooltip=&quot;RokuStreak/source/command.brs&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/RokuStreak/source/command.brs&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;403&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
+          <tags>Editor</tags>
+          <tags>com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor</tags>
+          <tags>removeOnHide</tags>
+        </children>
+        <children xsi:type="basic:Part" xmi:id="_60regOjCEeWvV-Xg_p_WCw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="schedules_direct.brs" iconURI="platform:/plugin/com.roku.brightscript.plugin/icons/roku_16x16.png" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor&quot; name=&quot;schedules_direct.brs&quot; partName=&quot;schedules_direct.brs&quot; title=&quot;schedules_direct.brs&quot; tooltip=&quot;RokuStreak/source/schedules_direct.brs&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/RokuStreak/source/schedules_direct.brs&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;0&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
+          <tags>Editor</tags>
+          <tags>com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor</tags>
+          <tags>removeOnHide</tags>
+        </children>
+        <children xsi:type="basic:Part" xmi:id="_7J2dQOjCEeWvV-Xg_p_WCw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="network.brs" iconURI="platform:/plugin/com.roku.brightscript.plugin/icons/roku_16x16.png" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor&quot; name=&quot;network.brs&quot; partName=&quot;network.brs&quot; title=&quot;network.brs&quot; tooltip=&quot;RokuStreak/source/network.brs&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/RokuStreak/source/network.brs&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;2416&quot; selectionTopPixel=&quot;746&quot;/>&#xA;&lt;/editor>"/>
+          <tags>Editor</tags>
+          <tags>com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor</tags>
+          <tags>removeOnHide</tags>
+        </children>
+        <children xsi:type="basic:Part" xmi:id="_sFYsoOjPEeWvV-Xg_p_WCw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="config.brs" iconURI="platform:/plugin/com.roku.brightscript.plugin/icons/roku_16x16.png" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor&quot; name=&quot;config.brs&quot; partName=&quot;config.brs&quot; title=&quot;config.brs&quot; tooltip=&quot;RokuStreak/source/config.brs&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/RokuStreak/source/config.brs&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;1893&quot; selectionTopPixel=&quot;462&quot;/>&#xA;&lt;/editor>"/>
+          <tags>Editor</tags>
+          <tags>com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor</tags>
+          <tags>removeOnHide</tags>
+        </children>
+        <children xsi:type="basic:Part" xmi:id="_FHKHAOjbEeWvV-Xg_p_WCw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="util.brs" iconURI="platform:/plugin/com.roku.brightscript.plugin/icons/roku_16x16.png" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor&quot; name=&quot;util.brs&quot; partName=&quot;util.brs&quot; title=&quot;util.brs&quot; tooltip=&quot;RokuStreak/source/util.brs&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/RokuStreak/source/util.brs&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;81&quot; selectionOffset=&quot;737&quot; selectionTopPixel=&quot;238&quot;/>&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>com.roku.brightscript.ide.eclipse.core.editors.brs.BrightScriptEditor</tags>
           <tags>removeOnHide</tags>
@@ -618,7 +422,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_EazWYOZQEeWbeeu44aqAZw" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_gIDycOZzEeW5SuO8WkYFuA" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_Ea1ya-ZQEeWbeeu44aqAZw"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_2l2YgOjAEeWvV-Xg_p_WCw" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_Ea1ya-ZQEeWbeeu44aqAZw"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_EazWbuZQEeWbeeu44aqAZw" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -639,7 +443,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_EazWouZQEeWbeeu44aqAZw" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_gIIq8OZzEeW5SuO8WkYFuA" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_Ea1MW-ZQEeWbeeu44aqAZw"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_2l6p8OjAEeWvV-Xg_p_WCw" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_Ea1MW-ZQEeWbeeu44aqAZw"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_EazWrOZQEeWbeeu44aqAZw" elementId="org.eclipse.ui.DefaultTextEditor" visible="false">
         <tags>Draggable</tags>
@@ -748,7 +552,6 @@
     <bindings xmi:id="_EazW_uZQEeWbeeu44aqAZw" keySequence="CTRL+2 R" command="_Ea1MuuZQEeWbeeu44aqAZw"/>
     <bindings xmi:id="_EazW_-ZQEeWbeeu44aqAZw" keySequence="CTRL+SHIFT+ARROW_DOWN" command="_Ea1zO-ZQEeWbeeu44aqAZw"/>
     <bindings xmi:id="_EazXAOZQEeWbeeu44aqAZw" keySequence="ALT+SHIFT+ARROW_LEFT" command="_Ea1y6uZQEeWbeeu44aqAZw"/>
-    <bindings xmi:id="_EazXAeZQEeWbeeu44aqAZw" keySequence="ALT+CTRL+SPACE" command="_Ea1zQeZQEeWbeeu44aqAZw"/>
   </bindingTables>
   <bindingTables xmi:id="_EazXAuZQEeWbeeu44aqAZw" elementId="org.eclipse.wst.sse.ui.structuredTextEditorScope" bindingContext="_Eaz-CeZQEeWbeeu44aqAZw">
     <bindings xmi:id="_EazXA-ZQEeWbeeu44aqAZw" keySequence="CTRL+I" command="_Ea1MYeZQEeWbeeu44aqAZw"/>
@@ -916,6 +719,7 @@
     <bindings xmi:id="_Eaz9RuZQEeWbeeu44aqAZw" keySequence="CTRL+SHIFT+G" command="_Ea1Mm-ZQEeWbeeu44aqAZw"/>
     <bindings xmi:id="_Eaz9R-ZQEeWbeeu44aqAZw" keySequence="ALT+CTRL+H" command="_Ea1MpeZQEeWbeeu44aqAZw"/>
     <bindings xmi:id="_Eaz9SOZQEeWbeeu44aqAZw" keySequence="ALT+CTRL+SHIFT+ARROW_DOWN" command="_Ea1y8uZQEeWbeeu44aqAZw"/>
+    <bindings xmi:id="_1uSeYOjAEeWvV-Xg_p_WCw" keySequence="ALT+CTRL+X G" command="_1rH1oejAEeWvV-Xg_p_WCw"/>
   </bindingTables>
   <bindingTables xmi:id="_Eaz9SeZQEeWbeeu44aqAZw" elementId="org.eclipse.ui.textEditorScope" bindingContext="_Eaz-B-ZQEeWbeeu44aqAZw">
     <bindings xmi:id="_Eaz9SuZQEeWbeeu44aqAZw" keySequence="CTRL+SHIFT+NUMPAD_MULTIPLY" command="_Ea1MaeZQEeWbeeu44aqAZw"/>
@@ -962,6 +766,7 @@
     <bindings xmi:id="_Eaz9c-ZQEeWbeeu44aqAZw" keySequence="CTRL+ARROW_LEFT" command="_Ea1MwOZQEeWbeeu44aqAZw"/>
     <bindings xmi:id="_Eaz9dOZQEeWbeeu44aqAZw" keySequence="CTRL+D" command="_Ea1NSeZQEeWbeeu44aqAZw"/>
     <bindings xmi:id="_Eaz9deZQEeWbeeu44aqAZw" keySequence="CTRL+ARROW_RIGHT" command="_Ea1yruZQEeWbeeu44aqAZw"/>
+    <bindings xmi:id="_1uX98OjAEeWvV-Xg_p_WCw" keySequence="ALT+CTRL+SPACE" command="_Ea1zQeZQEeWbeeu44aqAZw"/>
   </bindingTables>
   <bindingTables xmi:id="_Eaz9duZQEeWbeeu44aqAZw" elementId="org.eclipse.ant.ui.AntEditorScope" bindingContext="_Eaz-COZQEeWbeeu44aqAZw">
     <bindings xmi:id="_Eaz9d-ZQEeWbeeu44aqAZw" keySequence="CTRL+SHIFT+F" command="_Ea1ONOZQEeWbeeu44aqAZw"/>
@@ -2463,6 +2268,14 @@
   <commands xmi:id="_Ea1z4-ZQEeWbeeu44aqAZw" elementId="AUTOGEN:::org.eclipse.mylyn.tasks.ui.actions.view/org.eclipse.mylyn.tasks.ui.open.repositories.view" commandName="Show Task Repositories View" description="Show Task Repositories View" category="_Ea10COZQEeWbeeu44aqAZw"/>
   <commands xmi:id="_Ea1z5OZQEeWbeeu44aqAZw" elementId="AUTOGEN:::org.eclipse.mylyn.tasks.ui.actions.view/org.eclipse.mylyn.doc.legend.show.action" commandName="Show UI Legend" description="Show Tasks UI Legend" category="_Ea10COZQEeWbeeu44aqAZw"/>
   <commands xmi:id="_Ea1z5eZQEeWbeeu44aqAZw" elementId="AUTOGEN:::org.eclipse.mylyn.tasks.ui.actions.view/org.eclipse.mylyn.context.ui.actions.tasklist.focus" commandName="Focus on Workweek" description="Focus on Workweek" category="_Ea10COZQEeWbeeu44aqAZw"/>
+  <commands xmi:id="_1rH1oejAEeWvV-Xg_p_WCw" elementId="org.eclipse.buildship.ui.shortcut.test.run" commandName="Run Gradle Test" description="Run Gradle test based on the current selection" category="_Ea1z--ZQEeWbeeu44aqAZw"/>
+  <commands xmi:id="_1rIcsOjAEeWvV-Xg_p_WCw" elementId="org.eclipse.oomph.setup.editor.synchronizePreferences" commandName="Synchronize Preferences" category="_Ea10CeZQEeWbeeu44aqAZw"/>
+  <commands xmi:id="_1rIcsejAEeWvV-Xg_p_WCw" elementId="org.eclipse.mylyn.builds.ui.command.ShowBuildOutput.url" commandName="Show Build Output" category="_Ea10COZQEeWbeeu44aqAZw"/>
+  <commands xmi:id="_1rIcsujAEeWvV-Xg_p_WCw" elementId="org.eclipse.mylyn.builds.ui.commands.OpenBuildElementWithBrowser.url" commandName="Open Build with Browser" category="_Ea10COZQEeWbeeu44aqAZw"/>
+  <commands xmi:id="_1rIcs-jAEeWvV-Xg_p_WCw" elementId="org.eclipse.mylyn.builds.ui.command.ShowTestResults.url" commandName="Show Test Results" category="_Ea10COZQEeWbeeu44aqAZw"/>
+  <commands xmi:id="_2CcwgOjAEeWvV-Xg_p_WCw" elementId="org.eclipse.egit.ui.team.CompareWithCommit" commandName="org.eclipse.egit.ui.team.CompareWithCommit"/>
+  <commands xmi:id="_2Ci3IOjAEeWvV-Xg_p_WCw" elementId="org.eclipse.egit.ui.team.CompareWithRevision" commandName="org.eclipse.egit.ui.team.CompareWithRevision"/>
+  <commands xmi:id="_2CjeMOjAEeWvV-Xg_p_WCw" elementId="org.eclipse.egit.ui.team.ReplaceWithPrevious" commandName="org.eclipse.egit.ui.team.ReplaceWithPrevious"/>
   <addons xmi:id="_Ea1z5uZQEeWbeeu44aqAZw" elementId="org.eclipse.e4.core.commands.service" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
   <addons xmi:id="_Ea1z5-ZQEeWbeeu44aqAZw" elementId="org.eclipse.e4.ui.contexts.service" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
   <addons xmi:id="_Ea1z6OZQEeWbeeu44aqAZw" elementId="org.eclipse.e4.ui.bindings.service" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
