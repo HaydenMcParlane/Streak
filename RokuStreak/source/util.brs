@@ -51,6 +51,27 @@ Function AppendIfExists(aaSource as Object, aaDest as Object, key as String) as 
     end if
 End Function
 
+Function ShallowCopy(o as object)
+    if type(o) = "roAssociativeArray"
+        copy = CreateObject("roAssociativeArray")
+        for each key in o
+            copy[key] = o[key]
+        end for
+    else if type(o) = "roArray"
+        copy = CreateObject("roArray", 1, True)
+        for i = 0 to o.Count() - 1
+            copy[i] = o[i]
+        end for
+    else if type(o) = "roString"
+        copy = CreateObject("roString")
+        copy = o
+    else
+        LogError("Shallow copy type not implemented")
+        stop
+    end if
+    return copy
+End Function
+
 '######################################################################
 '   ASSOCIATIVE ARRAY HELPER FUNCTIONS
 '######################################################################
@@ -71,15 +92,6 @@ Function LinkAssociativeArrays(array as Object) as Object
         aa.Append(row)
     end for
     return aa
-End Function
-
-' TODO: Remove if not used
-Function ShallowCopy(aa as Object) as Object
-    newAA = CreateObject("roAssociativeArray")
-    for each key in aa
-        newAA[key] = aa[key]
-    end for    
-    return newAA
 End Function
 
 Function VerifyKeys(aa as Object, keys as Object) as Boolean

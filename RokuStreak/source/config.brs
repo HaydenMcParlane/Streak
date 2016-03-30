@@ -4,14 +4,22 @@
 '   @author: Hayden McParlane
 '   @creation-date: 2.18.2016
 
+'   TODO: This password is entered in plain text ONLY FOR DEV PURPOSES. LATER ON
+'   IT MUST BE STORED IN DIGESTED FORM (i.e, SHA1) FOR SECURITY PURPOSES. 
 Function Username() as String
     return "username"
 End Function
 
-'   TODO: This password is entered in plain text ONLY FOR DEV PURPOSES. LATER ON
-'   IT MUST BE STORED IN DIGESTED FORM (i.e, SHA1) FOR SECURITY PURPOSES. 
-Function RawPassword() as String
-    return "password" ' TODO: USE NEW
+Function Password() as String
+    return "password"
+End Function
+
+Function Authentication() as String
+    return "authentication"
+End Function
+
+Function ScheduleAPIName() as String
+    return "Schedules Direct"
 End Function
 
 Function SSLCertificatePath() as String
@@ -25,6 +33,39 @@ End Function
 Function TempEntityCount() as Integer
     return 5
 End Function
+
+Function SetAuthData(user as String, pass as String) as Object
+    sec = CreateObject("roRegistrySection", Authentication())
+    sec.Write(Username(), user)
+    sec.Write(Password(), pass)
+    sec.Flush()
+End Function
+
+Function GetAuthUsername() as Dynamic
+    sec = CreateObject("roRegistrySection", Authentication())
+    if sec.Exists(Username())
+        return sec.Read(Username())
+    end if
+    return invalid
+End Function
+
+Function GetAuthPassword() as Dynamic
+    sec = CreateObject("roRegistrySection", Authentication())
+    if sec.Exists(Password())
+        return sec.Read(Password())
+    end if
+    return invalid
+End Function
+
+Function HelperPrintAuth() as String
+    user = GetAuthUsername()
+    pass = GetAuthPassword()
+    result = ""
+    result = result + "Username: " + user + "\n"
+    result = result + "Password: " + pass + "\n"
+    return result
+End Function
+
 
 '################################################################################
 '   AppManager Application Settings
