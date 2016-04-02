@@ -6,29 +6,24 @@ Function PopulateTVData() as void ' TODO: Change return type to AA for render re
     FetchSchedulesDirectData()    
 End Function
 
-Function SchedulesAPIUsername() as String
-    return "username"
+Function SetSchedulesAPIAuthData(user as String, pass as String) as Object
+    return SetSchedulesDirectAuthData(user, pass)
 End Function
 
-Function GetSchedulesAPIUsername() as String
-    CreateIfDoesntExist(m, "user", "roString")
-    return m.user
+Function SchedulesAPIUsername() as Dynamic
+    return GetSchedulesDirectAuthUsername()
 End Function
 
-Function SchedulesAPIPassword() as String
-    return "username"
-End Function
-
-Function GetSchedulesAPIPassword() as String
-    CreateIfDoesntExist(m, "pass", "roString")
-    return m.pass
+Function SchedulesAPIPassword() as Dynamic
+    return GetSchedulesDirectAuthPassword()
 End Function    
 
 Function GetSchedulesAPIBase() as Object
-    CreateIfDoesntExist(m, "sapi", "roString")
-    return m.sapi
+    key = "sapi"
+    CreateIfDoesntExist(m, key, "roAssociativeArray")
+    return m[key]
 End Function
 
 Function GetSchedulesAPIHashType() as String
-    return GetSchedulesDirectPassHashType()
+    return GetSchedulesDirectPasswordHashType()
 End Function

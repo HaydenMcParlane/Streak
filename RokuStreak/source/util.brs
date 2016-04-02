@@ -43,6 +43,15 @@ Function CreateIfDoesntExist(o as Object, key as String, oType as String) as voi
     end if
 End Function
 
+Function MGet(base as Object, key as String, oType as String) as Object    
+    if base.DoesExist(key)
+        ' Do nothing
+    else
+        CreateIfDoesntExist(base, key, oType)        
+    end if
+    return base[key]
+End Function
+
 Function AppendIfExists(aaSource as Object, aaDest as Object, key as String) as void
     if aaSource.DoesExist(key)
         aaDest.AddReplace(key, aaSource[key])

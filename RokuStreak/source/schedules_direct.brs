@@ -258,7 +258,7 @@ Function PopulateProgramDescription() as void
     end for
     
     LogDebug("Fetch program descriptions successful")            
-End Function
+End Function        
 
 '###################################################################################
 ' The following functions define the applications schedules direct
@@ -269,104 +269,107 @@ End Function
 ' TODO: Right now, two changes are required to each change of schedules direct access
 ' because the names are used here as well as the getter/setter functions. Better way
 ' to initialize? This function should be called immediately upon app launch.
+' TODO: HIGH Remove this initialization in favor of each getter and setting creating object if non-existant.
+' Use utility function CreateIfDoesntExistAndReturn etc...to allow for greater code reuse and magnified
+' optimization when changes are made to CreateIfDoesntExist(...) if-else comparisons (i.e, hashing types?)
 Function InitSchedulesDirectDataStore() as Boolean
     LogDebug("Initializing Schedules Direct data store")
     success = True
-'    ' !!! NOTE !!! THIS FUNCTION IS EXTREMELY SENSITIVE TO FUNCTION CALL ORDER. ONLY CHANGE
-'    ' IF YOU UNDERSTAND THE LOGICAL DESIGN OF THE M-HIERARCHY (I.E, m.schedulesAPI.data.... etc)
-'    base_dir = m.schedulesAPI 
-'    if base_dir = invalid        
-'        AddUpdateSchedulesDirectBase(CreateObject("roAssociativeArray"))
-'        if GetSchedulesDirectBase() = invalid
-'            LogError("Add/Update vs. Getter for data store are inconsistent")
-'            success = False
-'            stop 
-'        end if
-'    end if
-'    
-'    network_dir = m.schedulesAPI.network
-'    data_dir = m.schedulesAPI.data
-'    
-'    if network_dir = invalid            
-'        AddUpdateSchedulesDirectNetwork(CreateObject("roAssociativeArray"))
-'        if GetSchedulesDirectNetwork() = invalid
-'            LogError("Add/Update vs. Getter for data store are inconsistent")
-'            success = False
-'            stop 
-'        end if
-'    end if    
-'    if data_dir = invalid
-'        AddUpdateSchedulesDirectData(CreateObject("roAssociativeArray"))
-'        if GetSchedulesDirectData() = invalid
-'            LogError("Add/Update vs. Getter for data store are inconsistent")
-'            success = False
-'            stop 
-'        end if
-'    end if
-'    
-'    headers_dir = m.schedulesAPI.network.headers
-'    cableHeadends_dir = m.schedulesAPI.data.cableHeadends
-'    stations_dir = m.schedulesAPI.data.stations
-'    programs_dir = m.schedulesAPI.data.programs
-'    programInfo_dir = m.schedulesAPI.data.programInfo    
-'    
-'    ' TODO: Update to include station table and program table
-'    
-'    if headers_dir = invalid        
-'        AddUpdateSchedulesDirectHeaders(CreateObject("roAssociativeArray"))
-'        if GetSchedulesDirectHeaders() = invalid
-'            LogError("Add/Update vs. Getter for data store are inconsistent")
-'            success = False
-'            stop 
-'        end if
-'    end if
-'    if cableHeadends_dir = invalid
-'        AddUpdateSchedulesDirectCableHeadends(CreateObject("roAssociativeArray"))
-'        if GetSchedulesDirectCableHeadends() = invalid
-'            LogError("Add/Update vs. Getter for data store are inconsistent")
-'            success = False
-'            stop 
-'        end if        
-'    end if
-'    if stations_dir = invalid
-'        AddUpdateSchedulesDirectStations(CreateObject("roAssociativeArray"))
-'        if GetSchedulesDirectStations() = invalid
-'            LogError("Add/Update vs. Getter for data store are inconsistent")
-'            success = False
-'            stop
-'        end if
-'    end if
-'    if programs_dir = invalid
-'        AddUpdateSchedulesDirectPrograms(CreateObject("roAssociativeArray"))
-'        if GetSchedulesDirectPrograms() = invalid
-'            LogError("Add/Update vs. Getter for data store are inconsistent")
-'            success = False
-'            stop
-'        end if
-'    end if
-'    if programInfo_dir = invalid
-'        AddUpdateSchedulesDirectProgramInfo(CreateObject("roAssociativeArray"))
-'        if GetSchedulesDirectProgramsInfo() = invalid
-'            LogError("Add/Update vs. Getter for data store are inconsistent")
-'            success = False
-'            stop
-'        end if
-'    end if
-'    
-'    token_loc = m.schedulesAPI.network.headers.token
-'    
-'    if token_loc = invalid
-'        AddUpdateSchedulesDirectToken("")
-'        if GetSchedulesDirectToken() = invalid
-'            LogError("Add/Update vs. Getter for data store are inconsistent")
-'            success = False
-'            stop 
-'        end if        
-'    end if        
-'    
+    ' !!! NOTE !!! THIS FUNCTION IS EXTREMELY SENSITIVE TO FUNCTION CALL ORDER. ONLY CHANGE
+    ' IF YOU UNDERSTAND THE LOGICAL DESIGN OF THE M-HIERARCHY (I.E, m.schedulesAPI.data.... etc)
+    base_dir = m.sapi 
+    if base_dir = invalid        
+        AddUpdateSchedulesDirectBase(CreateObject("roAssociativeArray"))
+        if GetSchedulesDirectBase() = invalid
+            LogError("Add/Update vs. Getter for data store are inconsistent")
+            success = False
+            stop 
+        end if
+    end if
+    
+    network_dir = m.sapi.network
+    data_dir = m.sapi.data
+    
+    if network_dir = invalid            
+        AddUpdateSchedulesDirectNetwork(CreateObject("roAssociativeArray"))
+        if GetSchedulesDirectNetwork() = invalid
+            LogError("Add/Update vs. Getter for data store are inconsistent")
+            success = False
+            stop 
+        end if
+    end if    
+    if data_dir = invalid
+        AddUpdateSchedulesDirectData(CreateObject("roAssociativeArray"))
+        if GetSchedulesDirectData() = invalid
+            LogError("Add/Update vs. Getter for data store are inconsistent")
+            success = False
+            stop 
+        end if
+    end if
+    
+    headers_dir = m.sapi.network.headers
+    cableHeadends_dir = m.sapi.data.cableHeadends
+    stations_dir = m.sapi.data.stations
+    programs_dir = m.sapi.data.programs
+    programInfo_dir = m.sapi.data.programInfo    
+    
+    ' TODO: Update to include station table and program table
+    
+    if headers_dir = invalid        
+        AddUpdateSchedulesDirectHeaders(CreateObject("roAssociativeArray"))
+        if GetSchedulesDirectHeaders() = invalid
+            LogError("Add/Update vs. Getter for data store are inconsistent")
+            success = False
+            stop 
+        end if
+    end if
+    if cableHeadends_dir = invalid
+        AddUpdateSchedulesDirectCableHeadends(CreateObject("roAssociativeArray"))
+        if GetSchedulesDirectCableHeadends() = invalid
+            LogError("Add/Update vs. Getter for data store are inconsistent")
+            success = False
+            stop 
+        end if        
+    end if
+    if stations_dir = invalid
+        AddUpdateSchedulesDirectStations(CreateObject("roAssociativeArray"))
+        if GetSchedulesDirectStations() = invalid
+            LogError("Add/Update vs. Getter for data store are inconsistent")
+            success = False
+            stop
+        end if
+    end if
+    if programs_dir = invalid
+        AddUpdateSchedulesDirectPrograms(CreateObject("roAssociativeArray"))
+        if GetSchedulesDirectPrograms() = invalid
+            LogError("Add/Update vs. Getter for data store are inconsistent")
+            success = False
+            stop
+        end if
+    end if
+    if programInfo_dir = invalid
+        AddUpdateSchedulesDirectProgramInfo(CreateObject("roAssociativeArray"))
+        if GetSchedulesDirectProgramsInfo() = invalid
+            LogError("Add/Update vs. Getter for data store are inconsistent")
+            success = False
+            stop
+        end if
+    end if
+    
+    token_loc = m.sapi.network.headers.token
+    
+    if token_loc = invalid
+        AddUpdateSchedulesDirectToken("")
+        if GetSchedulesDirectToken() = invalid
+            LogError("Add/Update vs. Getter for data store are inconsistent")
+            success = False
+            stop 
+        end if        
+    end if        
+    
     LogDebug("Initializing Schedules Direct data store successful")
     return success
-End Function        
+End Function
 
 Function AddUpdateSchedulesDirectProgramInfo(aaProgramInfo as Object) as void
     obj = GetSchedulesDirectData()
@@ -467,8 +470,13 @@ Function AddUpdateSchedulesDirectNetwork(aaNetwork as Object) as void
 End Function
 
 Function GetSchedulesDirectNetwork() as Object
-    obj = GetSchedulesDirectBase()
-    return obj.network
+    ' TODO: HIGH Test out below format and change all getters if good. Apply idea 
+    ' to setter as well    
+    ' return MGet(GetSchedulesDirectBase(), "network", "roAssociativeArray")
+    key = "network"
+    base = GetSchedulesDirectBase()
+    CreateIfDoesntExist(base, key, "roAssociativeArray")
+    return base[key]
 End Function
 
 Function AddUpdateSchedulesDirectBase(aaSchedulesDirectBase as Object) as Object
@@ -498,18 +506,6 @@ Function HasSchedulesDirectCableHeadends() as Boolean
         result = True
     end if
     return result
-End Function
-
-Function SchedulesDirectUsername() as String
-    return Username()
-End Function
-
-Function SchedulesDirectPassword() as String
-    return Digest(RawPassword(), "sha1")
-End Function
-
-Function GetSchedulesDirectPassHashType() as String
-    return "sha1"
 End Function
 
 Function SchedulesDirectUserAgentHeader() as String
@@ -656,4 +652,27 @@ End Function
 
 Function SchedulesDirectKeyMD5() as String
     return "md5"
+End Function
+
+'################################################################################
+'   Auth
+'################################################################################
+Function SetSchedulesDirectAuthData(user as String, pass as String) as Object
+    return SetAuthData(SchedulesDirectAuthSecName(), user, pass)
+End Function
+
+Function SchedulesDirectUsername() as Dynamic
+    return GetAuthUsername(SchedulesDirectAuthSecName())
+End Function
+
+Function SchedulesDirectPassword() as Dynamic
+    return GetAuthPassword(SchedulesDirectAuthSecName())
+End Function
+
+Function GetSchedulesDirectPasswordHashType() as String
+    return "sha1"
+End Function
+
+Function SchedulesDirectAuthSecName() as String
+    return "schedules_direct_auth"
 End Function

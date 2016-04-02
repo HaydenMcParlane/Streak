@@ -105,7 +105,7 @@ End Function
 '#  roGridScreen
 '#######################################################################################
 ' Perform search for tv schedule listings based on input filters
-Function RenderTVSchedule() as integer
+Function RenderTVSchedule(dummyArg as Object) as integer
     port = CreateObject("roMessagePort")
     grid = CreateObject("roGridScreen")
     grid.SetMessagePort(port)    
@@ -446,8 +446,8 @@ Function ExecuteLogin(args)
     user = base[Username()]
     pass = Digest(base[Password()], hash)
     
-    ' Store username and password in persistent storage
-    SetAuthData(user, pass)    
+    ' Store username and password in persistent storage    
+    SetSchedulesAPIAuthData(user, pass)
 End Function
 
 ' Command to store entry at storageLocation

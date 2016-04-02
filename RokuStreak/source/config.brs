@@ -3,17 +3,6 @@
 '   should be entered here to avoid needing numerous code changes upon code modification.
 '   @author: Hayden McParlane
 '   @creation-date: 2.18.2016
-
-'   TODO: This password is entered in plain text ONLY FOR DEV PURPOSES. LATER ON
-'   IT MUST BE STORED IN DIGESTED FORM (i.e, SHA1) FOR SECURITY PURPOSES. 
-Function Username() as String
-    return "username"
-End Function
-
-Function Password() as String
-    return "password"
-End Function
-
 Function Authentication() as String
     return "authentication"
 End Function
@@ -31,41 +20,39 @@ Function XRokuReservedDevId() as String
 End Function
 
 Function TempEntityCount() as Integer
-    return 5
+    return 15
 End Function
 
-Function SetAuthData(user as String, pass as String) as Object
-    sec = CreateObject("roRegistrySection", Authentication())
+Function Username() as String
+    return "username"
+End Function
+
+Function Password() as String
+    return "password"
+End Function
+
+Function SetAuthData(section as String, user as String, pass as String) as Object
+    sec = CreateObject("roRegistrySection", section)
     sec.Write(Username(), user)
     sec.Write(Password(), pass)
     sec.Flush()
 End Function
 
-Function GetAuthUsername() as Dynamic
-    sec = CreateObject("roRegistrySection", Authentication())
+Function GetAuthUsername(section as String) as Dynamic
+    sec = CreateObject("roRegistrySection", section)
     if sec.Exists(Username())
         return sec.Read(Username())
     end if
     return invalid
 End Function
 
-Function GetAuthPassword() as Dynamic
-    sec = CreateObject("roRegistrySection", Authentication())
+Function GetAuthPassword(section as String) as Dynamic
+    sec = CreateObject("roRegistrySection", section)
     if sec.Exists(Password())
         return sec.Read(Password())
     end if
     return invalid
 End Function
-
-Function HelperPrintAuth() as String
-    user = GetAuthUsername()
-    pass = GetAuthPassword()
-    result = ""
-    result = result + "Username: " + user + "\n"
-    result = result + "Password: " + pass + "\n"
-    return result
-End Function
-
 
 '################################################################################
 '   AppManager Application Settings
@@ -91,11 +78,12 @@ End Sub
 '################################################################################
 '   Application runtime configuration and setup
 '################################################################################
-Function ConfigureApplication() as void
+Function ConfigureApplicationEssentials() as void
     ' TODO: Application data stores should be setup and initialized here,
     ' not during tests.
     ' TODO: Include tests for user credentials. If they haven't logged in,
-    ' prompt for uname and password or something    
-    InitSchedulesDirectDataStore()
-    InitTelevisionDataStore()    
+    ' prompt for uname and password or something     
+    InitSchedulesDirectDataStore()   
+    InitTelevisionDataStore()   
+    'RenderFacadeScreen() 
 End Function

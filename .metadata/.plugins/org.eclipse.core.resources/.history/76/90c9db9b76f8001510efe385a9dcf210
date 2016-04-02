@@ -1,0 +1,123 @@
+'
+'   This document contains helper functions for use while working with networking.
+'   For example, accessing response status codes, checking those codes, etc is done
+'   here.
+'   @author: Hayden McParlane
+
+'   Execute POST request at specified URL
+Function AsyncPostRequest(destUrl as String, aaHeaders as Object, aaBody as Object) as Object                                 
+    response = Request(POST(), destUrl, aaHeaders, aaBody)
+    return response
+End Function
+
+Function AsyncGetRequest(destUrl as String, aaHeaders as Object, aaBody as Object) as Object                                 
+    response = Request(GET(), destUrl, aaHeaders, aaBody)
+    return response
+End Function
+
+Function AsyncPutRequest(destUrl as String, aaHeaders as Object, aaBody as Object) as Object
+End Function
+
+Function AsyncDeleteRequest(destUrl as String, aaHeaders as Object, aaBody as Object) as Object
+End Function
+
+Function Request(requestType as String, destUrl as String, aaHeaders as Object, aaBody as Object) as Object    
+    urlTransfer = CreateObject("roUrlTransfer")
+    port = CreateObject("roMessagePort")
+    timer = CreateObject("roTimeSpan")
+    timer.Mark()
+    urlTransfer.SetPort(port)
+    urlTransfer.SetUrl(destUrl)
+    urlTransfer.EnableEncodings(True)
+    
+    json = ConstructPacket(urlTransfer, aaHeaders, aaBody)
+    
+    LogInfo("Initiating " + requestType + " request to -> " + destUrl)    
+    if requestType = POST()
+        urlTransfer.AsyncPostFromString(json)
+    else if requestType = GET()
+        ' TODO: Test a GET request using this same function
+        urlTransfer.AsyncGetToString()
+    else
+        LogError("Invalid request type -> " + requestType)
+        stop
+    end if
+    
+    while true        
+        msg = wait(100, port)
+        if type(msg) = "roUrlEvent" then
+            LogDebug("Server response received")
+            LogDebugObj("Response Code is ", msg.GetResponseCode())
+            ' TODO: Efficiently implement check of different response status codes here and deal
+            ' with concerning circumstances appropriately            
+            if msg.GetResponseCode() = 200 then             
+                response = BuildResponse(msg)                
+                exit while
+            else
+                u.AsyncCancel()
+            end if
+        else
+            ' TODO: Make async request useful instead of blocking
+            'LogDebug("Do Useful stuff while wait for data")
+        end if
+   end while   
+   return response    
+End Function
+
+Function BuildResponse(message as Object) as Object
+    if message = invalid
+        LogError("UrlTransfer message received was invalid")
+        stop
+    else
+        ' TODO: Think about event data that may be useful to include here. For reference, look @ 
+        ' https://sdkdocs.roku.com/display/sdkdoc/roUrlEvent
+        LogDebug("Constructing response object")
+        response = CreateObject("roAssociativeArray") 
+        response.statusCode = message.GetResponseCode()                       
+        response.json = ParseJSON(message.GetString())
+        response.jsonString = message.GetString()        
+        response.headers = LinkAssociativeArrays(message.GetResponseHeadersArray())       
+        LogDebug("Value of response.body -> " + response.jsonString)        
+        'LogDebugObj("Value of response.headers -> ", response.headers)        
+           
+        LogDebug("Response object build successful")
+    end if
+    return response
+End Function
+
+Function ConstructPacket(urlTransfer as Object, aaHeaders as Object, aaBody as Object) as String            
+    InitClient(urlTransfer)               
+    ConstructPacketHeader(urlTransfer, aaHeaders)
+    bodyStr = ConstructPacketBody(aaBody)
+    return bodyStr
+End Function
+
+Function ConstructPacketHeader(urlTransfer as Object, aaHeaders as Object) as void
+    if aaHeaders = invalid
+        ' Do nothing
+    else    
+        for each header in aaHeaders
+            urlTransfer.AddHeader(header, aaHeaders[header])
+        end for
+    end if    
+End Function
+
+' Input: body -> roAssociativeArray or roArray
+Function ConstructPacketBody(body as Object) as String
+    ' TODO: If works, take care of 256 deep error condition
+    return FormatJSON(body)
+End Function
+
+Function InitClient(urlTransfer as Object) as void    
+    urlTransfer.SetCertificatesFile(SSLCertificatePath())
+    urlTransfer.AddHeader("X-Roku-Reserved-Dev-Id",XRokuReservedDevId())
+    urlTransfer.InitClientCertificates()    
+End Function
+
+Function POST() as String
+    return "POST"
+End Function
+
+Function GET() as String
+    return "GET"
+End Function

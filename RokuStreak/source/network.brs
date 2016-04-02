@@ -16,13 +16,12 @@ Function AsyncGetRequest(destUrl as String, aaHeaders as Object, aaBody as Objec
 End Function
 
 Function AsyncPutRequest(destUrl as String, aaHeaders as Object, aaBody as Object) as Object
+    ' TODO: Design using roUrlTransfer SetRequest.
 End Function
 
 Function AsyncDeleteRequest(destUrl as String, aaHeaders as Object, aaBody as Object) as Object
+    ' TODO: Design using roUrlTransfer SetRequest.
 End Function
-
-' TODO: At time of writing, PUT and DELETE haven't yet been implemented for Roku urlTransfer interface.
-' When added, implement.
 
 Function Request(requestType as String, destUrl as String, aaHeaders as Object, aaBody as Object) as Object    
     urlTransfer = CreateObject("roUrlTransfer")
