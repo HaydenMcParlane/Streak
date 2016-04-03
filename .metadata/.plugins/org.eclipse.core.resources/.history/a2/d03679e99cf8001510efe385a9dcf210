@@ -1,0 +1,13 @@
+'
+'   This document contains an API for use with the Schedules Direct
+'   open source television data service.
+'   @author: Hayden McParlane
+'   @creation-date: 2.18.2016
+
+' TODO: This helper function set will be used to construct a package object
+' that ties the network urltransfer id to the station id, program id, whatever.
+' This will be used to optimize the network access while keeping track of 
+' the operation that's being performed (i.e, get programs associated with
+' station id X, etc...).
+Function temp() as void
+End Function

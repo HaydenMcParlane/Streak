@@ -20,7 +20,7 @@ Function XRokuReservedDevId() as String
 End Function
 
 Function TempEntityCount() as Integer
-    return 15
+    return 7
 End Function
 
 Function Username() as String

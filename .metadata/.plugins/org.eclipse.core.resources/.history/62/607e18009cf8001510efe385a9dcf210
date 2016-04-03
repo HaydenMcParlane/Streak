@@ -1,0 +1,10 @@
+'
+'   This document contains an API for use with the Schedules Direct
+'   open source television data service.
+'   @author: Hayden McParlane
+'   @creation-date: 2.18.2016
+
+' TODO: This helper function set will be used to construct a package object
+' that ties
+Function temp() as void
+End Function

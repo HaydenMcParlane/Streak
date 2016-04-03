@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<cache:CacheIndex xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:cache="http://eclipse.org/dltk/cache_model" lastIndex="280" environment="org.eclipse.dltk.core.environment.localEnvironment">
+<cache:CacheIndex xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:cache="http://eclipse.org/dltk/cache_model" lastIndex="282" environment="org.eclipse.dltk.core.environment.localEnvironment">
   <entries path="#special#brightscript_types#/builtins/intrinsics_types" lastAccessTime="1459363375438">
     <attributes name="indexed" location="2838196607/903500642/23.idx"/>
   </entries>
@@ -63,10 +63,8 @@
   <entries path="/home/hayden/projects/newb/Streak/RokuStreak/source/test.brs" timestamp="1459363127000" lastAccessTime="1459363386615">
     <attributes name="indexed" location="2838196607/720751180/269.idx"/>
   </entries>
-  <entries path="/home/hayden/projects/newb/Streak/RokuStreak/source/tv.brs" timestamp="1459363154000" lastAccessTime="1459363387061">
-    <attributes name="indexed" location="2838196607/720751180/267.idx"/>
+  <entries path="/home/hayden/projects/newb/Streak/RokuStreak/source" timestamp="1459567893000" lastAccessTime="1459654052942">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/3683030337/281.idx"/>
   </entries>
-  <entries path="/home/hayden/projects/newb/Streak/RokuStreak/source" timestamp="1459555175000" lastAccessTime="1459562401560">
-    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/3683030337/279.idx"/>
-  </entries>
+  <entries path="/home/hayden/projects/newb/Streak/RokuStreak/source/schedules_direct.brs" timestamp="1459649227000" lastAccessTime="1459649228107"/>
 </cache:CacheIndex>

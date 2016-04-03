@@ -1,0 +1,40 @@
+'
+'   This document contains an API for use with the Schedules Direct
+'   open source television data service.
+'   @author: Hayden McParlane
+'   @creation-date: 2.18.2016
+
+' TODO: This helper function set will be used to construct a package object
+' that ties the network urltransfer id to the station id, program id, whatever.
+' This will be used to optimize the network access while keeping track of 
+' the operation that's being performed (i.e, get programs associated with
+' station id X, etc...).
+
+' TODO: This ~O(n^2) operation needs to be performed but it must be done more
+' efficiently. The approach below is prohibitively expensive
+'for each station in stations
+'    AddUpdateChannel(station["stationID"], CreateObject("roAssociativeArray"))
+'    ' TODO: Create current station filter and populate info
+'    for each program in station["programs"]
+'        o = program
+'        AppendToProgram(program["programID"], o)
+'    end for 
+'end for
+Function RequestProgramIDs(stationID as String) as Object
+    ' TODO: Store station id?        
+    requestID = AsyncPostRequest(SchedulesDirectJSONSchedulesUrl(), headers, body)        
+    StoreSchedulesDirectProgramIDRequest(requestID)
+End Function
+
+Function StoreSchedulesDirectProgramIDRequest(requestID as Integer) as void
+    requests = ProgramIDRequests()    
+    requests.Push(requestID)
+End Function
+
+Function ProgramIDRequests() as Object
+    return CreateIfDoesntExistAndReturn(SchedulesDirectRequests(), "pid", "roArray")
+End Function
+     
+Function SchedulesDirectRequests() as Object
+    return CreateIfDoesntExistAndReturn(GetSchedulesDirectNetwork(), "sdrequests", "roAssociativeArray")
+End Function

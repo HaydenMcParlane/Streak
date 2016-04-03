@@ -105,8 +105,8 @@ End Function
 '#  roGridScreen
 '#######################################################################################
 ' Perform search for tv schedule listings based on input filters
-Function RenderTVSchedule(dummyArg as Object) as integer
-    port = CreateObject("roMessagePort")
+Function RenderTVSchedule(dummyArg as Object) as integer ' TODO: Remove dummy arg when RenderTVSchedule is done using dynamic screen population.
+    port = CreateObject("roMessagePort")                 ' right now it's present to 
     grid = CreateObject("roGridScreen")
     grid.SetMessagePort(port)    
     ' TODO: Below is O(num_keys_visible). Optimization can come from populating rows that aren't visible right before they become

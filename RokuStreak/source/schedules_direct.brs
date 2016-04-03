@@ -9,11 +9,29 @@ Function FetchSchedulesDirectData() as void
     ' to ensure it's ready when the user begins to use it (or, if it's not, the user can be prompted to enter updated account info some
     ' how.    
     PopulateSchedulesDirectToken()
-    ' TODO: Modify as appropriate. Cable headends may not need fetch.    
-    PopulateCableHeadends("USA", "66103")    
-    PopulateStationsFromLineupUri("/lineups/USA-OTA-66103")
-    PopulateProgramsFromStationIds()
-    PopulateProgramInfo()
+    ' TODO: Modify as appropriate. Cable headends may not need fetch. Only specialty call would get cable headends    
+    'PopulateCableHeadends("USA", "66103")    
+    PopulateStationsFromLineupUri("/lineups/USA-OTA-66103")    
+    
+    stations = GetSchedulesDirectStations()
+    stations = stations["map"]
+    temp = CreateObject("roArray", 1, True)
+    num = 0    
+    for each station in stations
+        num = num + 1
+        new = CreateObject("roAssociativeArray")
+        new.AddReplace("stationID",station["stationID"])
+        temp.Push(new)
+        
+        if num = TempEntityCount()
+            exit for
+        end if
+                
+    end for        
+        
+    PopulateSchedulesDirectData(temp)
+    'PopulateProgramIDFromStationID()
+    'PopulateProgramInfoFromProgramID()
     'TODO: Server error on below call. Figure out why and how to fix.
     'PopulateProgramDescription()
 End Function
@@ -40,7 +58,7 @@ Function PopulateSchedulesDirectToken() as void ' This may need to be changed su
         body.AddReplace("password", SchedulesDirectPassword())        
         
         ' 2. Make request to API
-        response = AsyncPostRequest(SchedulesDirectJSONTokenUrl(), headers, body)
+        response = PostRequest(SchedulesDirectJSONTokenUrl(), headers, body)
         
         ' 3. Check server status code (not HTTP status, that's checked in network module)            
         if response.headers["code"] = 3000
@@ -98,7 +116,7 @@ Function PopulateStationsFromLineupUri(lineupUri as String) as void
     headers.AddReplace("token",GetSchedulesDirectToken())
     
     ' 2. Make request to API
-    response = AsyncGetRequest(SchedulesDirectJSONChannelMapUrl(lineupUri), headers, body)       
+    response = GetRequest(SchedulesDirectJSONChannelMapUrl(lineupUri), headers, body)       
     
     ' 3. Check server status code (not HTTP status, that's checked in network module)            
     if response.headers["code"] = 3000
@@ -108,24 +126,12 @@ Function PopulateStationsFromLineupUri(lineupUri as String) as void
     end if          
     
     ' 4. Store data
-    AddUpdateSchedulesDirectStations(response.json)
-
-    list = CreateObject("roArray", 1, True)
-    ' TODO: Ensure mapping isn't lost or, if it is, that that loss is inconsequential (json includes "map" key. Why if only one array every time?
-    ' TODO: Store additional metadata such as for different map types such as cable, etc. Some provide channel art.
-    ' This can be found in "channel mapping for a lineup" section in JSON documentation for SD
-    mapping = response.json["map"]    
-    for each station in mapping         
-        data = CreateObject("roAssociativeArray")
-        data.AddReplace("stationID", station["stationID"])
-        list.Push(data)        
-    end for
-    AddUpdateSchedulesDirectStationTable(list)
+    AddUpdateSchedulesDirectStations(response.json)   
     
     LogDebug("Fetch stations successful")            
 End Function
 
-Function PopulateProgramsFromStationIds() as void ' TODO: replace params -> stationIDs as Object
+Function PopulateProgramIDsFromStationIDs(stationIDs as Object) as void ' TODO: replace params -> stationIDs as Object
     LogInfo("Fetching programs")    
     headers = CreateObject("roAssociativeArray")    
     station = CreateObject("roAssociativeArray")
@@ -135,13 +141,13 @@ Function PopulateProgramsFromStationIds() as void ' TODO: replace params -> stat
     ' TODO: Token may not have been populated here, or may need to be refreshed.
     ' How to implement?
     headers.AddReplace("token",GetSchedulesDirectToken())
-    body = CreateObject("roArray", 4, True)
-    ' TODO: Implement such that stations are gathered in efficient manner (all at once slows system) 
-    table = GetSchedulesDirectStationTable()
-    keyList = table[0].Keys()    
-    for i = 0 to TempEntityCount()            
-        body.Push(table[i])
-    end for               
+    body = CreateObject("roArray", 4, True)            
+    for i = 0 to TempEntityCount()           
+        body.Push()
+    end for
+    tmp = CreateObject("roAssociativeArray")
+    tmp.AddReplace("stationID","30912")
+    body.Push(tmp)               
  
     ' 2. Make request to API
     response = AsyncPostRequest(SchedulesDirectJSONSchedulesUrl(), headers, body)
@@ -153,46 +159,29 @@ Function PopulateProgramsFromStationIds() as void ' TODO: replace params -> stat
         stop
     end if          
     
+    '######### NEW CODE ##########
+    ' Issue async requests
+    for each station in stationIDs
+        RequestProgramIDs(station)
+    end for
+    
+    '#############################
+    
     'processedJSON = ProcessSchedulesDirectJSONStationPrograms(response.json)
     
     ' 4. Store result
     AddUpdateSchedulesDirectPrograms(response.json)
     
-    ' TODO: Reduce complexity?
-    stations = GetSchedulesDirectPrograms()
-    for each station in stations
-        AddUpdateChannel(station["stationID"], CreateObject("roAssociativeArray"))
-        ' TODO: Create current station filter and populate info
-        for each program in station["programs"]
-            o = program
-            AppendToProgram(program["programID"], o)
-        end for 
-    end for
-        
-    programTable = CreateObject("roArray", 1, True)    
-    for each station in stations
-        for j = 0 to station["programs"].Count() - 1
-            programTable.Push(station["programs"][j]["programID"])
-            LogDebug("Program ID -> " + station["programs"][j]["programID"])
-        end for
-    end for    
-    AddUpdateSchedulesDirectProgramTable(programTable)
-    
     LogDebug("Fetch programs succeeded")            
 End Function
 
-Function PopulateProgramInfo() as void ' TODO replace these params -> aProgramIDs as Object
+Function PopulateProgramInfoFromProgramID() as void ' TODO replace these params -> aProgramIDs as Object
     LogInfo("Fetching program info")    
     headers = CreateObject("roAssociativeArray")
     body = CreateObject("roArray", 1, True)
     
-    table = GetSchedulesDirectProgramTable()
-    for i = 0 to TempEntityCount()
-        body.Push(table[i])
-    end for 
-    
-    'body.Push("SH011425150000")
-    'body.Push("SH019486590000")
+    body.Push("SH011425150000")
+    body.Push("SH019486590000")
     
     ' 1. Populate headers and body for network packet    
     headers.AddReplace("User-Agent",SchedulesDirectUserAgentHeader())
@@ -244,18 +233,7 @@ Function PopulateProgramDescription() as void
         LogErrorObj("Schedules Direct server offline. Try again later.", response.json)
         ' TODO: Program shouldn't be halted. What should be done here?
         stop
-    end if
-    
-    ' 4. Store result in m-hierarchy
-    ' TODO: Is storage of this information necessary? What to do here?        
-    ' AddUpdateSchedulesDirectProgramInfo(response.json)
-    LogDebugObj("Program Descriptions -> ", response.json)
-    
-    for each program in response.json
-        for each field in program
-            LogDebugObj("", field)
-        end for
-    end for
+    end if                    
     
     LogDebug("Fetch program descriptions successful")            
 End Function        
@@ -391,26 +369,11 @@ Function GetSchedulesDirectPrograms() as Object
     return obj.programs
 End Function
 
-' TODO: Ensure more readable. this actually acts on assoc. array.
-Function AddUpdateSchedulesDirectProgramTable(aaProgramTable as Object) as void
-    obj = GetSchedulesDirectData()
-    obj.programTable = aaProgramTable
-End Function
-
-Function GetSchedulesDirectProgramTable() as Object
-    obj= GetSchedulesDirectData()
-    return obj.programTable
-End Function
-
-' TODO: Ensure more readable. this actually acts on assoc. array.
-Function AddUpdateSchedulesDirectStationTable(aaStationTable as Object) as void
-    obj = GetSchedulesDirectData()
-    obj.stationTable = aaStationTable
-End Function
-
-Function GetSchedulesDirectStationTable() as Object
-    obj= GetSchedulesDirectData()
-    return obj.stationTable
+Function AppendStation(stationID as String) as Void
+    obj = GetSchedulesDirectStations()
+    newStation = CreateObject("roAssociativeArray")
+    newStation.AddReplace("stationID", stationID)
+    obj.Append(newStation)
 End Function
 
 Function AddUpdateSchedulesDirectStations(aaStations as Object) as void

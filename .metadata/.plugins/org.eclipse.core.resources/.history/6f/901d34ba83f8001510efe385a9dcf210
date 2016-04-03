@@ -1,0 +1,22 @@
+'
+'   This document contains an API for use with the Schedules Direct
+'   open source television data service.
+'   @author: Hayden McParlane
+'   @creation-date: 2.18.2016
+Function temp() as void
+End Function
+
+Function FetchSchedulesDirectData() as void
+    ' TODO: Some of these functions will need to be removed and placed elsewhere. I.e, GetSchedulesDirectAccountStatus() should be called
+    ' when the application is first launched from the Roku shell (home screen). That way, account status can be checked asynchronously
+    ' to ensure it's ready when the user begins to use it (or, if it's not, the user can be prompted to enter updated account info some
+    ' how.    
+    PopulateSchedulesDirectToken()
+    ' TODO: Modify as appropriate. Cable headends may not need fetch. Only specialty call would get cable headends    
+    'PopulateCableHeadends("USA", "66103")    
+    PopulateStationsFromLineupUri("/lineups/USA-OTA-66103")
+    PopulateProgramsFromStationIds()
+    PopulateProgramInfo()
+    'TODO: Server error on below call. Figure out why and how to fix.
+    'PopulateProgramDescription()
+End Function

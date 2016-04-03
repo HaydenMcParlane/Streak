@@ -43,7 +43,7 @@ Function CreateIfDoesntExist(o as Object, key as String, oType as String) as voi
     end if
 End Function
 
-Function MGet(base as Object, key as String, oType as String) as Object    
+Function CreateIfDoesntExistAndReturn(base as Object, key as String, oType as String) as Object    
     if base.DoesExist(key)
         ' Do nothing
     else
@@ -58,6 +58,19 @@ Function AppendIfExists(aaSource as Object, aaDest as Object, key as String) as 
     else
         'Do nothing
     end if
+End Function
+
+Function Reverse( array as Object ) as void
+    for i = array.Count() - 1 to 0
+        j = (array.Count() - 1) - i
+        SwapElements(array, i, j)        
+    end for
+End Function
+
+Function SwapElements(array as Object, i as Integer, j as Integer) as void
+    temp = array[i]
+    array[i] = array[j]
+    array[j] = temp      
 End Function
 
 Function ShallowCopy(o as object)
