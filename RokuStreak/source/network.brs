@@ -4,7 +4,7 @@
 '   here.
 '   @author: Hayden McParlane
 
-'   Execute POST request at specified URL
+'   Execute POST request at specified URL      
 Function AsyncPostRequest(destUrl as String, aaHeaders as Object, aaBody as Object) as Object                                 
     response = AsyncRequest(POST(), destUrl, aaHeaders, aaBody)
     return response
@@ -54,7 +54,7 @@ Function AsyncRequest(requestType as String, destUrl as String, aaHeaders as Obj
     end if
     
     ' Store urltransfer
-    StoreRequest(urlTransfer.GetIdentity(), port)    
+    StoreRequest(urlTransfer.GetIdentity(), urlTransfer)    
     
     ' TODO: Implement cleaning mechanism so that requests that take too long are simply dropped
     ' by network component. Otherwise, this will represent a memory leak.

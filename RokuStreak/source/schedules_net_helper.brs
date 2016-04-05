@@ -25,19 +25,18 @@ Function RequestProgramIDs(stationID as String, headers as Object, body as Objec
     ' Store station IDs for use with stations request
     AppendStation(stationID)
     requestID = AsyncPostRequest(SchedulesDirectJSONSchedulesUrl(), headers, body)
-    stop
     StoreSchedulesDirectProgramIDRequest(requestID)     
 End Function
 
 Function RequestProgramInfo(programID as String, headers as Object, body as Object) as Object
     ' TODO: Store program id?
     ' Check to ensure that request is necessary
-    if AlreadyFetched(programID)
+    if AlreadyProcessed(programID)
         ' Do nothing
     else         
         requestID = AsyncPostRequest(SchedulesDirectJSONProgramInfoUrl(), headers, body)
         StoreSchedulesDirectProgramInfoRequest(requestID)
-        SetFetched(programID)
+        SetProcessed(programID)
     end if    
 End Function
 
@@ -81,7 +80,7 @@ End Function
 Function AlreadyProcessed(programID as String) as Boolean
     found = False
     table = ProgramIDProcessedTable()
-    if table[programID] ' If program has already been stored
+    if table.DoesExist(programID) ' If program has already been processed
         found = True
     end if
     return found
@@ -124,11 +123,10 @@ Function PopulateSchedulesDirectData(stations as Object) as void
     ' requiring shifting of elements after deleted element).    
     requests = ProgramIDRequests()
     Reverse(requests)    
-    stop
     while requests.Count() <> 0
         requestID = requests.Pop()
-        port = GetAsyncRequestPort(requestID)
-        msg = wait(100, port)
+        port = GetAsyncRequestPort(requestID) 'TODO: Change to GetAsyncRequestTransfer if successful
+        msg = wait(100, port.GetMessagePort())
         if type(msg) = "roUrlEvent" then
             LogDebug("Server response received")
             LogDebugObj("Response Code is ", msg.GetResponseCode())            
@@ -143,13 +141,13 @@ Function PopulateSchedulesDirectData(stations as Object) as void
                 ' Immediately initiate requests for program info
                 for each program in response.json[0]["programs"]
                     ' Create program object for quick access later
-                    if AlreadyProcessed(programID)
+                    pid = program["programID"]
+                    if AlreadyProcessed(pid)
                         ' Do nothing
-                    else
-                        pid = program["programID"]
+                    else                        
                         body[0] = pid
                         pInfoRequestID = RequestProgramInfo(pid, headers, body)
-                        AppendToProgram(program[pid], program)
+                        AppendToProgram(pid, program)
                         SetProcessed(pid)
                     end if    
                 end for                    
@@ -169,7 +167,7 @@ Function PopulateSchedulesDirectData(stations as Object) as void
     while requests.Count() <> 0
         requestID = requests.Pop()
         port = GetAsyncRequestPort(requestID)
-        msg = wait(100, port)
+        msg = wait(100, port.GetMessagePort())
         if type(msg) = "roUrlEvent" then
             LogDebug("Server response received")
             LogDebugObj("Response Code is ", msg.GetResponseCode())
