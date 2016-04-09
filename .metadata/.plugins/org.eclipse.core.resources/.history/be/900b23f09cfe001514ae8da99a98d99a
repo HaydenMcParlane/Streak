@@ -112,7 +112,7 @@ Function RenderTVSchedule(dummyArg as Object) as integer ' TODO: Remove dummy ar
     ' TODO: Below is O(num_keys_visible). Optimization can come from populating rows that aren't visible right before they become
     ' visible instead of populating all of the rows at once.       
     'titles = GetEpisodeTitles(EpisodeFilterTime())    
-    episodes = GetEpisodes(EpisodeFilterGenre())
+    episodes = GetEpisodes(EpisodeFilterTime())
     titles = episodes.keys() 'TODO: Titles should be stored and retrieved. Its much Faster
     
     grid.SetupLists(titles.Count())

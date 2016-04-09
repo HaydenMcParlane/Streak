@@ -1,1 +1,1 @@
-/home/hayden/projects/newb/Streak/.metadata/.plugins/org.eclipse.dltk.core/3706531360.index
+/home/hayden/projects/tmp/opt/1/Streak/.metadata/.plugins/org.eclipse.dltk.core/3706531360.index
