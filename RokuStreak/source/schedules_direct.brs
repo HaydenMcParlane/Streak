@@ -23,9 +23,9 @@ Function FetchSchedulesDirectData() as void
         new.AddReplace("stationID",station["stationID"])
         temp.Push(new)
         
-        if num = TempEntityCount()
-            exit for
-        end if
+        'if num = TempEntityCount()
+        '    exit for
+        'end if
                 
     end for        
         

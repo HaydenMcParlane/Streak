@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<cache:CacheIndex xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:cache="http://eclipse.org/dltk/cache_model" lastIndex="282" environment="org.eclipse.dltk.core.environment.localEnvironment">
+<cache:CacheIndex xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:cache="http://eclipse.org/dltk/cache_model" lastIndex="286" environment="org.eclipse.dltk.core.environment.localEnvironment">
   <entries path="#special#brightscript_types#/builtins/intrinsics_types" lastAccessTime="1459363375438">
     <attributes name="indexed" location="2838196607/903500642/23.idx"/>
   </entries>
@@ -67,4 +67,19 @@
     <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/3683030337/281.idx"/>
   </entries>
   <entries path="/home/hayden/projects/newb/Streak/RokuStreak/source/schedules_direct.brs" timestamp="1459649227000" lastAccessTime="1459649228107"/>
+  <entries path="/home/hayden/projects/tmp/opt/1/Streak/RokuStreak/source/test.brs" timestamp="1460238189000" lastAccessTime="1460238442582"/>
+  <entries path="/home/hayden/projects/tmp/opt/1/Streak/RokuStreak/source/logger.brs" timestamp="1460238189000" lastAccessTime="1460238440406"/>
+  <entries path="/home/hayden/projects/tmp/opt/1/Streak/RokuStreak/source/app_screens.brs" timestamp="1460239258000" lastAccessTime="1460239541387"/>
+  <entries path="/home/hayden/projects/tmp/opt/1/Streak/RokuStreak/source" timestamp="1460239363000" lastAccessTime="1460239554000">
+    <attributes name=".dltk.core.archive.cache.lastaccess" location="2838196607/3273826276/285.idx"/>
+  </entries>
+  <entries path="/home/hayden/projects/tmp/opt/1/Streak/RokuStreak/source/command.brs" timestamp="1460239258000" lastAccessTime="1460239550691"/>
+  <entries path="/home/hayden/projects/tmp/opt/1/Streak/RokuStreak/source/config.brs" timestamp="1460239363000" lastAccessTime="1460239554000"/>
+  <entries path="/home/hayden/projects/tmp/opt/1/Streak/RokuStreak/source/entry.brs" timestamp="1460239258000" lastAccessTime="1460239551489"/>
+  <entries path="/home/hayden/projects/tmp/opt/1/Streak/RokuStreak/source/network.brs" timestamp="1460239363000" lastAccessTime="1460239553430"/>
+  <entries path="/home/hayden/projects/tmp/opt/1/Streak/RokuStreak/source/schedules_api.brs" timestamp="1460239258000" lastAccessTime="1460239552076"/>
+  <entries path="/home/hayden/projects/tmp/opt/1/Streak/RokuStreak/source/schedules_direct.brs" timestamp="1460239363000" lastAccessTime="1460239552381"/>
+  <entries path="/home/hayden/projects/tmp/opt/1/Streak/RokuStreak/source/schedules_net_helper.brs" timestamp="1460239363000" lastAccessTime="1460239552702"/>
+  <entries path="/home/hayden/projects/tmp/opt/1/Streak/RokuStreak/source/tv.brs" timestamp="1460239258000" lastAccessTime="1460239553084"/>
+  <entries path="/home/hayden/projects/tmp/opt/1/Streak/RokuStreak/source/util.brs" timestamp="1460239258000" lastAccessTime="1460239553281"/>
 </cache:CacheIndex>

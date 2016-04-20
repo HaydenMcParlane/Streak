@@ -117,7 +117,7 @@ Function RenderTVSchedule(dummyArg as Object) as integer ' TODO: Remove dummy ar
     
     grid.SetupLists(titles.Count())
     grid.SetListNames(titles)  
-    for i = 0 to TempEntityCount() - 1 '=> Linear time ( O(num_keys_visible) ) 
+    for i = 0 to titles.Count() - 1 '=> Linear time ( O(num_keys_visible) ) 
        grid.SetContentList(i,episodes[titles[i]]) '=> keys will hash to list for row. Filtration will occur by storing different title types
        grid.Show()       
     end for                   
