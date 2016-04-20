@@ -24,6 +24,8 @@ Function GetSchedulesAPIBase() as Object
     return m[key]
 End Function
 
+' TODO: May want to do this some other way. Transmitting the algorithm used may be
+' unwise. Verify that this is ok.
 Function GetSchedulesAPIHashType() as String
     return GetSchedulesDirectPasswordHashType()
 End Function

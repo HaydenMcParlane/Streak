@@ -1,0 +1,23 @@
+
+!ENTRY org.python.pydev.shared_core 4 4 2016-04-20 08:29:07.176
+!MESSAGE Error. returning: 0
+!STACK 0
+java.nio.file.NoSuchFileException: /home/hayden/projects/tmp/opt/1/Streak/server/schedules/api/restful.py
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileAttributeViews$Basic.readAttributes(UnixFileAttributeViews.java:55)
+	at sun.nio.fs.UnixFileSystemProvider.readAttributes(UnixFileSystemProvider.java:144)
+	at sun.nio.fs.LinuxFileSystemProvider.readAttributes(LinuxFileSystemProvider.java:97)
+	at java.nio.file.Files.readAttributes(Files.java:1686)
+	at java.nio.file.Files.getLastModifiedTime(Files.java:2209)
+	at org.python.pydev.shared_core.io.FileUtils.lastModified(FileUtils.java:1056)
+	at org.python.pydev.shared_core.io.FileUtils.lastModified(FileUtils.java:1047)
+	at org.python.pydev.editor.codecompletion.revisited.modules.SourceModule.<init>(SourceModule.java:391)
+	at org.python.pydev.editor.codecompletion.revisited.modules.AbstractModule.createModule(AbstractModule.java:355)
+	at org.python.pydev.editor.refactoring.RefactoringRequest.getModule(RefactoringRequest.java:238)
+	at org.python.pydev.editor.refactoring.RefactoringRequest.getAST(RefactoringRequest.java:260)
+	at com.python.pydev.refactoring.wizards.rename.PyReferenceSearcher.prepareSearch(PyReferenceSearcher.java:104)
+	at com.python.pydev.refactoring.markoccurrences.MarkOccurrencesJob.createRequest(MarkOccurrencesJob.java:147)
+	at org.python.pydev.shared_ui.mark_occurrences.BaseMarkOccurrencesJob.run(BaseMarkOccurrencesJob.java:168)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
