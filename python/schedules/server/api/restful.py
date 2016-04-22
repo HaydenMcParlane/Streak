@@ -9,12 +9,15 @@
 #		different restful interface modules such as security,
 #		etc.
 ###########################################################
-import flask
 from flask import Flask
 app = Flask(__name__)
 
+import flask
+from flask import request
+from schedules.server.command import command as CMD
+
 # Access URL Configurations
-_CONNECTION_STATUS = "/" # Flask interprets this as the home url
+_HOME = "/" # Flask interprets this as the home url
 _EPISODES = "/episodes"
 _SERIES = "/series"
 _CHANNELS = "/channels"
@@ -33,14 +36,20 @@ _RUN_IN_DEBUG = False
  
 @app.route(_EPISODES, methods = ["GET"])
 def episodes():
-    return "episodes"
+    '''Get episode(s)'''  
+    if request.method == "GET":
+        command = CMD.GetEpisodes()
+        options = dict()
+        command.invoke(options)
+    else:
+        raise HTTPMethodError()        
     
 @app.route(_SERIES, methods = ["GET"])
 def series():
     return "series"
 
 @app.route(_CHANNELS, methods = ["GET"])
-def stations():
+def channels():
     return "channels"
     
 ###########################################################
@@ -48,13 +57,17 @@ def stations():
 ###########################################################
 # TODO: Implement username and password update
 
-@app.route(_CONNECTION_STATUS, methods=["GET"])
+@app.route(_HOME, methods=["GET"])
 def connection_status():
     return "connection active"
 
+
 ###########################################################
-#    
+#    Exceptions/Errors
 ###########################################################
+class HTTPMethodError(Error):
+    pass
+
 
 if __name__=="__main__":
     app.run(host="localhost", port=10023, debug=_RUN_IN_DEBUG)
