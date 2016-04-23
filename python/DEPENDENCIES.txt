@@ -1,0 +1,16 @@
+###################################################################
+#	Dependencies that will require install before use
+#	of this software package will be achievable.
+###################################################################
+
+Python
+	+ flask
+	+ https://github.com/HaydenMcParlane/DesignPatterns/pypatterns
+	+ https://github.com/ReusableComponents/Authentication/py/scram/helper.py
+	+ enum34
+	+ requests
+	+ grequests (async) requests
+
+Apt-get
+	+ python-dev
+

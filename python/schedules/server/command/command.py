@@ -19,4 +19,4 @@ class ServerCommand(CMD):
 class GetEpisodes(ServerCommand):    
         
     def execute(self, **kwargs):
-        
+        raise NotImplementedError()

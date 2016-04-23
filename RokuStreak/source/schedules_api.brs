@@ -16,7 +16,7 @@ End Function
 
 Function SchedulesAPIPassword() as Dynamic
     return GetSchedulesDirectAuthPassword()
-End Function    
+End Function
 
 Function GetSchedulesAPIBase() as Object
     key = "sapi"

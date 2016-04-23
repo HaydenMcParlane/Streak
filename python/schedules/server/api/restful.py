@@ -61,7 +61,19 @@ def channels():
 def connection_status():
     return "connection active"
 
-
+@app.route(_CREDENTIALS, methods=["GET","POST","PUT", "DELETE"])
+def credentials():
+    if request.method == "GET":
+        raise NotImplementedError()
+    elif request.method == "POST":
+        raise NotImplementedError()
+    elif request.method == "PUT":
+        raise NotImplementedError()
+    elif request.method == "DELETE":
+        raise NotImplementedError()
+    else:
+        raise HTTPMethodError()
+    
 ###########################################################
 #    Exceptions/Errors
 ###########################################################
