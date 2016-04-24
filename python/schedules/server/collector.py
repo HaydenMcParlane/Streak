@@ -9,7 +9,7 @@
 #############################################################
 from schedules.server.external.host import HostType as HTYPE
 from schedules.server.external.host import HostFactory as HFACTORY
-from schedules.server.external.host import SchedulesDirectServices as SERVICE
+import host
 from enum import Enum as ENUM
 
 _SD = "SchedulesDirect"
@@ -19,17 +19,19 @@ class Collector(object):
     def __init__(self):
         super(object, self).__init__()
         
-    def collect(self, **kwargs):
+    def run(self, **kwargs):
         raise NotImplementedError()            
         
 class SchedulesDirectCollector(Collector):    
     def __init__(self):
         super(Collector, self).__init__()
         self.server = HFACTORY.get(HTYPE.SCHEDULES_DIRECT)
+        self.service_list = [host.Channels(), host.ChannelInfo(), host.Series()
+                             host.Episodes() ]
         
-    def collect(self, **kwargs):
+    def run(self, **kwargs):
         data = {}
-        data = self.server.consume(SERVICE.GETCHANNELS)
+        data = self.server.consume()
         # TODO: Process raw data
         
         # TODO: Store data

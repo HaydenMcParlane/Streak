@@ -193,14 +193,14 @@ class Server(Host):
 	def get(self, **kwargs):
 		raise NotImplementedError()		
 
-class SchedulesDirectServer(Server, STATE):	
+class SchedulesDirectClient(Client, STATE):	
 	_TOKEN = "token"
 	_HEADERS = "headers"	
 	_USERNAME = "umkcsce"
 	_PASSWORD = "umkcsceresearch"
 	
 	def __init__(self):
-		Server.__init__(self)
+		Client.__init__(self)
 		STATE.__init__(self)
 		STATE.add(self, self._HEADERS, { "user-agent" : "RokuStreak" , "verbose": True, "token" : "",
 										"Accept-Encoding":"identity,deflate,gzip"} )
@@ -237,7 +237,7 @@ class SchedulesDirectServer(Server, STATE):
 		
 		
 class HostFactory(object):
-	_HOSTS = { HostType.SCHEDULES_DIRECT : SchedulesDirectServer() }
+	_HOSTS = { HostType.SCHEDULES_DIRECT : SchedulesDirectClient() }
 	
 	def __init__(self):
 		super(object, self).__init__()
