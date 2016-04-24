@@ -13,4 +13,5 @@ Python
 
 Apt-get
 	+ python-dev
+	+ mongodb
 

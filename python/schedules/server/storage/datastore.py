@@ -11,5 +11,5 @@ class DataStorageInterface(object):
 	def __init__(self):
 		super(object, self).__init__()
 
-	def read(self):
+	def find(self):
 		raise NotImplementedError()

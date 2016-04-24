@@ -119,7 +119,7 @@ Function PopulateStationsFromLineupUri(lineupUri as String) as void
     response = GetRequest(SchedulesDirectJSONChannelMapUrl(lineupUri), headers, body)       
     
     ' 3. Check server status code (not HTTP status, that's checked in network module)            
-    if response.headers["code"] = 3000
+    if response.headers["code"] = 3000 
         LogErrorObj("Schedules Direct server offline. Try again later.", response.json)
         ' TODO: Program shouldn't be halted. What should be done here?
         stop
