@@ -110,7 +110,7 @@ class Service(STATE):
 		httpmethod = RequestFactory.get(self.method())
 		print self.url()
 		response = httpmethod(self.url(), data=json.dumps(self.body()), headers=self.headers())
-		
+		print response.text
 		# TODO: Handle response return HTTP status codes
 		return response.json()
 		
@@ -154,6 +154,13 @@ class Channels(SchedulesDirectService):
 		Service.urlappend(self, "USA-OTA-66103")
 		Service.methodappend(self, HTTPMethods.GET)
 		
+class ChannelInfo(SchedulesDirectService):
+	def __init__(self):
+		SchedulesDirectService.__init__(self)
+		Service.urlappend(self, SchedulesDirectService._VERSION)		
+		Service.urlappend(self, "schedules")
+		Service.methodappend(self, HTTPMethods.POST)
+		
 class Series(SchedulesDirectService):
 	def __init__(self):
 		SchedulesDirectService.__init__(self)
@@ -195,7 +202,8 @@ class SchedulesDirectServer(Server, STATE):
 	def __init__(self):
 		Server.__init__(self)
 		STATE.__init__(self)
-		STATE.add(self, self._HEADERS, { "user-agent" : "RokuStreak" , "verbose": True, "token" : ""} )
+		STATE.add(self, self._HEADERS, { "user-agent" : "RokuStreak" , "verbose": True, "token" : "",
+										"Accept-Encoding":"identity,deflate,gzip"} )
 	
 	def consume(self, service, data, **kwargs):
 		if not isinstance(service, SchedulesDirectService):
