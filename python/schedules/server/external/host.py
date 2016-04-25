@@ -226,7 +226,7 @@ class SchedulesDirectClient(Client, STATE):
 										"Accept-Encoding":"identity,deflate,gzip"} )
 		#Host.register(self, adapter, Services.UPDATE_TOKEN)
 	
-	def consume(self, service, data, **kwargs):
+	def consume(self, service, data=dict(), **kwargs):
 		if not isinstance(service.value, SchedulesDirectService):
 			raise TypeError()
 		else:				

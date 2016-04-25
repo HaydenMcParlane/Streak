@@ -34,19 +34,13 @@ class SchedulesDirectCollector(Collector):
         # self.client.register(self._adapter_episodes, HOST.Services.GET_EPISODES)
         
     def collect(self, **kwargs):        
-        data = {}
-        batch = list()
-        
-        json = self.client.consume(HOST.Services.GET_CHANNELS, data)        
-        batch.append(json) 
-        json = self.client.consume(HOST.Services.GET_CHANNEL_INFO, json)        
-        batch.append(json)                                  
-        json = self.client.consume(HOST.Services.GET_EPISODES, json)
-        batch.append(json)        
-        json = self.client.consume(HOST.Services.GET_SERIES_INFO, json)
-        batch.append(json)             
-        # TODO: Store data        
-        return batch
+        json1 = self.client.consume(HOST.Services.GET_CHANNELS)        
+        json1 = self.client.consume(HOST.Services.GET_CHANNEL_INFO, json1)                
+        json2 = self.client.consume(HOST.Services.GET_EPISODES, json1)        
+        json3 = self.client.consume(HOST.Services.GET_SERIES_INFO, json1)
+
+    # TODO: HIGH Use adapters to process data, add default hash filters (i.e,
+    # genre, show time, etc) and store processed data.
     
     def _adapter_channels(self, json):
         stations = list()
