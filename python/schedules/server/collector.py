@@ -9,7 +9,7 @@
 #############################################################
 from schedules.server.external.host import HostType as HTYPE
 from schedules.server.external.host import HostFactory as HFACTORY
-import host
+import schedules.server.external.host as HOST
 from enum import Enum as ENUM
 
 _SD = "SchedulesDirect"
@@ -19,21 +19,69 @@ class Collector(object):
     def __init__(self):
         super(object, self).__init__()
         
-    def run(self, **kwargs):
+    def collect(self, **kwargs):
         raise NotImplementedError()            
         
-class SchedulesDirectCollector(Collector):    
+class SchedulesDirectCollector(Collector):
+    _MAX_REQUESTS = 490    
+    _DATA_PROCESSORS = {  } 
     def __init__(self):
         super(Collector, self).__init__()
-        self.server = HFACTORY.get(HTYPE.SCHEDULES_DIRECT)
-        self.service_list = [host.Channels(), host.ChannelInfo(), host.Series()
-                             host.Episodes() ]
+        self.client = HFACTORY.get(HTYPE.SCHEDULES_DIRECT)        
+        self.client.register(self._adapter_channels, HOST.Services.GET_CHANNELS)
+        self.client.register(self._adapter_channelinfo, HOST.Services.GET_CHANNEL_INFO)
+        # self.client.register(self._adapter_series, HOST.Services.GET_SERIES_INFO)
+        # self.client.register(self._adapter_episodes, HOST.Services.GET_EPISODES)
         
-    def run(self, **kwargs):
+    def collect(self, **kwargs):        
         data = {}
-        data = self.server.consume()
-        # TODO: Process raw data
+        batch = list()
         
-        # TODO: Store data
+        json = self.client.consume(HOST.Services.GET_CHANNELS, data)        
+        batch.append(json) 
+        json = self.client.consume(HOST.Services.GET_CHANNEL_INFO, json)        
+        batch.append(json)                                  
+        json = self.client.consume(HOST.Services.GET_EPISODES, json)
+        batch.append(json)        
+        json = self.client.consume(HOST.Services.GET_SERIES_INFO, json)
+        batch.append(json)             
+        # TODO: Store data        
+        return batch
+    
+    def _adapter_channels(self, json):
+        stations = list()
+        count = self._MAX_REQUESTS          
+        for station in json['map']:
+            if count > 0:
+                sid = station['stationID']
+                stations.append({ 'stationID': sid})
+                count -= 1
+            else:
+                break        
+        return stations
+    
+    def _adapter_channelinfo(self, json):
+        programs = list()
+        count = self._MAX_REQUESTS
+        print json            
+        for station in json:
+            for program in station['programs']:
+                if count > 0:                
+                    programs.append(program['programID'])
+                    count -= 1
+                else:
+                    break                    
+        return programs
+    
+    def _adapter_series(self, json):
+        pass
+    
+    def _adapter_episodes(self, json):
+        pass
         
+def main():
+    coll = SchedulesDirectCollector()
+    coll.collect()
         
+if __name__=="__main__":
+    main()
