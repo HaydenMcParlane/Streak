@@ -8,8 +8,7 @@
 class DataStorageInterface(object):
 	'''Contract which must be adhered to by all concrete data storage
 	implementations.'''
-	def __init__(self):
-		super(object, self).__init__()
-
 	def find(self):
 		raise NotImplementedError()
+		
+	

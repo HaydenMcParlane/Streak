@@ -10,6 +10,7 @@
 from schedules.server.external.host import HostType as HTYPE
 from schedules.server.external.host import HostFactory as HFACTORY
 import schedules.server.external.host as HOST
+from schedules.server.storage.mongostore import MongoInterface as STORE
 from enum import Enum as ENUM
 
 _SD = "SchedulesDirect"
@@ -24,37 +25,39 @@ class Collector(object):
         
 class SchedulesDirectCollector(Collector):
     _MAX_REQUESTS = 490    
-    _DATA_PROCESSORS = {  } 
+    
     def __init__(self):
         super(Collector, self).__init__()
         self.client = HFACTORY.get(HTYPE.SCHEDULES_DIRECT)        
-        self.client.register(self._adapter_channels, HOST.Services.GET_CHANNELS)
-        self.client.register(self._adapter_channelinfo, HOST.Services.GET_CHANNEL_INFO)
+        self.client.register(self._filter_stationID, HOST.Services.GET_CHANNELS)
+        self.client.register(self._filter_programID, HOST.Services.GET_CHANNEL_INFO)
+        self.store = STORE()
         # self.client.register(self._adapter_series, HOST.Services.GET_SERIES_INFO)
         # self.client.register(self._adapter_episodes, HOST.Services.GET_EPISODES)
         
     def collect(self, **kwargs):        
-        json1 = self.client.consume(HOST.Services.GET_CHANNELS)        
-        json1 = self.client.consume(HOST.Services.GET_CHANNEL_INFO, json1)                
-        json2 = self.client.consume(HOST.Services.GET_EPISODES, json1)        
-        json3 = self.client.consume(HOST.Services.GET_SERIES_INFO, json1)
+        stations = self.client.consume(HOST.Services.GET_CHANNELS)        
+        series = self.client.consume(HOST.Services.GET_CHANNEL_INFO, stations)                
+        series_info = self.client.consume(HOST.Services.GET_EPISODES, series)        
+        episode_info = self.client.consume(HOST.Services.GET_SERIES_INFO, series)
 
     # TODO: HIGH Use adapters to process data, add default hash filters (i.e,
     # genre, show time, etc) and store processed data.
     
-    def _adapter_channels(self, json):
-        stations = list()
-        count = self._MAX_REQUESTS          
-        for station in json['map']:
-            if count > 0:
-                sid = station['stationID']
-                stations.append({ 'stationID': sid})
-                count -= 1
-            else:
-                break        
+    def _filter_stationID(self, json):
+        with self.store as mongo:
+            stations = list()
+            count = self._MAX_REQUESTS          
+            for station in json['map']:
+                if count > 0:
+                    sid = station['stationID']
+                    stations.append({ 'stationID': sid})
+                    count -= 1
+                else:
+                    break        
         return stations
     
-    def _adapter_channelinfo(self, json):
+    def _filter_programID(self, json):
         programs = list()
         count = self._MAX_REQUESTS
         print json            
