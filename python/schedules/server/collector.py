@@ -7,12 +7,14 @@
 #        The collector is responsible for collecting data from some source
 #        to be processed and/or used by the server.
 #############################################################
+from schedules import config as CONFIG
 from schedules.server.external.host import HostType as HTYPE
 from schedules.server.external.host import HostFactory as HFACTORY
 import schedules.server.external.host as HOST
 from scram import helper as HELPER
-from schedules.server.storage.mongostore import MongoInterface as STORE
 from enum import Enum as ENUM
+
+DATASTORE = CONFIG.DATASTORE
 
 _SD = "SchedulesDirect"
 
@@ -33,7 +35,7 @@ class SchedulesDirectCollector(Collector):
         self.client.register(self._filter_stationID, HOST.Services.GET_CHANNELS)
         self.client.register(self._filter_programID, HOST.Services.GET_CHANNEL_INFO)
         self.client.register(self._adapter_episodes, HOST.Services.GET_EPISODES)        
-        self.store = STORE()
+        self.store = DATASTORE()
         # self.client.register(self._adapter_series, HOST.Services.GET_SERIES_INFO)
         # self.client.register(self._adapter_episodes, HOST.Services.GET_EPISODES)
         

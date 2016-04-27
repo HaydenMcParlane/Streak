@@ -34,8 +34,7 @@ RUN_IN_DEBUG = CONFIG.RUN_IN_DEBUG
 # optimized data structures for a given application (i.e, )
 _EPISODES = "/episodes" 
 @app.route(_EPISODES, methods = ["GET"])
-def episodes():
-    '''Get episode(s)'''  
+def episodes():  
     if request.method == "GET":
         command = CMD.GetEpisodes()        
         episodes = command.invoke()

@@ -6,8 +6,9 @@
 #		This interface is used by public server APIs to deliver
 #		reusable, atomic transactions.
 ###########################################################
+from schedules import config as CONFIG
 from pypatterns.commander import Command as CMD
-from schedules.server.storage.mongostore import MongoInterface as CLIENT
+DATASTORE = CONFIG.DATASTORE
 
 class ServerCommand(CMD):
     def __init__(self):
@@ -21,7 +22,7 @@ class GetEpisodes(ServerCommand):
     def execute(self, **kwargs):
         # TODO: Modify so that options are specifiable in kwargs (not hardcoded - find() returns directly
         # from database=streak, collection=episodes.        
-        return CLIENT().find()        
+        return DATASTORE().find()        
 
 if __name__=="__main__":
     pass

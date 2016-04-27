@@ -28,7 +28,10 @@ class MongoInterface(datastore.DataStorageInterface):
         with self as mongo:
             # TODO: Fix hardcode        
             cursor = mongo["streak"]["episodes"].find({})
-            for document in cursor:                
+            for document in cursor:         
+                # TODO: The actual DB object IDs shouldn't be visible to 
+                # client. How to implement such that an object is uniquely
+                # identifiable yet hide such details?       
                 document['_id'] = str(document['_id'])                
                 result.append(copy.deepcopy(document))
         return result
