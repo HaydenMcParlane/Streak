@@ -14,13 +14,8 @@ app = Flask(__name__)
 
 import flask
 from flask import request
+import json as JSON
 from schedules.server.command import command as CMD
-
-# Access URL Configurations
-_HOME = "/" # Flask interprets this as the home url
-_EPISODES = "/episodes"
-_SERIES = "/series"
-_CHANNELS = "/channels"
 
 # Runtime configurations
 _RUN_IN_DEBUG = False
@@ -33,21 +28,23 @@ _RUN_IN_DEBUG = False
 # structure to decouple the specific client implementation
 # from the data representation model. Therefore, creation of
 # optimized data structures for a given application (i.e, )
- 
+_EPISODES = "/episodes" 
 @app.route(_EPISODES, methods = ["GET"])
 def episodes():
     '''Get episode(s)'''  
     if request.method == "GET":
-        command = CMD.GetEpisodes()
-        options = dict()
-        command.invoke(options)
+        command = CMD.GetEpisodes()        
+        eps = command.invoke()
+        return JSON.dumps(eps)
     else:
         raise HTTPMethodError()        
     
+_SERIES = "/series"
 @app.route(_SERIES, methods = ["GET"])
 def series():
     return "series"
 
+_CHANNELS = "/channels"
 @app.route(_CHANNELS, methods = ["GET"])
 def channels():
     return "channels"
@@ -56,13 +53,14 @@ def channels():
 #    Management
 ###########################################################
 # TODO: Implement username and password update
-
+_HOME = "/"
 @app.route(_HOME, methods=["GET"])
 def connection_status():
     return "connection active"
 
-@app.route(_CREDENTIALS, methods=["GET","POST","PUT", "DELETE"])
-def credentials():
+_LOGIN = "/login"
+@app.route(_LOGIN, methods=["GET","POST","PUT", "DELETE"])
+def login():
     if request.method == "GET":
         raise NotImplementedError()
     elif request.method == "POST":
@@ -77,7 +75,7 @@ def credentials():
 ###########################################################
 #    Exceptions/Errors
 ###########################################################
-class HTTPMethodError(Error):
+class HTTPMethodError(TypeError):
     pass
 
 

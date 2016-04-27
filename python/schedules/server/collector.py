@@ -43,18 +43,15 @@ class SchedulesDirectCollector(Collector):
         # in the request sequence.        
         channel_ids = self.client.consume(HOST.Services.GET_CHANNELS)        
         episode_shard1, program_ids = self.client.consume(HOST.Services.GET_CHANNEL_INFO, channel_ids)                
-        episode_shard2 = self.client.consume(HOST.Services.GET_EPISODES, program_ids)
-        print episode_shard1
-        print episode_shard2
-        
+        episode_shard2 = self.client.consume(HOST.Services.GET_EPISODES, program_ids)        
         # TODO: Make sure  all episodes are included otherwise if episode_shard1.size not equal
         # to episode_shard2 then episodes will be left out. 
         #Combine episode objects
+        # TODO: All of this logic needs to be refined to be more maintainable and
+        # flexible, separation of concerns
         for key, value in episode_shard1.iteritems():
             episode_shard1[key].update(episode_shard2[key])
             episode = episode_shard1[key]
-            print "In EPISODE"
-            print episode
             self.store.insert("streak", 'episodes', data=episode)
                
         series_info = self.client.consume(HOST.Services.GET_SERIES_INFO, program_ids)
@@ -114,32 +111,21 @@ class SchedulesDirectCollector(Collector):
         episodes = dict()
         count = 1
         for ep in json:
-            if True:#count >= 1:
+            # TODO: Remove if False stmt. DEBUG purposes
+            if False:#count >= 1:
                 count -= 1
             episode = dict()       
-            keys = ['titles', 0, 'title']     
-            #title = [value for key, value in ep['titles'][0].iteritems() if 'title' in key.lower()][0]
-            title = HELPER.getvalue(ep, keys, verbatim=False)            
-            #eptitle = [value for key, value in ep.iteritems() if 'episodetitle' in key.lower()]
-            keys = ['episodetitle']
-            #eptitle = [value for key, value in ep.iteritems() if 'episodetitle' in key.lower()]
+            keys = ['titles', 0, 'title']                 
+            title = HELPER.getvalue(ep, keys, verbatim=False)                        
+            keys = ['episodetitle']            
             eptitle = HELPER.getvalue(ep, keys, verbatim=False)
             episode['title'] = title
-            episode['type'] = HELPER.value(ep, 'eventDetails')
-            #descriptions = dict()
+            episode['type'] = HELPER.value(ep, 'eventDetails')            
             keys = ['descriptions', 'description', 0, 'description']
             description = HELPER.getvalue(ep, keys, verbatim=False)
-            #descriptions['temp'] = [value for key, value in ep['descriptions'].iteritems()
-            #                 if 'description' in key.lower()].pop()
-            #print descriptions
-            #description = descriptions['temp'][0]['description']
             episode['shortdescriptionline1'] = eptitle
             snum = HELPER.getvalue(ep, ['metadata', 0, 'Gracenote', 'season'], verbatim=False)
             epnum = HELPER.getvalue(ep, ['metadata', 0, 'Gracenote', 'episode'], verbatim=False)            
-            #episode['shortdescriptionline2'] = "Season " +str(ep['metadata'][0]['Gracenote']['season'])
-            #episode['shortdescriptionline2'] += ', Episode ' + str(ep['metadata'][0]['Gracenote']['episode'])
-            #reldate = ep['originalAirDate'].split('-').reverse()
-            #episode['releasedate'] = '/'.join(reldate)
             episode['releasedate'] = HELPER.value(ep, 'originalAirDate')
             episode['actors'] = list()
             if HELPER.has_key(ep, 'cast'):

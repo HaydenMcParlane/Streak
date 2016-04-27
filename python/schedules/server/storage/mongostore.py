@@ -22,13 +22,16 @@ class MongoInterface(datastore.DataStorageInterface):
             print(e)
             raise Error()
     
-    def find(self, database, collection, **kwargs):
+    def find(self, **kwargs):
         with self as mongo:
             # TODO: Refine
-            cursor = mongo[database][collection].find()
-            return cursor        
+            result = list()
+            cursor = mongo["streak"]["episodes"].find({})
+            for document in cursor:
+                result.append(document)
+            return result
         
-    def insert(self, database, collection, data, many=False, **kwargs):
+    def insert(self, database, collection, data, batch=False, **kwargs):
         with self as mongo:
             if many:
                 # TODO: Implement
