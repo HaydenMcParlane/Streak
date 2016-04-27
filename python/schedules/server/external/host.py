@@ -82,7 +82,7 @@ class Service(STATE):
 		self.load_headers(headers)
 	
 	def load_body(self, data):
-		print data
+		#print data
 		if not isinstance(data, dict) and not isinstance(data, list):
 			raise TypeError()
 		else:
@@ -90,7 +90,7 @@ class Service(STATE):
 			
 	
 	def load_headers(self, headers):
-		print headers			
+		#print headers			
 		if not isinstance(headers, dict):
 			raise TypeError()
 		else:
@@ -159,14 +159,14 @@ class ChannelInfo(SchedulesDirectService):
 		Service.urlappend(self, "schedules")
 		Service.methodappend(self, HTTPMethods.POST)
 		
-class Series(SchedulesDirectService):
+class Episodes(SchedulesDirectService):
 	def __init__(self):
 		SchedulesDirectService.__init__(self)
 		Service.urlappend(self, SchedulesDirectService._VERSION)		
 		Service.urlappend(self, "programs")
 		Service.methodappend(self, HTTPMethods.POST)
 		
-class Episodes(SchedulesDirectService):
+class Series(SchedulesDirectService):
 	def __init__(self):
 		SchedulesDirectService.__init__(self)
 		Service.urlappend(self, SchedulesDirectService._VERSION)		
@@ -240,10 +240,8 @@ class SchedulesDirectClient(Client, STATE):
 		# restrictions on requests.				
 		# TODO: If adapter used, apply to data result		
 		json = service.value.invoke(headers, data)
-		print json				
 		if Host.using_adapter(self, service):
-			adapter = Host.get_adapter(self, service)
-			print adapter
+			adapter = Host.get_adapter(self, service)			
 			return adapter(json)
 		else:
 			return json

@@ -10,6 +10,7 @@
 from schedules.server.external.host import HostType as HTYPE
 from schedules.server.external.host import HostFactory as HFACTORY
 import schedules.server.external.host as HOST
+from scram import helper as HELPER
 from schedules.server.storage.mongostore import MongoInterface as STORE
 from enum import Enum as ENUM
 
@@ -31,49 +32,128 @@ class SchedulesDirectCollector(Collector):
         self.client = HFACTORY.get(HTYPE.SCHEDULES_DIRECT)        
         self.client.register(self._filter_stationID, HOST.Services.GET_CHANNELS)
         self.client.register(self._filter_programID, HOST.Services.GET_CHANNEL_INFO)
+        self.client.register(self._adapter_episodes, HOST.Services.GET_EPISODES)        
         self.store = STORE()
         # self.client.register(self._adapter_series, HOST.Services.GET_SERIES_INFO)
         # self.client.register(self._adapter_episodes, HOST.Services.GET_EPISODES)
         
-    def collect(self, **kwargs):        
-        stations = self.client.consume(HOST.Services.GET_CHANNELS)        
-        series = self.client.consume(HOST.Services.GET_CHANNEL_INFO, stations)                
-        series_info = self.client.consume(HOST.Services.GET_EPISODES, series)        
-        episode_info = self.client.consume(HOST.Services.GET_SERIES_INFO, series)
+    def collect(self, **kwargs):
+        # TODO: HIGH call to series corresponds to lengthy paragraph sent by
+        # sched. dir. from program_description. The episode info comes first
+        # in the request sequence.        
+        channel_ids = self.client.consume(HOST.Services.GET_CHANNELS)        
+        episode_shard1, program_ids = self.client.consume(HOST.Services.GET_CHANNEL_INFO, channel_ids)                
+        episode_shard2 = self.client.consume(HOST.Services.GET_EPISODES, program_ids)
+        print episode_shard1
+        print episode_shard2
+        
+        # TODO: Make sure  all episodes are included otherwise if episode_shard1.size not equal
+        # to episode_shard2 then episodes will be left out. 
+        #Combine episode objects
+        for key, value in episode_shard1.iteritems():
+            episode_shard1[key].update(episode_shard2[key])
+            episode = episode_shard1[key]
+            print "In EPISODE"
+            print episode
+            self.store.insert("streak", 'episodes', data=episode)
+               
+        series_info = self.client.consume(HOST.Services.GET_SERIES_INFO, program_ids)
 
     # TODO: HIGH Use adapters to process data, add default hash filters (i.e,
     # genre, show time, etc) and store processed data.
     
-    def _filter_stationID(self, json):
-        with self.store as mongo:
-            stations = list()
-            count = self._MAX_REQUESTS          
-            for station in json['map']:
-                if count > 0:
-                    sid = station['stationID']
-                    stations.append({ 'stationID': sid})
-                    count -= 1
-                else:
-                    break        
+    def _filter_stationID(self, json):        
+        stations = list()
+        count = self._MAX_REQUESTS          
+        for station in json['map']:
+            if count > 0:
+                sid = station['stationID']
+                stations.append({ 'stationID': sid})
+                count -= 1
+            else:
+                break        
         return stations
     
     def _filter_programID(self, json):
         programs = list()
         count = self._MAX_REQUESTS
-        print json            
+        episodes = dict()
         for station in json:
             for program in station['programs']:
-                if count > 0:                
+                if count > 0:
+                    # TODO: HIGH Find way to map keys to one another so that
+                    # mapping isn't hard coded and can be reused.
+                    episode = dict()       
+                    
+                    # Required fields
+                    # TODO: MID Construct hashing system to allow for application of obvious
+                    # filters such as by channel, time, genre, etc.
+                    episode['contenttype'] = "episode"
+                    episode['channelID'] = station['stationID']
+                    episode['programID'] = program['programID']
+                    episode['channel_md5'] = program['md5']
+                    
+                    # Optional fields
+                    episode['length'] = HELPER.value(program, 'duration')
+                    episode['audioProperties'] = HELPER.value(program, 'audioProperties')
+                    episode['videoProperties'] = HELPER.value(program, 'videoProperties')
+                    #episode['new'] = program['new'] or "None"
+                    episode['releasedate'] = HELPER.value(program, 'airDateTime')                    
+                    
+                    episodes[program['programID']] = episode
+                    
+                    # Process program for next request
                     programs.append(program['programID'])
                     count -= 1
                 else:
-                    break                    
-        return programs
-    
-    def _adapter_series(self, json):
-        pass
+                    break             
+        # TODO: HIGH Append to episode object        
+        return ( episodes, programs )
     
     def _adapter_episodes(self, json):
+        episodes = dict()
+        count = 1
+        for ep in json:
+            if True:#count >= 1:
+                count -= 1
+            episode = dict()       
+            keys = ['titles', 0, 'title']     
+            #title = [value for key, value in ep['titles'][0].iteritems() if 'title' in key.lower()][0]
+            title = HELPER.getvalue(ep, keys, verbatim=False)            
+            #eptitle = [value for key, value in ep.iteritems() if 'episodetitle' in key.lower()]
+            keys = ['episodetitle']
+            #eptitle = [value for key, value in ep.iteritems() if 'episodetitle' in key.lower()]
+            eptitle = HELPER.getvalue(ep, keys, verbatim=False)
+            episode['title'] = title
+            episode['type'] = HELPER.value(ep, 'eventDetails')
+            #descriptions = dict()
+            keys = ['descriptions', 'description', 0, 'description']
+            description = HELPER.getvalue(ep, keys, verbatim=False)
+            #descriptions['temp'] = [value for key, value in ep['descriptions'].iteritems()
+            #                 if 'description' in key.lower()].pop()
+            #print descriptions
+            #description = descriptions['temp'][0]['description']
+            episode['shortdescriptionline1'] = eptitle
+            snum = HELPER.getvalue(ep, ['metadata', 0, 'Gracenote', 'season'], verbatim=False)
+            epnum = HELPER.getvalue(ep, ['metadata', 0, 'Gracenote', 'episode'], verbatim=False)            
+            #episode['shortdescriptionline2'] = "Season " +str(ep['metadata'][0]['Gracenote']['season'])
+            #episode['shortdescriptionline2'] += ', Episode ' + str(ep['metadata'][0]['Gracenote']['episode'])
+            #reldate = ep['originalAirDate'].split('-').reverse()
+            #episode['releasedate'] = '/'.join(reldate)
+            episode['releasedate'] = HELPER.value(ep, 'originalAirDate')
+            episode['actors'] = list()
+            if HELPER.has_key(ep, 'cast'):
+                for actor in ep['cast']:
+                    episode['actors'].append(actor['name'])
+            if HELPER.has_key(ep, 'crew'):
+                episode['director'] = ep['crew'][0]['name']
+            if HELPER.has_key(ep, 'hasImageArtwork'):
+                episode['hasimageartwork'] = ep['hasImageArtwork']
+            episode['episode_md5'] = ep['md5']
+            episodes[ep['programID']] = episode
+        return episodes
+    
+    def _adapter_series(self, json):
         pass
         
 def main():
