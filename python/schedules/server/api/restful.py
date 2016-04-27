@@ -18,7 +18,7 @@ import json as JSON
 from schedules.server.command import command as CMD
 
 # Runtime configurations
-_RUN_IN_DEBUG = False
+_RUN_IN_DEBUG = True
 
 ###########################################################
 #    Data
@@ -34,8 +34,8 @@ def episodes():
     '''Get episode(s)'''  
     if request.method == "GET":
         command = CMD.GetEpisodes()        
-        eps = command.invoke()
-        return JSON.dumps(eps)
+        episodes = command.invoke()
+        return JSON.dumps(episodes)        
     else:
         raise HTTPMethodError()        
     

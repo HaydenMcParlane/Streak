@@ -3,6 +3,7 @@
 #	@author: Hayden McParlane
 #	@creation-date: 2.23.2016
 #################################################################
+import copy
 import datastore
 from pymongo import MongoClient
 from gi.overrides.Gdk import Cursor
@@ -23,13 +24,14 @@ class MongoInterface(datastore.DataStorageInterface):
             raise Error()
     
     def find(self, **kwargs):
+        result = list()
         with self as mongo:
-            # TODO: Refine
-            result = list()
+            # TODO: Fix hardcode        
             cursor = mongo["streak"]["episodes"].find({})
-            for document in cursor:
-                result.append(document)
-            return result
+            for document in cursor:                
+                document['_id'] = str(document['_id'])                
+                result.append(copy.deepcopy(document))
+        return result
         
     def insert(self, database, collection, data, batch=False, **kwargs):
         with self as mongo:

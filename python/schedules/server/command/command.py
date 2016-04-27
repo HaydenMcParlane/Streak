@@ -7,7 +7,7 @@
 #		reusable, atomic transactions.
 ###########################################################
 from pypatterns.commander import Command as CMD
-from schedules.server.storage.mongostore import MongoInterface as INTERFACE
+from schedules.server.storage.mongostore import MongoInterface as CLIENT
 
 class ServerCommand(CMD):
     def __init__(self):
@@ -19,17 +19,9 @@ class ServerCommand(CMD):
 class GetEpisodes(ServerCommand):    
         
     def execute(self, **kwargs):
-        # TODO: Modify so that options are specifiable in kwargs.
-        client = INTERFACE()        
-        episodes = client.find()
-        print episodes
-        return episodes
-    
-
-def sandbox():
-    cmd = GetEpisodes()
-    result = cmd.execute()
-    return result
+        # TODO: Modify so that options are specifiable in kwargs (not hardcoded - find() returns directly
+        # from database=streak, collection=episodes.        
+        return CLIENT().find()        
 
 if __name__=="__main__":
-    sandbox()
+    pass
