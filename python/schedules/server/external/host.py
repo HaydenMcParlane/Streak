@@ -12,8 +12,9 @@
 from enum import Enum as ENUM
 from scram import helper as HELPER
 from scram.helper import StateHolder as STATE
+from schedules import config as CONFIG
 from schedules.server.globals import Data as DATA
-import json
+import json as JSON
 import requests as REQ
 from mate_invest.defs import DATA_DIR
 
@@ -99,7 +100,7 @@ class Service(STATE):
 	def invoke(self, headers, data):		
 		self.load(headers, data)
 		httpmethod = RequestFactory.get(self.method())		
-		response = httpmethod(self.url(), data=json.dumps(self.body()), headers=self.headers())
+		response = httpmethod(self.url(), data=JSON.dumps(self.body()), headers=self.headers())
 		self.set_not_ready()
 		# TODO: HIGH Handle response return HTTP status codes		
 		try:
@@ -215,8 +216,8 @@ class Server(Host):
 class SchedulesDirectClient(Client, STATE):	
 	_TOKEN = "token"
 	_HEADERS = "headers"	
-	_USERNAME = "umkcsce"
-	_PASSWORD = "umkcsceresearch"
+	_USERNAME = CONFIG.USERNAME
+	_PASSWORD = CONFIG.PASSWORD
 	_REQMAX = 490
 	
 	def __init__(self):
