@@ -15,10 +15,14 @@ app = Flask(__name__)
 import flask
 from flask import request
 import json as JSON
+from schedules import config as CONFIG
 from schedules.server.command import command as CMD
 
-# Runtime configurations
-_RUN_IN_DEBUG = True
+# Globals
+HOSTNAME = CONFIG.S_HOSTNAME
+PORT = CONFIG.S_PORT
+
+RUN_IN_DEBUG = CONFIG.RUN_IN_DEBUG
 
 ###########################################################
 #    Data
@@ -48,6 +52,11 @@ _CHANNELS = "/channels"
 @app.route(_CHANNELS, methods = ["GET"])
 def channels():
     return "channels"
+
+_FILTERS = "/filters"
+@app.route(_FILTERS, methods=["GET"])
+def filter():
+    return "filters"
     
 ###########################################################
 #    Management
@@ -80,4 +89,4 @@ class HTTPMethodError(TypeError):
 
 
 if __name__=="__main__":
-    app.run(host="localhost", port=10023, debug=_RUN_IN_DEBUG)
+    app.run(host=HOSTNAME, port=PORT, debug=RUN_IN_DEBUG)
