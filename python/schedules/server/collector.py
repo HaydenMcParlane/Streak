@@ -123,7 +123,7 @@ class SchedulesDirectCollector(Collector):
             eptitle = HELPER.getvalue(ep, keys, verbatim=False)
             episode['title'] = title
             episode['type'] = HELPER.value(ep, 'eventDetails')            
-            keys = ['descriptions', 'description', 0]
+            keys = ['descriptions', 'description', 0, 'description']
             description = HELPER.getvalue(ep, keys, verbatim=False)
             episode['shortdescriptionline1'] = eptitle
             snum = HELPER.getvalue(ep, ['metadata', 0, 'Gracenote', 'season'], verbatim=False)
