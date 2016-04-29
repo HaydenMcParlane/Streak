@@ -112,26 +112,33 @@ Function RenderTVSchedule(dummyArg as Object) as integer ' TODO: Remove dummy ar
     ' TODO: Below is O(num_keys_visible). Optimization can come from populating rows that aren't visible right before they become
     ' visible instead of populating all of the rows at once.       
     'titles = GetEpisodeTitles(EpisodeFilterTime())    
-    episodes = GetEpisodes(EpisodeFilterGenre())
-    titles = episodes.keys() 'TODO: Titles should be stored and retrieved. Its much Faster
-    
+    'episodes = GetEpisodes(EpisodeFilterGenre())
+    episodes = GetEpisodes()
+    for each e in episodes
+        print e
+    end for
+    titles = CreateObject("roArray", 1, True)
+    for i = 0 to 10'episodes.Count() - 1
+        titles.Push("[Row Title " + i.toStr() + " ]")
+    end for
+    'titles = episodes.keys() 'TODO: Titles should be stored and retrieved. Its much Faster
     grid.SetupLists(titles.Count())
-    grid.SetListNames(titles)  
-    for i = 0 to titles.Count() - 1 '=> Linear time ( O(num_keys_visible) ) 
-       grid.SetContentList(i,episodes[titles[i]]) '=> keys will hash to list for row. Filtration will occur by storing different title types
-       grid.Show()       
-    end for                   
+    grid.SetListNames(titles)      
+   
+'    for i = 0 to 10'titles.Count() - 1 '=> Linear time ( O(num_keys_visible) )        
+'       grid.SetContentList(i,episodes[i]) '=> keys will hash to list for row. Filtration will occur by storing different title types   
+'    end for   
+    grid.SetContentList(1,episodes)           
+    grid.Show()            
     while true
          msg = wait(0, port)
          if type(msg) = "roGridScreenEvent" then
              if msg.isScreenClosed() then
                  return -1
              else if msg.isListItemFocused()
-                 print "Focused msg: ";msg.GetMessage();"row: ";msg.GetIndex();
-                 print " col: ";msg.GetData()
+
              else if msg.isListItemSelected()
-                 print "Selected msg: ";msg.GetMessage();"row: ";msg.GetIndex();
-                 print " col: ";msg.GetData()
+                 
              end if
          end if
     end while

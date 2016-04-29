@@ -73,9 +73,9 @@ Function AppendToFilterList(filter as String, hash as String, programID as Strin
     base[hash].Push(GetProgram(programID))
 End Function
 
-Function GetEpisodes(filter as String) as Object     
-    return GetEpisodeSubcategory(filter, EpisodeSubcategoryData())
-End Function
+'Function GetEpisodes(filter as String) as Object     
+'    return GetEpisodeSubcategory(filter, EpisodeSubcategoryData())
+'End Function
 
 Function AddUpdateEpisodes(filter as String, o as Object) as Object     
     base = GetEpisodeSubcategory(filter, EpisodeSubcategoryData())

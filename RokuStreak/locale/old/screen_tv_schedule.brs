@@ -28,11 +28,9 @@ Function RenderTVSchedule() as integer
              if msg.isScreenClosed() then
                  return -1
              else if msg.isListItemFocused()
-                 print "Focused msg: ";msg.GetMessage();"row: ";msg.GetIndex();
-                 print " col: ";msg.GetData()
+                 
              else if msg.isListItemSelected()
-                 print "Selected msg: ";msg.GetMessage();"row: ";msg.GetIndex();
-                 print " col: ";msg.GetData()
+
              end if
          end if
     end while
