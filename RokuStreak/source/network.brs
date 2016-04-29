@@ -116,8 +116,7 @@ Function BuildResponse(message as Object) as Object
         response.statusCode = message.GetResponseCode()                       
         response.json = ParseJSON(message.GetString())
         response.jsonString = message.GetString()        
-        response.headers = LinkAssociativeArrays(message.GetResponseHeadersArray())       
-        LogDebug("Value of response.body -> " + response.jsonString)        
+        response.headers = LinkAssociativeArrays(message.GetResponseHeadersArray())
         'LogDebugObj("Value of response.headers -> ", response.headers)        
            
         LogDebug("Response object build successful")

@@ -6,7 +6,7 @@
 ' TODO: At application Launch, begin populating data
 Function RunUserInterface(aa as Object)    
     ConfigureApplicationEssentials()
-    PopulateTVData()
+    'PopulateTVData()
 
     'ShowWelcomeScreen()
     'TODO: Better, more readable name?

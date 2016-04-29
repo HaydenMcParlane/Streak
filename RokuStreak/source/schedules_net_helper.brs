@@ -28,7 +28,7 @@ Function RequestProgramIDs(stationID as String, headers as Object, body as Objec
     StoreSchedulesDirectProgramIDRequest(requestID)     
 End Function
 
-Function RequestProgramInfo(programID as String, headers as Object, body as Object) as Object
+Function RequestProgramInfo(programID as String, headers as Object, body as Object) as object
     ' TODO: Store program id?
     ' Check to ensure that request is necessary
     if AlreadyProcessed(programID)
@@ -37,6 +37,7 @@ Function RequestProgramInfo(programID as String, headers as Object, body as Obje
         requestID = AsyncPostRequest(SchedulesDirectJSONProgramInfoUrl(), headers, body)
         StoreSchedulesDirectProgramInfoRequest(requestID)
         SetProcessed(programID)
+        return requestID
     end if    
 End Function
 
