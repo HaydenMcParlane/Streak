@@ -4,7 +4,7 @@
 #	@creation-date: 2.23.2016
 #################################################################
 import copy
-import datastore
+import schedules.server.storage.datastore as datastore
 from pymongo import MongoClient
 from gi.overrides.Gdk import Cursor
 
@@ -38,7 +38,7 @@ class MongoInterface(datastore.DataStorageInterface):
         
     def insert(self, database, collection, data, batch=False, **kwargs):
         with self as mongo:
-            if many:
+            if batch:
                 # TODO: Implement
                 raise NotImplementedError()
             else:

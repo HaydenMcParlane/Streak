@@ -51,7 +51,7 @@ class SchedulesDirectCollector(Collector):
         #Combine episode objects
         # TODO: All of this logic needs to be refined to be more maintainable and
         # flexible, separation of concerns
-        for key, value in episode_shard1.iteritems():
+        for key, value in episode_shard1.items():
             episode_shard1[key].update(episode_shard2[key])
             episode = episode_shard1[key]
             self.store.insert("streak", 'episodes', data=episode)

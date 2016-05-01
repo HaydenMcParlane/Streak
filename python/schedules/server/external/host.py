@@ -16,7 +16,6 @@ from schedules import config as CONFIG
 from schedules.server.globals import Data as DATA
 import json as JSON
 import requests as REQ
-from mate_invest.defs import DATA_DIR
 
 
 #####################################################################
@@ -43,7 +42,7 @@ class RequestFactory(object):
 		try:			
 			return RequestFactory._CATALOG[method]
 		except Exception as e:
-			print e
+			print(e)
 			raise ValueError()
 
 class Service(STATE):
@@ -83,7 +82,7 @@ class Service(STATE):
 		self.load_headers(headers)
 	
 	def load_body(self, data):
-		#print data
+		#print(data)
 		if not isinstance(data, dict) and not isinstance(data, list):
 			raise TypeError()
 		else:
@@ -91,7 +90,7 @@ class Service(STATE):
 			
 	
 	def load_headers(self, headers):
-		#print headers			
+		#print(headers)			
 		if not isinstance(headers, dict):
 			raise TypeError()
 		else:
