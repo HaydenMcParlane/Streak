@@ -14,6 +14,12 @@ import schedules.server.external.host as HOST
 from scram import helper as HELPER
 from enum import Enum as ENUM
 
+# TODO: HIGH For decreased coupling and increased cohesion, system should not use
+# requests to access image URLs or anything in this module. This should be moved
+# to host.Service. It's here for presentation I'm giving tomorrow demonstrating
+# application.
+import requests as REQ
+
 DATASTORE = CONFIG.DATASTORE
 
 _SD = "SchedulesDirect"
@@ -34,7 +40,8 @@ class SchedulesDirectCollector(Collector):
         self.client = HFACTORY.get(HTYPE.SCHEDULES_DIRECT)        
         self.client.register(self._filter_stationID, HOST.Services.GET_CHANNELS)
         self.client.register(self._filter_programID, HOST.Services.GET_CHANNEL_INFO)
-        self.client.register(self._adapter_episodes, HOST.Services.GET_EPISODES)        
+        self.client.register(self._adapter_episodes, HOST.Services.GET_EPISODES)
+        self.client.register(self._adapter_grab_image_info, HOST.Services.GET_SERIES_METADATA)        
         self.store = DATASTORE()
         # self.client.register(self._adapter_series, HOST.Services.GET_SERIES_INFO)
         # self.client.register(self._adapter_episodes, HOST.Services.GET_EPISODES)
@@ -45,18 +52,24 @@ class SchedulesDirectCollector(Collector):
         # in the request sequence.        
         channel_ids = self.client.consume(HOST.Services.GET_CHANNELS)        
         episode_shard1, program_ids = self.client.consume(HOST.Services.GET_CHANNEL_INFO, channel_ids)                
-        episode_shard2 = self.client.consume(HOST.Services.GET_EPISODES, program_ids)        
+        episode_shard2 = self.client.consume(HOST.Services.GET_EPISODES, program_ids)
+        series_info = self.client.consume(HOST.Services.GET_SERIES_INFO, program_ids)
+        episode_shard3 = self.client.consume(HOST.Services.GET_SERIES_METADATA, program_ids)        
         # TODO: Make sure  all episodes are included otherwise if episode_shard1.size not equal
         # to episode_shard2 then episodes will be left out. 
         #Combine episode objects
         # TODO: All of this logic needs to be refined to be more maintainable and
         # flexible, separation of concerns
-        for key, value in episode_shard1.items():
+        count = 1
+        episodes = dict()
+        for key, value in episode_shard1.items():            
             episode_shard1[key].update(episode_shard2[key])
+            episode_shard1[key].update(episode_shard3[key])            
             episode = episode_shard1[key]
+            if count > 0:
+                print(episode)
+                count-=1            
             self.store.insert("streak", 'episodes', data=episode)
-               
-        series_info = self.client.consume(HOST.Services.GET_SERIES_INFO, program_ids)
 
     # TODO: HIGH Use adapters to process data, add default hash filters (i.e,
     # genre, show time, etc) and store processed data.
@@ -148,6 +161,40 @@ class SchedulesDirectCollector(Collector):
     
     def _adapter_series(self, json):
         pass
+    
+    def _adapter_grab_image_info(self, json):
+        episodes = dict()
+        count = 1
+        for ep in json:
+            episode = dict()
+            
+            if count > 0:
+                print(ep)
+                count -= 1
+            
+            if HELPER.has_key(ep, 'data'):
+                data = HELPER.getvalue(ep, ['data'], verbatim=False)
+                if data is not None:
+                    for entry in data:                      
+                        if 'size' in entry.keys():
+                            if 'sm' in entry['size'].lower():
+                                episode['sdposterurl'] = entry['uri']
+                            if 'lg' in entry['size'].lower():
+                                episode['hdposterurl'] = entry['uri']
+                            if HELPER.has_key(episode, 'sdposterurl'):                                
+                                if 'http' not in episode['sdposterurl'].lower():
+                                    # This case means schedules direct should be referenced
+                                    # according to schedules JSON API spec
+                                    episode['sdposterurl'] = 'https://json.schedulesdirect.org/20141201/image/' + episode['sdposterurl']
+                            if HELPER.has_key(episode, 'hdposterurl'):                                
+                                if 'http' not in episode['hdposterurl'].lower():
+                                    # This case means schedules direct should be referenced
+                                    # according to schedules JSON API spec
+                                    episode['hdposterurl'] = 'https://json.schedulesdirect.org/20141201/image/' + episode['hdposterurl']
+                                episodes[ep['programID']] = episode
+                        else:
+                            continue
+        return episodes
         
 def main():
     coll = SchedulesDirectCollector()

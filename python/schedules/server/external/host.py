@@ -130,6 +130,9 @@ class Service(STATE):
 	def _getbody(self):
 		return self.b
 
+# TODO: HIGH rename and refactor Services to be more readable and
+# intuitive.
+
 class SchedulesDirectService(Service):
 	_BASE = "https://json.schedulesdirect.org"
 	_VERSION = "20141201"
@@ -170,9 +173,25 @@ class Series(SchedulesDirectService):
 	def __init__(self):
 		SchedulesDirectService.__init__(self)
 		Service.urlappend(self, SchedulesDirectService._VERSION)		
-		Service.urlappend(self, "metadata")
-		Service.urlappend(self, "description")		
-		Service.methodappend(self, HTTPMethods.POST)
+		Service.urlappend(self, "metadata") 	# TODO: MID Other services have metadata in URL
+		Service.urlappend(self, "description")	# Change so that code reuse occurs by inheritance	
+		Service.methodappend(self, HTTPMethods.POST) # from this class (and rename class)
+
+class ProgramMetadata(SchedulesDirectService):
+	def __init__(self):
+		SchedulesDirectService.__init__(self)
+		Service.urlappend(self, SchedulesDirectService._VERSION)		
+		Service.urlappend(self, "metadata")  # TODO: MID Refine this design so that urls
+		Service.urlappend(self, "programs")	 # can be established using a list instead of multiple lines.
+		Service.methodappend(self, HTTPMethods.POST)# TODO: MID Make Service method to allow setting http method
+													# and URL list as specified above in the same call.
+class Images(SchedulesDirectService):
+	def __init__(self):
+		SchedulesDirectService.__init__(self)
+		Service.urlappend(self, SchedulesDirectService._VERSION)		
+		Service.urlappend(self, "image")
+		Service.urlappend(self, "assets")		
+		Service.methodappend(self, HTTPMethods.GET)
 
 class Services(ENUM):
 	UPDATE_TOKEN = Token()
@@ -181,6 +200,8 @@ class Services(ENUM):
 	GET_CHANNEL_INFO = ChannelInfo()
 	GET_SERIES_INFO = Series()
 	GET_EPISODES = Episodes()
+	GET_SERIES_METADATA = ProgramMetadata()
+	GET_IMAGES = Images()
 
 class HostType(ENUM):
 	SCHEDULES_DIRECT = 1
