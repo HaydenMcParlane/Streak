@@ -3,6 +3,14 @@
 '   should be entered here to avoid needing numerous code changes upon code modification.
 '   @author: Hayden McParlane
 '   @creation-date: 2.18.2016
+Function SchedulesAPIHostName() as String
+    return "104.236.76.248"
+End Function
+
+Function SchedulesAPIPort() as String
+    return "10023"
+End Function
+
 Function Authentication() as String
     return "authentication"
 End Function

@@ -21,9 +21,9 @@ Function ServerHost() as String
 End Function
 
 Function ServerHostName() as String ' TODO: CHANGE
-    return "192.168.1.118"
+    return SchedulesAPIHostName()
 End Function
 
 Function ServerHostPort() as String
-    return "10023"
+    return SchedulesAPIPort()
 End Function
