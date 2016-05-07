@@ -113,22 +113,26 @@ Function RenderTVSchedule(dummyArg as Object) as integer ' TODO: Remove dummy ar
     ' visible instead of populating all of the rows at once.       
     'titles = GetEpisodeTitles(EpisodeFilterTime())    
     'episodes = GetEpisodes(EpisodeFilterGenre())
-    episodes = GetEpisodes()
-    for each e in episodes
-        print e
-    end for
+    episodes = GetEpisodes()    
     titles = CreateObject("roArray", 1, True)
-    for i = 0 to 10'episodes.Count() - 1
+    for i = 0 to 15'episodes.Count() - 1
         titles.Push("[Row Title " + i.toStr() + " ]")
     end for
     'titles = episodes.keys() 'TODO: Titles should be stored and retrieved. Its much Faster
     grid.SetupLists(titles.Count())
-    grid.SetListNames(titles)      
+    grid.SetListNames(titles)
+    
+    for i = 0 to 15
+        rowEpisodes = CreateObject("roArray", 1, True)
+        for j = 0 to 10
+            rowEpisodes.Push(episodes[10*i + j])
+        end for
+        grid.SetContentList(i,rowEpisodes)
+    end for
    
 '    for i = 0 to 10'titles.Count() - 1 '=> Linear time ( O(num_keys_visible) )        
 '       grid.SetContentList(i,episodes[i]) '=> keys will hash to list for row. Filtration will occur by storing different title types   
-'    end for   
-    grid.SetContentList(1,episodes)           
+'    end for        
     grid.Show()            
     while true
          msg = wait(0, port)

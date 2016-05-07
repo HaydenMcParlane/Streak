@@ -4,7 +4,7 @@
 '   @author: Hayden McParlane
 '   @creation-date: 2.18.2016
 Function SchedulesAPIHostName() as String
-    return "104.236.76.248"
+    return "192.168.1.118"  '"104.236.76.248"
 End Function
 
 Function SchedulesAPIPort() as String
