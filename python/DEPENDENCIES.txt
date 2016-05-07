@@ -3,7 +3,8 @@
 #	of this software package will be achievable.
 ###################################################################
 
-Python
+# For all python versions
+PIP
 	+ flask
 	+ https://github.com/HaydenMcParlane/DesignPatterns/pypatterns
 	+ https://github.com/ReusableComponents/Authentication/py/scram/helper.py
@@ -12,6 +13,7 @@ Python
 	+ grequests (async) requests
 
 Apt-get
+	+ python3-pip
 	+ python-dev
 	+ mongodb
-
+	+ gir1.2-webkit-3.0 (needed to run on python 3 on some platforms).
