@@ -36,7 +36,7 @@ _EPISODES = "/episodes"
 @app.route(_EPISODES, methods = ["GET"])
 def episodes():  
     if request.method == "GET":
-        command = CMD.GetEpisodes()        
+        command = CMD.GetEpisodes()
         episodes = command.invoke()
         return JSON.dumps(episodes)        
     else:

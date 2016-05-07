@@ -126,7 +126,6 @@ class SchedulesDirectCollector(Collector):
             episode['type'] = HELPER.value(ep, 'eventDetails')            
             keys = ['descriptions', 'description', 0]
             description = HELPER.getvalue(ep, keys, verbatim=False)
-            print(description)
             if description is not None:
                 episode['description'] = HELPER.value(description, 'description')
             else:
