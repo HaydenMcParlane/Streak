@@ -111,11 +111,12 @@ class SchedulesDirectCollector(Collector):
     
     def _adapter_episodes(self, json):
         episodes = dict()
-        count = 1
+        count = 5
         for ep in json:
             # TODO: Remove if False stmt. DEBUG purposes
-            if False:#count >= 1:
+            if False: #count >= 1:
                 count -= 1
+                print(ep['descriptions'])
             episode = dict()       
             keys = ['titles', 0, 'title']                 
             title = HELPER.getvalue(ep, keys, verbatim=False)                        
@@ -123,8 +124,13 @@ class SchedulesDirectCollector(Collector):
             eptitle = HELPER.getvalue(ep, keys, verbatim=False)
             episode['title'] = title
             episode['type'] = HELPER.value(ep, 'eventDetails')            
-            keys = ['descriptions', 'description', 0, 'description']
+            keys = ['descriptions', 'description', 0]
             description = HELPER.getvalue(ep, keys, verbatim=False)
+            print(description)
+            if description is not None:
+                episode['description'] = HELPER.value(description, 'description')
+            else:
+                episode['description'] = "None"
             episode['shortdescriptionline1'] = eptitle
             snum = HELPER.getvalue(ep, ['metadata', 0, 'Gracenote', 'season'], verbatim=False)
             epnum = HELPER.getvalue(ep, ['metadata', 0, 'Gracenote', 'episode'], verbatim=False)            
