@@ -54,6 +54,10 @@ def run_install(colls):
         collection.install()
     
 def main():
+    # TODO: Ensure script is run using root priv
+    
+    # TODO: Implement usage
+    
     apt_packages = ( r"python3-pip",
                  r"python-dev" ,
                  r"mongodb",
@@ -81,6 +85,8 @@ def main():
     # TODO: Add ...../DesignPatterns/pypatterns/ to PYTHONPATH
     
     # TODO: Add ...../Streak/python to PYTHONPATH
+    
+    # TODO: Create necessary directory for package pymongo (/data/db)
     
 if __name__== "__main__":
     main()
