@@ -3,9 +3,7 @@
 #	with RokuStreak
 #	@author: Hayden McParlane
 #	@creation-date: 6.15.2016
-import os
 import subprocess
-from collections import deque
 
 PIP = r"pip3"
 APTITUDE = r"apt-get"
@@ -64,24 +62,25 @@ def main():
     pip_packages = ( r"flask",
                  r"enum34",
                  r"requests",
-                 r"grequests")
+                 r"grequests",
+                 r"pymongo")
     
     git_repos = ( r"https://github.com/HaydenMcParlane/DesignPatterns",
                   r"https://github.com/ReusableComponents/Authentication")
     
-    colls = ( AptitudeCollection(apt_packages),
-              PipCollection(pip_packages),
-              GitCollection(git_repos) )
+    collections = ( AptitudeCollection(apt_packages),
+                    PipCollection(pip_packages),
+                    GitCollection(git_repos) )
     
-    run_install(colls)
-    
-    print("DONE!\n")
+    run_install(collections)    
     
     # TODO: After install modify environment
     
     # TODO: Add ...../Authentication/py/scram/ to PYTHONPATH
     
     # TODO: Add ...../DesignPatterns/pypatterns/ to PYTHONPATH
+    
+    # TODO: Add ...../Streak/python to PYTHONPATH
     
 if __name__== "__main__":
     main()

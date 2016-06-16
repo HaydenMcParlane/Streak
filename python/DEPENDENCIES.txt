@@ -11,6 +11,7 @@ PIP
 	+ enum34
 	+ requests
 	+ grequests (async) requests
+	+ pymongo
 
 Apt-get
 	+ python3-pip
