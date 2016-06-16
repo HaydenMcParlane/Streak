@@ -1,0 +1,10 @@
+#
+#
+#
+
+. Install eclipse.
+
+. Install the JDK (i.e, oracle java 8u91).
+
+. Add JAVA_HOME to PATH.
+	+ Modify .bashrc
