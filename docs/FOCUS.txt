@@ -14,5 +14,6 @@
     - Others if you'd like, the two above are those used as of 6.18.2016.
 + REST architectural specification (or microframeworks).
     - Python flask microframework was used for RESTful API.
+    - SchedulesDirectJSON RESTful API can be found @ https://github.com/SchedulesDirect/JSON-Service/wiki/API-20141201
 + HTTP (REST is designed to make efficient use of HTTP)
 + Roku documentation developer guide starting @ https://sdkdocs.roku.com/display/sdkdoc/Developer+Guide 
