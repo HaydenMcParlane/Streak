@@ -1,0 +1,17 @@
+#
+#	This document outlines key concepts worth investigation to fully
+#	understand the system.
+#
+
++ Python 3.x (version used originally is 3.5)
+    - There are tremendous differences between 2.x and 3.x, so it must
+    be at least a 3.x version.
++ MongoDB
+    - Package used is pymongo, a mongodb wrapper for python.
++ Design Patterns such as...
+    - The commander pattern
+    - The strategy pattern
+    - Others if you'd like, the two above are those used as of 6.18.2016.
++ REST architectural specification (or microframeworks).
+    - Python flask microframework was used for RESTful API.
++ HTTP (REST is designed to make efficient use of HTTP)
