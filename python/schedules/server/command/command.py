@@ -7,7 +7,8 @@
 #		reusable, atomic transactions.
 ###########################################################
 from schedules import config as CONFIG
-from pypatterns.commander import Command as CMD
+from pypatterns.commander.commander import Command as CMD
+import pypatterns.commander.commander as COMMANDER
 DATASTORE = CONFIG.DATASTORE
 
 class ServerCommand(CMD):

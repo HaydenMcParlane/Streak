@@ -18,6 +18,8 @@ import json as JSON
 from schedules import config as CONFIG
 from schedules.server.command import command as CMD
 
+_COMMANDER = CMD.COMMANDER
+
 # Globals
 HOSTNAME = CONFIG.S_HOSTNAME
 PORT = CONFIG.S_PORT
@@ -36,8 +38,7 @@ _EPISODES = "/episodes"
 @app.route(_EPISODES, methods = ["GET"])
 def episodes():  
     if request.method == "GET":
-        command = CMD.GetEpisodes()
-        episodes = command.invoke()
+        episodes = _COMMANDER.load([ CMD.GetEpisodes() ])[0] # TODO: Eliminate hardcode if needed        
         return JSON.dumps(episodes)        
     else:
         raise HTTPMethodError()        
