@@ -15,3 +15,4 @@
 + REST architectural specification (or microframeworks).
     - Python flask microframework was used for RESTful API.
 + HTTP (REST is designed to make efficient use of HTTP)
++ Roku documentation developer guide starting @ https://sdkdocs.roku.com/display/sdkdoc/Developer+Guide 
