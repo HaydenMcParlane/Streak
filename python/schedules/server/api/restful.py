@@ -38,7 +38,7 @@ _EPISODES = "/episodes"
 @app.route(_EPISODES, methods = ["GET"])
 def episodes():  
     if request.method == "GET":
-        episodes = _COMMANDER.load([ CMD.GetEpisodes() ])[0] # TODO: Eliminate hardcode if needed        
+        episodes = _COMMANDER.load([ CMD.GetEpisodes() ]) # TODO: Eliminate hardcode if needed        
         return JSON.dumps(episodes)        
     else:
         raise HTTPMethodError()        
